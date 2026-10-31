@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OBESITY TO INFINITY - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdad7",
+                        "secondary": "#006a61",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#006c4a",
+                        "on-primary-fixed-variant": "#005137",
+                        "surface-variant": "#dee4de",
+                        "tertiary-container": "#ba5551",
+                        "surface-dim": "#d5dcd6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002114",
+                        "secondary-container": "#86f2e4",
+                        "inverse-primary": "#68dba9",
+                        "surface-container-high": "#e4eae4",
+                        "outline-variant": "#bccac0",
+                        "background": "#f5fbf5",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#e9efe9",
+                        "inverse-surface": "#2c322e",
+                        "outline": "#6d7a72",
+                        "primary": "#006948",
+                        "primary-fixed": "#85f8c4",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary-container": "#006f66",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#89f5e7",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-container-low": "#eff5ef",
+                        "tertiary": "#9b3e3b",
+                        "on-tertiary-fixed": "#410004",
+                        "primary-fixed-dim": "#68dba9",
+                        "on-surface-variant": "#3d4a42",
+                        "on-surface": "#171d19",
+                        "surface-bright": "#f5fbf5",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "surface": "#f5fbf5",
+                        "on-primary-container": "#f5fff7",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ecf2ec",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#171d19",
+                        "on-error": "#ffffff",
+                        "primary-container": "#00855d",
+                        "surface-container-highest": "#dee4de",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed-variant": "#7f2928",
+                        "secondary-fixed-dim": "#6bd8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "120px",
+                        "base": "4px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "sm": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative overflow-hidden font-body-md flex items-center justify-center">
+<!-- Ambient Background -->
+<!-- STITCH_SHADER_START:ANIMATION_4 class="absolute inset-0 w-full h-full z-0 opacity-60" -->
+<div class="absolute inset-0 w-full h-full z-0 opacity-60" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_4" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_4');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    float time = u_time * 0.2;
+    
+    // Smooth flowing gradient for the background
+    vec3 color1 = vec3(0.97, 0.98, 0.99); // Light bg (#F8FAFC)
+    vec3 color2 = vec3(0.90, 0.95, 0.93); // Very soft emerald tint
+    
+    float noise = sin(uv.x * 3.0 + time) * cos(uv.y * 2.0 - time) * 0.5 + 0.5;
+    vec3 finalColor = mix(color1, color2, noise * 0.4);
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_4 -->
+<main class="relative z-10 w-full max-w-md px-margin-mobile flex flex-col items-center">
+<!-- Logo & Branding -->
+<div class="flex flex-col items-center mb-10 fade-in-up" style="animation-delay: 0.1s;">
+<div class="w-32 h-32 mb-6 float-animation bg-surface rounded-full flex items-center justify-center shadow-lg glass-card p-4">
+<img alt="Obesity to Infinity Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHSkFcE2XyRf_5ZI3-b5v3sl-qoiYFXiSK_p61BsoZ_quUY513G9vDCD6t90AIDrhNtZx39ank3xC7qmayEV8GRBCkTfX5LfB8XW-uJfZ2c8agAxEkZ_BHPjdwX4T88iRVkJy9i1USsJIl5lp0TsXc_0ZsMfAbZYP7oHorOoh0qXCOYCWHB3sw1l6rLC7yp5CvBKFYxSef5v6-zlpvpTHGvpWoOcYAoWud0ZuilrJQ2PfhRHIzX5i_Dg"/>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary text-center tracking-tight leading-tight">
+                OBESITY TO<br/>INFINITY
+            </h1>
+<p class="font-body-lg text-body-lg text-secondary text-center mt-4 max-w-[280px]">
+                Transformasi Sehat Bertahap: Walking → Jogging → Running
+            </p>
+</div>
+<!-- Login Card -->
+<div class="glass-card w-full rounded-xl p-md flex flex-col gap-md fade-in-up" style="animation-delay: 0.3s;">
+<div class="relative">
+<label class="sr-only" for="access_code">Kode Akses Pengguna</label>
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">key</span>
+</div>
+<input autocomplete="off" class="w-full bg-surface-container-low border-0 text-on-surface rounded-lg pl-12 pr-4 py-3 font-body-md shadow-inner focus:ring-2 focus:ring-primary focus:outline-none transition-shadow" id="access_code" placeholder="Kode Akses Pengguna (OBE-XXXX)" type="text"/>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-4 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-95 shadow-md">
+<span>Masuk ke Akun Saya</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="flex flex-col gap-2 mt-2">
+<button class="w-full bg-transparent border border-secondary text-secondary hover:bg-secondary-container/20 font-label-md text-label-md py-3 rounded-lg transition-colors hover:scale-[1.02] active:scale-95">
+                    Belum Punya Kode? Buat Akun
+                </button>
+<button class="w-full bg-transparent text-outline hover:text-primary font-label-sm text-label-sm py-2 rounded-lg transition-colors underline-offset-4 hover:underline">
+                    Coba Mode Demo
+                </button>
+</div>
+</div>
+</main>
+</body></html>

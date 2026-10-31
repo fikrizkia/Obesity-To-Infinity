@@ -1,0 +1,3591 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>OBESITY TO INFINITY - Vitality Flow & Walk-to-Run Transformation</title>
+
+  <!-- Tailwind CSS CDN with Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Tailwind Custom Theme (Stitch Vitality Flow) -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#006948",
+            "primary-container": "#00855d",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#f5fff7",
+            "primary-fixed": "#85f8c4",
+            "primary-fixed-dim": "#68dba9",
+            "secondary": "#006a61",
+            "secondary-container": "#86f2e4",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#006f66",
+            "secondary-fixed": "#89f5e7",
+            "secondary-fixed-dim": "#6bd8cb",
+            "tertiary": "#9b3e3b",
+            "tertiary-container": "#ba5551",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#fffbff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "surface": "#f5fbf5",
+            "surface-dim": "#d5dcd6",
+            "surface-bright": "#f5fbf5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff5ef",
+            "surface-container": "#e9efe9",
+            "surface-container-high": "#e4eae4",
+            "surface-container-highest": "#dee4de",
+            "on-surface": "#171d19",
+            "on-surface-variant": "#3d4a42",
+            "outline": "#6d7a72",
+            "outline-variant": "#bccac0",
+            "background": "#f5fbf5"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.25rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <style>
+/* ==========================================================
+   OBESITY TO INFINITY - Vitality Flow Design System
+   Matches Google Stitch UIX Specification & Medical Precision
+   Fully Responsive for Mobile, Tablet, Laptop & Desktop
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+  --color-surface: #f5fbf5;
+  --color-surface-dim: #d5dcd6;
+  --color-surface-bright: #f5fbf5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff5ef;
+  --color-surface-container: #e9efe9;
+  --color-surface-container-high: #e4eae4;
+  --color-surface-container-highest: #dee4de;
+  --color-on-surface: #171d19;
+  --color-on-surface-variant: #3d4a42;
+  --color-inverse-surface: #2c322e;
+  --color-inverse-on-surface: #ecf2ec;
+  --color-outline: #6d7a72;
+  --color-outline-variant: #bccac0;
+  --color-surface-tint: #006c4a;
+  --color-primary: #006948;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #00855d;
+  --color-on-primary-container: #f5fff7;
+  --color-inverse-primary: #68dba9;
+  --color-secondary: #006a61;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #86f2e4;
+  --color-on-secondary-container: #006f66;
+  --color-tertiary: #9b3e3b;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ba5551;
+  --color-on-tertiary-container: #fffbff;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #85f8c4;
+  --color-primary-fixed-dim: #68dba9;
+  --color-background: #f5fbf5;
+}
+
+* {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Form inputs on mobile - prevent unwanted iOS auto-zoom by maintaining 16px minimum font size */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Material Symbols default styling */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Glassmorphism & High-Performance Glass Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+.glass-card-active {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #86f2e4;
+  box-shadow: 0 8px 30px rgba(0, 105, 72, 0.08);
+}
+
+/* Progress Track & Gradient */
+.progress-gradient {
+  background: linear-gradient(90deg, #006948 0%, #00855d 50%, #86f2e4 100%);
+}
+
+.progress-track {
+  background: rgba(0, 105, 72, 0.08);
+}
+
+/* Smooth Animations */
+.fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Pulse Ring */
+.pulse-ring {
+  animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 105, 72, 0.3); }
+  70% { box-shadow: 0 0 0 16px rgba(0, 105, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 105, 72, 0); }
+}
+
+/* Flame Glow */
+@keyframes flameGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+  50% {
+    transform: scale(1.1) rotate(-3deg);
+    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.7));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+}
+
+.flame-streak {
+  animation: flameGlow 2s infinite ease-in-out;
+}
+
+/* Day Cards on Calendar */
+.day-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.day-card:hover:not(.day-locked) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -4px rgba(0, 105, 72, 0.1);
+}
+
+.day-completed {
+  background: rgba(245, 255, 247, 0.9);
+  border-color: #85f8c4;
+}
+
+.day-active {
+  background: rgba(254, 252, 232, 0.95);
+  border-color: #fde047;
+  box-shadow: 0 0 0 2px #eab308;
+}
+
+.day-rest {
+  background: rgba(240, 249, 255, 0.9);
+  border-color: #bae6fd;
+}
+
+.day-locked {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Fasting Circular Ring */
+.fasting-circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tab Panes */
+.tab-pane {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.tab-pane.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Safe Area Inset for Modern Mobile Devices (iPhone notch/home bar) */
+.pb-safe {
+  padding-bottom: max(0.6rem, env(safe-area-inset-bottom, 0.6rem));
+}
+
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem));
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #eff5ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #bccac0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d7a72;
+}
+
+/* Interactive touch target helpers */
+button, a, input, select {
+  touch-action: manipulation;
+}
+
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-white font-sans">
+
+  <!-- ======================================================== -->
+  <!-- 1. AUTH / ONBOARDING SCREEN (Stitch Welcome Style) -->
+  <!-- ======================================================== -->
+  <div id="auth-screen" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-surface via-surface-container-low to-secondary-container/20 relative z-10">
+    <div class="max-w-md w-full my-8">
+      
+      <!-- Logo & Hero Header -->
+      <div class="flex flex-col items-center mb-8 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="w-28 h-28 mb-5 float-animation bg-white/80 rounded-full flex items-center justify-center shadow-lg glass-card p-3.5 border-2 border-white/60">
+          <img alt="Obesity to Infinity Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHSkFcE2XyRf_5ZI3-b5v3sl-qoiYFXiSK_p61BsoZ_quUY513G9vDCD6t90AIDrhNtZx39ank3xC7qmayEV8GRBCkTfX5LfB8XW-uJfZ2c8agAxEkZ_BHPjdwX4T88iRVkJy9i1USsJIl5lp0TsXc_0ZsMfAbZYP7oHorOoh0qXCOYCWHB3sw1l6rLC7yp5CvBKFYxSef5v6-zlpvpTHGvpWoOcYAoWud0ZuilrJQ2PfhRHIzX5i_Dg"/>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-primary text-center tracking-tight leading-tight">
+          OBESITY TO<br/>INFINITY
+        </h1>
+        <p class="text-sm font-medium text-secondary text-center mt-3 max-w-[320px] leading-relaxed">
+          Transformasi Sehat Bertahap: Walking → Jogging → Running
+        </p>
+      </div>
+
+      <!-- Login Card -->
+      <div id="login-box" class="glass-card w-full rounded-2xl p-6 sm:p-8 flex flex-col gap-4 fade-in-up" style="animation-delay: 0.25s;">
+        <div class="flex items-center justify-between mb-1">
+          <div>
+            <h2 class="text-lg font-bold text-on-surface">Masuk ke Akun Anda</h2>
+            <p class="text-xs text-on-surface-variant">Gunakan Kode Akses unik Anda untuk melanjutkan</p>
+          </div>
+          <span class="p-2 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-xl">key</span>
+          </span>
+        </div>
+
+        <form onsubmit="loginWithCode(event)" class="space-y-4">
+          <div class="relative">
+            <label class="sr-only" for="login-access-code-input">Kode Akses Pengguna</label>
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+              <span class="material-symbols-outlined text-lg">vpn_key</span>
+            </div>
+            <input type="text" id="login-access-code-input" placeholder="Kode Akses (Contoh: OBE-7824)" class="w-full bg-surface-container-low border border-outline-variant/40 text-on-surface rounded-xl pl-11 pr-4 py-3 text-sm font-mono uppercase tracking-widest font-bold focus:ring-2 focus:ring-primary focus:outline-none transition shadow-inner" required>
+          </div>
+
+          <button type="submit" id="login-submit-btn" class="w-full bg-primary hover:bg-primary-container text-on-primary font-bold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-95 shadow-md">
+            <span>Masuk ke Akun Saya</span>
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </button>
+        </form>
+
+        <div class="flex flex-col gap-2.5 mt-2">
+          <button onclick="startRegistration()" class="w-full bg-transparent border border-secondary text-secondary hover:bg-secondary-container/20 font-bold text-xs py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-base">person_add</span>
+            <span>Belum Punya Kode? Buat Akun & Skrining Baru</span>
+          </button>
+          
+          <button onclick="loadDemoUser()" class="w-full bg-transparent text-outline hover:text-primary font-medium text-xs py-2 rounded-lg transition underline-offset-4 hover:underline flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-sm text-tertiary-container">play_circle</span>
+            <span>Coba Mode Demo Cepat (Budi - 96 kg &rarr; 75 kg)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Registration & Multi-step Onboarding Box -->
+      <div id="onboarding-box" class="glass-card rounded-2xl p-6 sm:p-8 hidden">
+        <!-- Progress Steps -->
+        <div class="flex items-center justify-between mb-5 pb-3 border-b border-outline-variant/30">
+          <button onclick="backToLogin()" class="text-xs text-on-surface-variant hover:text-primary flex items-center gap-1 font-semibold">
+            <span class="material-symbols-outlined text-sm">arrow_back</span> Kembali
+          </button>
+          <div class="flex items-center gap-2">
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-primary text-white">1</span>
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-surface-container text-outline">2</span>
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-surface-container text-outline">3</span>
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-surface-container text-outline">4</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Input Data Fisik -->
+        <div id="onboarding-step-1" class="onboarding-step-pane space-y-4">
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Langkah 1: Profil Fisik Awal</h3>
+            <p class="text-xs text-on-surface-variant">Sistem mengkalkulasi level obesitas standar WHO Asia-Pasifik.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Nama Panggilan</label>
+              <input type="text" id="reg-name" placeholder="Nama Anda" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Usia (Tahun)</label>
+              <input type="number" id="reg-age" placeholder="Contoh: 32" min="15" max="90" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Jenis Kelamin</label>
+              <select id="reg-gender" class="w-full px-3 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80">
+                <option value="male">Pria</option>
+                <option value="female">Wanita</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Tinggi Badan (cm)</label>
+              <input type="number" id="reg-height" placeholder="Contoh: 170" min="120" max="230" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Berat Badan (kg)</label>
+              <input type="number" id="reg-weight" step="0.1" placeholder="Contoh: 95" min="30" max="250" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Lingkar Pinggang (cm) <span class="text-outline font-normal">(Opsional)</span></label>
+            <input type="number" id="reg-waist" placeholder="Contoh: 102" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80">
+          </div>
+
+          <!-- Pilihan Hari & Tanggal Mulai Program -->
+          <div class="p-3.5 bg-surface-container/70 rounded-xl border border-outline-variant/40">
+            <label class="block text-xs font-bold text-on-surface mb-1.5 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-base text-primary">event</span>
+              <span>Kapan Anda Ingin Memulai Hari ke-1 Program?</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div>
+                <select id="reg-start-timing" onchange="onStartTimingChange(event)" class="w-full px-3 py-2 rounded-lg border border-outline-variant/50 text-xs font-bold text-on-surface focus:ring-2 focus:ring-primary outline-none bg-white">
+                  <option value="today" selected>Mulai Hari Ini</option>
+                  <option value="tomorrow">Mulai Besok</option>
+                  <option value="next_monday">Mulai Hari Senin Depan</option>
+                  <option value="custom">Pilih Tanggal Sendiri</option>
+                </select>
+              </div>
+              <div>
+                <input type="date" id="reg-start-date" class="w-full px-3 py-1.5 rounded-lg border border-outline-variant/50 text-xs font-bold text-primary focus:ring-2 focus:ring-primary outline-none bg-white">
+              </div>
+            </div>
+            <p id="reg-start-date-helper" class="text-[11px] text-outline mt-1 font-medium">Hari ke-1 latihan akan otomatis disinkronkan dengan kalender nyata.</p>
+          </div>
+
+          <button type="button" onclick="processStep1()" class="w-full mt-3 py-3 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1.5 hover:scale-[1.02]">
+            <span>Hitung Level Obesitas & Lanjut</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Step 2: Hasil Kategori & Uji Kelayakan Target Realistis -->
+        <div id="onboarding-step-2" class="onboarding-step-pane space-y-4 hidden">
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Langkah 2: Klasifikasi & Target Realistis</h3>
+            <p class="text-xs text-on-surface-variant">Sistem menguji kelayakan target penurunan berat badan Anda.</p>
+          </div>
+
+          <!-- BMI Banner -->
+          <div class="p-4 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider">Standar WHO Asia-Pasifik</span>
+              <h4 id="display-step2-category" class="text-sm font-extrabold text-on-surface mt-0.5">Obesitas Tingkat 1</h4>
+              <p id="display-step2-desc" class="text-xs text-on-surface-variant mt-1 leading-relaxed"></p>
+            </div>
+            <div class="text-right pl-3 border-l border-primary/20">
+              <span class="text-[10px] font-bold text-primary">Skor BMI</span>
+              <div id="display-step2-bmi" class="text-2xl font-black text-primary">28.4</div>
+            </div>
+          </div>
+
+          <div class="text-xs text-on-surface-variant bg-surface-container p-3 rounded-xl border border-outline-variant/40">
+            <span>🎯 Berat Badan Ideal Sehat: <strong id="display-step2-ideal-range" class="text-primary font-bold"></strong></span>
+          </div>
+
+          <!-- Target Weight & Duration Inputs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Target Berat Badan (kg)</label>
+              <input type="number" id="reg-target-weight" step="0.1" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 font-bold text-primary text-sm focus:ring-2 focus:ring-primary outline-none bg-white/90">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Pilihan Durasi Target (Bulan)</label>
+              <select id="reg-duration-months" class="w-full px-3 py-2.5 rounded-xl border border-outline-variant/50 font-bold text-on-surface text-sm focus:ring-2 focus:ring-primary outline-none bg-white/90">
+                <option value="1">1 Bulan (4 Minggu - Habit Starter)</option>
+                <option value="2">2 Bulan (8 Minggu - Endurance Builder)</option>
+                <option value="3" selected>3 Bulan (12 Minggu - Standard Transformation)</option>
+                <option value="4">4 Bulan (16 Minggu - Fat Loss & Stride Build)</option>
+                <option value="5">5 Bulan (20 Minggu - Advanced Cardio Progression)</option>
+                <option value="6">6 Bulan (24 Minggu - Complete 5K Run)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Real-time Clinical Feasibility Alert Container -->
+          <div id="feasibility-alert-container"></div>
+
+          <div class="flex gap-2 pt-2">
+            <button type="button" onclick="showOnboardingStep(1)" class="w-1/3 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-bold text-xs rounded-xl transition">Kembali</button>
+            <button type="button" onclick="processStep2()" class="w-2/3 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1 hover:scale-[1.02]">
+              <span>Lanjut ke Pola Diet & Puasa</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Pilihan Kebugaran & Diet/Puasa -->
+        <div id="onboarding-step-3" class="onboarding-step-pane space-y-4 hidden">
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Langkah 3: Preferensi Olahraga & Nutrisi</h3>
+            <p class="text-xs text-on-surface-variant">Pilih level kesiapan fisik dan pemodelan pola makan yang Anda minati.</p>
+          </div>
+
+          <!-- Kesiapan Fisik -->
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-2">Level Kesiapan Fisik Saat Ini:</label>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fitness-level" value="level_0" checked class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Level 0: Pemula Total / Sendi Sensitif</span>
+                  <span class="text-on-surface-variant">Jarang jalan kaki (<3.000 langkah/hari). Fokus adaptasi sendi lutut.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fitness-level" value="level_1" class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Level 1: Terbiasa Jalan Kaki</span>
+                  <span class="text-on-surface-variant">Sudah biasa jalan 5.000+ langkah/hari, siap meningkatkan kecepatan ke brisk walk.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Model Puasa Intermiten -->
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-2">Protokol Puasa / Pola Makan:</label>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fasting-protocol" value="16_8" checked class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Intermittent Fasting 16:8 (Rekomendasi Populer)</span>
+                  <span class="text-on-surface-variant">16 jam puasa (air putih/teh tawar boleh), 8 jam jendela makan.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fasting-protocol" value="14_10" class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Intermittent Fasting 14:10 (Ramah Pemula)</span>
+                  <span class="text-on-surface-variant">14 jam puasa, 10 jam jendela makan. Sangat aman bagi asam lambung.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fasting-protocol" value="none" class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Pola Makan Teratur (Non-Fasting Plate Model)</span>
+                  <span class="text-on-surface-variant">Makan 3x sehari seimbang dengan defisit kalori moderat.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <input type="hidden" name="reg-diet-model" value="deficit_moderate">
+
+          <div class="flex gap-2 pt-2">
+            <button type="button" onclick="showOnboardingStep(2)" class="w-1/3 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-bold text-xs rounded-xl transition">Kembali</button>
+            <button type="button" onclick="finalizeRegistration()" class="w-2/3 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1 hover:scale-[1.02]">
+              <span class="material-symbols-outlined text-sm">sparkles</span>
+              <span>Buat Kode Akses & Program Saya</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Kode Akses Berhasil Dibuat -->
+        <div id="onboarding-step-4" class="onboarding-step-pane space-y-4 text-center hidden">
+          <div class="w-16 h-16 bg-primary/15 text-primary rounded-full flex items-center justify-center mx-auto shadow-inner">
+            <span class="material-symbols-outlined text-3xl font-bold">check_circle</span>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-extrabold text-on-surface">Program Berhasil Dibuat!</h3>
+            <p class="text-xs text-on-surface-variant mt-1">Berikut adalah Kode Akses unik Anda. Simpan kode ini untuk login kembali kapan saja.</p>
+          </div>
+
+          <!-- Access Code Card -->
+          <div class="p-5 bg-gradient-to-r from-primary to-primary-container text-white rounded-2xl shadow-xl">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary-fixed">KODE AKSES ANDA</span>
+            <div id="display-new-access-code" class="text-3xl font-black font-mono tracking-widest my-2">OBE-XXXX</div>
+            <p class="text-[11px] text-on-primary-container/90">Gunakan kode ini untuk masuk dari perangkat mana pun.</p>
+          </div>
+
+          <button onclick="finishOnboardingAndEnterApp()" class="w-full py-3.5 px-4 bg-primary text-on-primary font-bold text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 hover:scale-[1.02]">
+            <span>Mulai Perjalanan Transformasi Saya</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- 2. MAIN APPLICATION DASHBOARD (Stitch Vitality Flow) -->
+  <!-- ======================================================== -->
+  <div id="main-app-screen" class="min-h-screen antialiased hidden">
+    
+    <!-- TopAppBar (Fixed Header) -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 h-16 bg-surface/75 backdrop-blur-xl border-b border-white/50 shadow-sm">
+      <div class="flex items-center gap-3">
+        <img alt="OBESITY TO INFINITY Logo" class="h-9 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHSkFcE2XyRf_5ZI3-b5v3sl-qoiYFXiSK_p61BsoZ_quUY513G9vDCD6t90AIDrhNtZx39ank3xC7qmayEV8GRBCkTfX5LfB8XW-uJfZ2c8agAxEkZ_BHPjdwX4T88iRVkJy9i1USsJIl5lp0TsXc_0ZsMfAbZYP7oHorOoh0qXCOYCWHB3sw1l6rLC7yp5CvBKFYxSef5v6-zlpvpTHGvpWoOcYAoWud0ZuilrJQ2PfhRHIzX5i_Dg"/>
+        <div>
+          <span class="text-base font-extrabold text-primary tracking-tight hidden sm:block">OBESITY TO INFINITY</span>
+          <div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+            <span id="user-display-name" class="font-bold text-on-surface">Pengguna</span>
+            <span>•</span>
+            <span class="flex items-center gap-1 font-mono text-primary bg-primary/10 px-2 py-0.5 rounded-md font-bold">
+              <span id="user-access-code-badge">OBE-0000</span>
+              <button onclick="copyAccessCode()" title="Salin Kode Akses" class="hover:text-primary-container"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Badges & Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Streak Flame Badge -->
+        <div class="flex items-center gap-1.5 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant/50 shadow-sm">
+          <span class="material-symbols-outlined text-tertiary-container animate-pulse text-lg" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+          <span class="text-xs font-black text-on-surface"><span id="user-streak-count">0</span> Hari</span>
+        </div>
+
+        <!-- BMI Pill -->
+        <div id="user-bmi-badge" class="hidden sm:flex items-center gap-1 bg-primary-container px-3 py-1 rounded-full text-on-primary-container text-xs font-bold">
+          <span class="material-symbols-outlined text-sm">monitor_weight</span>
+          <span>BMI 00.0</span>
+        </div>
+
+        <!-- Logout Button -->
+        <button onclick="userLogout()" title="Keluar Akun" class="text-on-surface-variant hover:text-error hover:scale-105 transition-transform p-1.5 rounded-lg">
+          <span class="material-symbols-outlined text-xl">logout</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SideNavBar (Desktop Fixed Left) -->
+    <nav class="hidden md:flex flex-col h-full fixed left-0 top-0 pt-20 pb-8 w-64 bg-surface/80 backdrop-blur-xl border-r border-white/50 shadow-md z-40">
+      
+      <!-- Navigation Links -->
+      <div class="flex flex-col gap-1.5 px-3 w-full font-medium text-xs">
+        <button id="side-tab-btn-calendar" onclick="switchTab('calendar')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl bg-primary-container/20 text-primary font-bold border-r-4 border-primary hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">calendar_today</span>
+          <span>Jadwal Olahraga</span>
+        </button>
+        <button id="side-tab-btn-health" onclick="switchTab('health')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">stethoscope</span>
+          <span>Analisis Pasca Latihan</span>
+        </button>
+        <button id="side-tab-btn-diet" onclick="switchTab('diet')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">restaurant</span>
+          <span>Diet & Puasa Intermiten</span>
+        </button>
+        <button id="side-tab-btn-analytics" onclick="switchTab('analytics')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">show_chart</span>
+          <span>Progres & Kebiasaan</span>
+        </button>
+        <button id="side-tab-btn-education" onclick="switchTab('education')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">school</span>
+          <span>Edukasi Sendi</span>
+        </button>
+      </div>
+
+      <div class="mt-auto px-4 w-full">
+        <button onclick="openWeightUpdateModal()" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-xs hover:scale-105 transition-transform shadow-md flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">scale</span>
+          <span>+ Update Berat Badan</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 md:hidden bg-surface/85 backdrop-blur-xl border-t border-white/50 shadow-lg">
+      <button onclick="switchTab('calendar')" class="flex flex-col items-center justify-center text-primary font-bold text-[10px]">
+        <span class="material-symbols-outlined text-lg">calendar_today</span>
+        <span>Jadwal</span>
+      </button>
+      <button onclick="switchTab('health')" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px]">
+        <span class="material-symbols-outlined text-lg">stethoscope</span>
+        <span>Analisa</span>
+      </button>
+      <button onclick="switchTab('diet')" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px]">
+        <span class="material-symbols-outlined text-lg">restaurant</span>
+        <span>Diet/Puasa</span>
+      </button>
+      <button onclick="switchTab('analytics')" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px]">
+        <span class="material-symbols-outlined text-lg">show_chart</span>
+        <span>Progres</span>
+      </button>
+    </nav>
+
+    <!-- Main Content Canvas -->
+    <main class="pt-20 pb-24 md:pb-12 md:pl-72 px-4 md:px-8 max-w-[1280px] mx-auto min-h-screen">
+
+      <!-- Transformation Progress Card (Bento Style) -->
+      <div class="glass-card rounded-2xl p-5 sm:p-6 mb-6 relative overflow-hidden group hover:shadow-lg transition-shadow">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 relative z-10">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-full border border-primary/20">Target Transformasi Sehat</span>
+              <span class="text-[10px] font-bold text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-full">Walk &rarr; Run</span>
+            </div>
+            <h2 class="text-base font-bold text-on-surface mt-1">Perjalanan Berat Badan Ideal</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button onclick="openWeightUpdateModal()" class="py-2 px-3 bg-primary text-on-primary hover:bg-primary-container font-bold text-xs rounded-xl transition flex items-center gap-1 shadow-sm">
+              <span class="material-symbols-outlined text-sm">scale</span>
+              <span>Input BB Baru</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-center sm:text-left">
+            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Berat Saat Ini</p>
+            <p class="text-2xl sm:text-3xl font-extrabold text-primary mt-0.5"><span id="user-bb-stat">0 kg</span></p>
+          </div>
+
+          <div class="flex-1 w-full px-2">
+            <div class="h-3.5 w-full rounded-full progress-track overflow-hidden relative shadow-inner">
+              <div id="header-progress-bar" class="h-full rounded-full progress-gradient transition-all duration-1000 ease-out" style="width: 15%"></div>
+            </div>
+          </div>
+
+          <div class="text-center sm:text-right">
+            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Target Akhir</p>
+            <p class="text-2xl sm:text-3xl font-extrabold text-secondary mt-0.5"><span id="user-target-stat">0 kg</span></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 1: KALENDER & JADWAL OLAHRAGA -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-calendar" class="tab-pane active space-y-6">
+        
+        <!-- Weekly Milestone Card -->
+        <section class="glass-card rounded-2xl p-5 sm:p-6 border-l-4 border-l-primary relative overflow-hidden">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Weekly Milestone</p>
+              <h3 id="weekly-milestone-title" class="text-base sm:text-lg font-bold text-primary mt-0.5">Minggu 1: Adaptasi Persendian & Postur Jalan</h3>
+              <p class="text-xs text-on-surface-variant mt-1">Selesaikan jadwal latihan harian secara bertahap untuk menjaga persendian.</p>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="text-right">
+                <span class="text-[10px] uppercase font-bold text-outline">Progres Minggu Ini</span>
+                <div id="weekly-progress-counter" class="text-xs font-extrabold text-primary">0 dari 7 Selesai (0%)</div>
+              </div>
+              <div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl border border-outline-variant/40">
+                <button onclick="changeWeekViewing(-1)" class="p-1.5 hover:bg-white rounded-lg text-on-surface transition"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+                <select id="week-selector-dropdown" onchange="onWeekDropdownChange(event)" class="bg-transparent text-xs font-bold text-on-surface px-2 py-1 outline-none"></select>
+                <button onclick="changeWeekViewing(1)" class="p-1.5 hover:bg-white rounded-lg text-on-surface transition"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7 Days Grid Cards -->
+        <section>
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-bold text-on-surface text-sm">Jadwal 7 Hari Berjalan (Linear Safe Progression):</h4>
+            <div class="flex items-center gap-3 text-[11px] text-on-surface-variant">
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Selesai</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Aktif</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span> Terkunci</span>
+            </div>
+          </div>
+
+          <div id="week-days-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Protection & Catch-Up Info Box -->
+        <div class="p-4 bg-surface-container rounded-2xl border border-outline-variant/40 text-xs text-on-surface-variant flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-xl mt-0.5">verified_user</span>
+          <div>
+            <strong class="text-on-surface font-bold">Protokol Keamanan Sendi & Linear Catch-Up Lock:</strong>
+            <p class="mt-0.5 leading-relaxed">Sistem secara otomatis mengunci hari berikutnya jika sesi latihan utama sebelumnya belum selesai. Ini mencegah sendi dan tendon lutut cedera akibat lonjakan volume mendadak.</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 2: ANALISIS KESEHATAN PASCA LATIHAN -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-health" class="tab-pane space-y-6">
+        
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-container/30 px-2.5 py-1 rounded-full border border-secondary-container">Early Warning Diagnostic</span>
+              <h3 class="text-base font-bold text-on-surface mt-2">Analisis Respon Fisik & Risiko Kesehatan Pasca Latihan</h3>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed max-w-2xl">
+                Setelah selesai jalan kaki/joging, input rekaman data dan gejala Anda. Sistem mendiagnosa potensi radang sendi (*tendonitis/plantar*), dehidrasi, atau tanda kardiovaskular untuk melindungi kesehatan Anda.
+              </p>
+            </div>
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-2xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-2xl">health_and_safety</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Level Zone Info Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-primary/10 border border-primary/20 rounded-2xl">
+            <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-primary text-on-primary">🟢 ZONA AMAN</span>
+            <h4 class="font-bold text-on-surface text-sm mt-2">Pemulihan Optimal</h4>
+            <p class="text-xs text-on-surface-variant mt-1">RPE 1–6, tidak ada nyeri sendi tajam. Hidrasi normal 300–500ml.</p>
+          </div>
+
+          <div class="p-4 bg-amber-50 border border-amber-300 rounded-2xl">
+            <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500 text-white">🟡 ZONA PERHATIAN</span>
+            <h4 class="font-bold text-amber-950 text-sm mt-2">Deteksi Overuse / Sendi Lelah</h4>
+            <p class="text-xs text-amber-900 mt-1">RPE 7–8 atau ngilu sendi. Jadwal besok otomatis diperingan (*Active Recovery*).</p>
+          </div>
+
+          <div class="p-4 bg-error-container/40 border border-error/30 rounded-2xl">
+            <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-error text-on-error">🔴 ZONA RED FLAG</span>
+            <h4 class="font-bold text-on-error-container text-sm mt-2">Peringatan Medis Darurat</h4>
+            <p class="text-xs text-on-error-container mt-1">Nyeri dada, pusing berputar, atau sesak napas >10 menit. Lockdown latihan 48 jam.</p>
+          </div>
+        </div>
+
+        <!-- History Logbook Section -->
+        <div>
+          <h4 class="font-bold text-on-surface text-sm mb-3">Riwayat Rekaman Latihan & Catatan Pemulihan:</h4>
+          <div id="health-logs-history-list" class="space-y-3">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 3: POLA MAKAN, DIET & PUASA INTERMITEN -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-diet" class="tab-pane space-y-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Fasting Circular Clock -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-container/30 px-3 py-1 rounded-full border border-secondary-container mb-3">Fasting Window Clock</span>
+            
+            <div class="relative w-48 h-48 flex items-center justify-center my-2 pulse-ring rounded-full">
+              <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" class="text-surface-container" stroke-width="8" stroke="currentColor" fill="transparent"></circle>
+                <circle id="fasting-progress-circle" cx="50" cy="50" r="45" class="fasting-circle text-primary" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="140" stroke-linecap="round" stroke="currentColor" fill="transparent"></circle>
+              </svg>
+              <div class="absolute flex flex-col items-center justify-center">
+                <span class="text-[10px] uppercase font-bold text-outline tracking-wider">Durasi Puasa</span>
+                <span id="fasting-time-elapsed" class="text-2xl font-black text-on-surface">8j 30m</span>
+                <span class="text-[10px] text-primary font-bold mt-0.5">Jendela Puasa Aktif</span>
+              </div>
+            </div>
+
+            <div id="fasting-phase-tag" class="text-xs font-bold text-tertiary bg-tertiary-container/15 px-3.5 py-1 rounded-full border border-tertiary-container/30 my-3">
+              🔥 Fase Pembakaran Lemak Dimulai
+            </div>
+
+            <button id="toggle-fasting-btn" onclick="toggleFastingMode()" class="w-full py-2.5 px-4 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition">
+              Selesaikan Puasa & Buka Jendela Makan
+            </button>
+          </div>
+
+          <!-- Energy & Macro Breakdown -->
+          <div class="glass-card rounded-2xl p-6 lg:col-span-2 space-y-4">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">Kalkulasi Energi Klinis</span>
+              <h3 class="text-base font-bold text-on-surface mt-1">Kebutuhan Energi & Target Defisit Kalori</h3>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3">
+              <div class="p-3 bg-surface rounded-xl border border-outline-variant/30 text-center">
+                <span class="text-[10px] font-bold text-outline uppercase">Metabolisme Basal (BMR)</span>
+                <div id="stat-bmr" class="text-sm sm:text-base font-black text-on-surface mt-0.5">0 kkal</div>
+              </div>
+              <div class="p-3 bg-surface rounded-xl border border-outline-variant/30 text-center">
+                <span class="text-[10px] font-bold text-outline uppercase">Total Energi (TDEE)</span>
+                <div id="stat-tdee" class="text-sm sm:text-base font-black text-secondary mt-0.5">0 kkal</div>
+              </div>
+              <div class="p-3 bg-primary/10 rounded-xl border border-primary/20 text-center">
+                <span class="text-[10px] font-bold text-primary uppercase">Target Asupan Harian</span>
+                <div id="stat-target-calories" class="text-sm sm:text-base font-black text-primary mt-0.5">0 kkal</div>
+              </div>
+            </div>
+
+            <!-- Macro Targets -->
+            <div class="p-4 bg-surface rounded-xl border border-outline-variant/30">
+              <span class="text-xs font-bold text-on-surface block mb-2">Target Makronutrisi Harian:</span>
+              <div class="grid grid-cols-3 gap-3 text-center text-xs">
+                <div>
+                  <span class="text-outline block">Protein (Otot)</span>
+                  <strong id="stat-protein-g" class="text-primary font-extrabold text-sm">0g</strong>
+                </div>
+                <div>
+                  <span class="text-outline block">Karbo Kompleks</span>
+                  <strong id="stat-carbs-g" class="text-secondary font-extrabold text-sm">0g</strong>
+                </div>
+                <div>
+                  <span class="text-outline block">Lemak Sehat</span>
+                  <strong id="stat-fat-g" class="text-tertiary font-extrabold text-sm">0g</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fasting Advice -->
+            <div class="text-xs text-on-surface-variant bg-secondary-container/15 p-4 rounded-xl border border-secondary-container/30">
+              <h5 id="fasting-protocol-title" class="font-bold text-secondary mb-1">Protokol Puasa Intermiten</h5>
+              <p id="fasting-schedule-advice" class="leading-relaxed"></p>
+              <div id="fasting-sync-container" class="mt-2 pt-2 border-t border-secondary-container/30 font-medium text-secondary">
+                <strong>🏃 Waktu Terbaik Olahraga:</strong> <span id="fasting-workout-sync"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Plate Model & Binge Prevention -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-card rounded-2xl p-6">
+            <h4 class="font-bold text-on-surface text-sm mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">pie_chart</span>
+              <span>Panduan Piring Sehat (Plate Model)</span>
+            </h4>
+            <div class="space-y-2.5 text-xs">
+              <div class="p-3 bg-primary/10 rounded-xl border border-primary/20">
+                <strong class="text-primary block font-bold">🥗 50% Piring: Sayuran & Serat</strong>
+                <p id="plate-veggies" class="text-on-surface-variant mt-0.5 leading-relaxed"></p>
+              </div>
+              <div class="p-3 bg-secondary-container/20 rounded-xl border border-secondary-container/40">
+                <strong class="text-secondary block font-bold">🍗 25% Piring: Protein Berkualitas</strong>
+                <p id="plate-protein" class="text-on-surface-variant mt-0.5 leading-relaxed"></p>
+              </div>
+              <div class="p-3 bg-tertiary-container/15 rounded-xl border border-tertiary-container/30">
+                <strong class="text-tertiary block font-bold">🥔 25% Piring: Karbohidrat Kompleks</strong>
+                <p id="plate-carbs" class="text-on-surface-variant mt-0.5 leading-relaxed"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h4 class="font-bold text-on-surface text-sm mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary text-base">shield</span>
+              <span>Mencegah Binge Eating Pasca Latihan</span>
+            </h4>
+            <div class="space-y-2.5 text-xs text-on-surface-variant leading-relaxed">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                <span><strong>Minum 1 Gelas Air Hangat</strong> segera setelah jalan kaki untuk meredakan sinyal lapar palsu akibat dehidrasi.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                <span><strong>Konsumsi Protein Berkualitas</strong> saat berbuka (telur/tahu/tempe/ayam) untuk menekan hormon lapar (*ghrelin*).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                <span><strong>Hindari Sugar Reward</strong> dengan anggapan sudah jalan jauh. Ingat: jalan 30 menit membakar ~150 kkal, 1 minuman boba mengandung ~350 kkal!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 4: PROGRES BB & HABIT TRACKER -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-analytics" class="tab-pane space-y-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Chart.js Graph -->
+          <div class="glass-card rounded-2xl p-6 lg:col-span-2">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="font-bold text-on-surface text-base">Grafik Tren Penurunan Berat Badan</h3>
+                <p class="text-xs text-on-surface-variant">Aktual vs Target Penurunan Realistis</p>
+              </div>
+              <button onclick="openWeightUpdateModal()" class="py-1.5 px-3 bg-primary/10 hover:bg-primary/20 text-primary font-bold text-xs rounded-xl transition">
+                + Input BB Baru
+              </button>
+            </div>
+            <div class="h-64 w-full">
+              <canvas id="weightProgressChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Hydration Tracker with Dynamic Fluid Wave Shader -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden min-h-[290px]">
+            <!-- WebGL Fluid Wave Shader Animation Canvas -->
+            <div class="absolute inset-0 w-full h-full z-0 opacity-40 mix-blend-multiply pointer-events-none rounded-2xl overflow-hidden">
+              <canvas id="shader-canvas-hydration" style="display:block;width:100%;height:100%"></canvas>
+            </div>
+
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-container/30 px-2.5 py-1 rounded-full border border-secondary-container">Hidrasi Harian</span>
+                <button onclick="resetWaterIntake()" class="text-[11px] text-outline hover:text-on-surface">Reset</button>
+              </div>
+              <h4 class="font-bold text-on-surface text-sm">Target Air: 2.5 Liter</h4>
+              <p class="text-xs text-on-surface-variant mt-0.5">Membantu metabolisme lemak dan mencegah kram sendi.</p>
+
+              <div class="text-center my-6">
+                <span id="water-intake-current" class="text-3xl font-black text-secondary">0.0 L</span>
+                <span class="text-xs text-outline block mt-0.5">dari target 2.5 L</span>
+                <div class="w-full bg-surface-container rounded-full h-3 mt-3 overflow-hidden border border-outline-variant/30">
+                  <div id="water-progress-bar" class="bg-secondary h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 relative z-10">
+              <button onclick="addWaterIntake(250)" class="py-2.5 px-3 bg-secondary-container/30 hover:bg-secondary-container/50 text-secondary font-bold text-xs rounded-xl border border-secondary-container transition flex items-center justify-center gap-1 backdrop-blur-md">
+                <span class="material-symbols-outlined text-sm">local_drink</span> +250ml
+              </button>
+              <button onclick="addWaterIntake(600)" class="py-2.5 px-3 bg-secondary hover:bg-on-secondary-container text-on-secondary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1 backdrop-blur-md">
+                <span class="material-symbols-outlined text-sm">water_drop</span> +600ml
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 5: EDUKASI SENDI & MEDIS -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-education" class="tab-pane space-y-6">
+        
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-xl">medical_information</span>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-on-surface">Edukasi Ortopedi & Keselamatan Olahraga Obesitas</h3>
+              <p class="text-xs text-on-surface-variant">Prinsip biomekanika bergerak aman tanpa merusak tulang rawan sendi.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">directions_walk</span>
+              <span>Teknik Langkah Pendek (High Cadence)</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Penyandang obesitas disarankan mengambil <strong>langkah lebih pendek namun berirama teratur</strong> daripada melangkah terlalu lebar (*overstriding*). Langkah pendek menjaga pusat gravitasi tetap di bawah tubuh, sehingga impak ke tempurung lutut berkurang hingga 40%.
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary text-base">favorite</span>
+              <span>Zona Fat Max: Jalan Kaki vs Sprint</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Pada intensitas rendah–sedang (jalan santai/jalan cepat), tubuh menggunakan <strong>lemak sebagai sumber bahan bakar utama (Fat Max Zone)</strong>. Lari sprint berlebihan justru memicu asam laktat dan kelaparan hebat pasca latihan.
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-base">footprint</span>
+              <span>Tips Memilih Sepatu untuk Obesitas</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Pilihlah sepatu dengan <strong>bantalan tebal (Maximal Cushioning)</strong> dan stabilitas tumit (*heel counter*) yang kokoh untuk mencegah radang telapak kaki (*Plantar Fasciitis*).
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">bedtime</span>
+              <span>Peran Tidur dalam Pembakaran Lemak</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Tidur kurang dari 7 jam meningkatkan hormon stres (*kortisol*) dan hormon nafsu makan (*ghrelin*). Tubuh meregenerasi otot dan tendon terutama saat tidur malam yang nyenyak.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- MODAL: POST-WORKOUT CHECK-IN & HEALTH DIAGNOSTIC -->
+  <!-- ======================================================== -->
+  <div id="post-workout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div class="glass-card rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl bg-white/95">
+      
+      <div class="flex items-center justify-between pb-4 mb-4 border-b border-outline-variant/30">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">Post-Workout Check-in</span>
+          <h3 id="modal-workout-day-title" class="text-base font-bold text-on-surface mt-0.5">Check-in Latihan</h3>
+        </div>
+        <button onclick="closePostWorkoutModal()" class="p-1 text-outline hover:text-on-surface rounded-xl transition">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+
+      <!-- Form Inputs Container -->
+      <form id="post-workout-form-inputs" onsubmit="submitPostWorkoutCheckin(event)" class="space-y-4">
+        
+        <!-- Target Prescribed vs Actual Banner -->
+        <div class="flex items-center justify-between p-3 bg-surface-container/70 rounded-xl border border-outline-variant/30 text-xs">
+          <span class="text-on-surface-variant font-medium">Target Jadwal Sesi Ini:</span>
+          <strong id="modal-prescribed-duration-badge" class="font-extrabold text-primary bg-primary/10 px-2.5 py-0.5 rounded-lg border border-primary/20">30 Menit</strong>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Durasi Aktual (Menit)</label>
+            <input type="number" id="post-duration-input" oninput="checkExcessDurationRealtime()" min="5" max="300" class="w-full px-3 py-2 rounded-xl border border-outline-variant/50 text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary outline-none" required>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Estimasi Langkah / Jarak</label>
+            <input type="number" id="post-steps-input" placeholder="Opsional" class="w-full px-3 py-2 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none">
+          </div>
+        </div>
+
+        <!-- Real-time Excess Duration Live Warning Banner -->
+        <div id="post-excess-alert-banner" class="hidden p-3 bg-amber-50 border border-amber-300 rounded-xl text-amber-950 text-xs flex items-start gap-2">
+          <span class="material-symbols-outlined text-amber-600 text-base shrink-0 mt-0.5">warning</span>
+          <div>
+            <strong class="block font-bold" id="post-excess-alert-title">Durasi Melebihi Target Jadwal</strong>
+            <p id="post-excess-alert-desc" class="text-[11px] text-amber-900 mt-0.5 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- RPE Borg Fatigue Slider -->
+        <div>
+          <label class="block text-xs font-bold text-on-surface mb-1">Tingkat Kelelahan / Beban (Skala Borg 1-10):</label>
+          <input type="range" id="post-rpe-input" min="1" max="10" value="5" class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary">
+          <div id="rpe-value-display" class="text-xs font-bold text-primary bg-primary/10 p-2 rounded-xl border border-primary/20 mt-1 text-center">
+            5 - Cukup Melelahkan (Bisa Bicara Pendek)
+          </div>
+        </div>
+
+        <!-- Heart Rate Optional -->
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Detak Jantung Rata-rata (bpm) <span class="text-outline font-normal">(Opsional)</span></label>
+          <input type="number" id="post-heartrate-input" placeholder="Contoh: 125" class="w-full px-3 py-2 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none">
+        </div>
+
+        <!-- Symptom Checklist -->
+        <div>
+          <label class="block text-xs font-bold text-on-surface mb-1">Checklist Gejala & Sinyal Tubuh Pasca Latihan:</label>
+          <p class="text-[11px] text-on-surface-variant mb-2">Centang jika Anda merasakan salah satu keluhan berikut:</p>
+          
+          <div class="space-y-2 max-h-44 overflow-y-auto pr-1">
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="knee_dull_pain" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Nyeri tumpul / pegal di tempurung lutut</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="itb_outer_knee" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Nyeri di sisi luar lutut (IT Band)</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="heel_plantar_pain" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Ngilu di tumit / telapak kaki saat menapak</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="shin_splints" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Nyeri pada tulang kering depan (Shin Splints)</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="mild_dizziness" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Pusing ringan saat berdiri cepat</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="extreme_hunger" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Dorongan nafsu makan meledak (Binge Urge)</span>
+            </label>
+
+            <!-- Red Flags -->
+            <label class="flex items-center gap-2 p-2 bg-error-container/30 rounded-xl text-xs cursor-pointer hover:bg-error-container/50 text-error border border-error/20">
+              <input type="checkbox" value="chest_tightness" class="symptom-checkbox rounded text-error focus:ring-error">
+              <span class="font-bold">⚠️ Rasa tertekan / nyeri di dada</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-error-container/30 rounded-xl text-xs cursor-pointer hover:bg-error-container/50 text-error border border-error/20">
+              <input type="checkbox" value="severe_dyspnea" class="symptom-checkbox rounded text-error focus:ring-error">
+              <span class="font-bold">⚠️ Sesak napas berat > 10 menit tidak reda</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-error-container/30 rounded-xl text-xs cursor-pointer hover:bg-error-container/50 text-error border border-error/20">
+              <input type="checkbox" value="palpitations" class="symptom-checkbox rounded text-error focus:ring-error">
+              <span class="font-bold">⚠️ Jantung berdebar kencang tidak teratur</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">check</span>
+          <span>Simpan Rekaman & Analisa Respon Tubuh</span>
+        </button>
+      </form>
+
+      <!-- Diagnostic Results Screen (shown after submit) -->
+      <div id="diagnostic-result-container" class="hidden"></div>
+
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- MODAL: UPDATE BERAT BADAN TERBARU -->
+  <!-- ======================================================== -->
+  <div id="weight-update-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div class="glass-card rounded-2xl max-w-sm w-full p-6 shadow-2xl bg-white/95">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-bold text-on-surface text-base">Check-in Berat Badan Baru</h4>
+        <button onclick="closeWeightUpdateModal()" class="text-outline hover:text-on-surface"><span class="material-symbols-outlined text-xl">close</span></button>
+      </div>
+      <form onsubmit="submitWeightUpdate(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Berat Badan Hari Ini (kg)</label>
+          <input type="number" id="new-weight-input" step="0.1" min="30" max="250" class="w-full px-4 py-3 rounded-xl border border-outline-variant/50 font-extrabold text-lg text-primary focus:ring-2 focus:ring-primary outline-none" required>
+          <p class="text-[11px] text-outline mt-1">Sistem akan memperbarui BMI dan kalori target secara otomatis.</p>
+        </div>
+        <button type="submit" class="w-full py-3 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition">
+          Simpan Progres Berat Badan
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Application Scripts -->
+  <script>
+// ==========================================
+// 1. SUPABASE CLIENT & OFFLINE RESILIENCE
+// ==========================================
+/**
+ * ==========================================================
+ * SUPABASE CLIENT & HYBRID STORAGE ENGINE
+ * Obesity to Infinity
+ * Handles communication with Supabase REST API & LocalStorage Fallback
+ * ==========================================================
+ */
+
+const SUPABASE_CONFIG = {
+  url: 'https://sgvynqlwnukphnccencd.supabase.co',
+  anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNndnlucWx3bnVrcGhuY2NlbmNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgwNTM2NTksImV4cCI6MjEwMzYyOTY1OX0.Lj7LwszF54_ltowZ940FfNtXF88HmCxOuvXYHBaHeXA',
+  storageKeyUser: 'obesity_current_user',
+  storageKeyPrefix: 'obesity_data_'
+};
+
+class SupabaseService {
+  constructor() {
+    this.url = SUPABASE_CONFIG.url;
+    this.key = SUPABASE_CONFIG.anonKey;
+    this.headers = {
+      'Content-Type': 'application/json',
+      'apikey': this.key,
+      'Authorization': `Bearer ${this.key}`,
+      'Prefer': 'return=representation'
+    };
+  }
+
+  /**
+   * Helper request to Supabase REST API
+   */
+  async request(endpoint, options = {}) {
+    const url = `${this.url}/rest/v1/${endpoint}`;
+    const fetchOptions = {
+      headers: { ...this.headers, ...(options.headers || {}) },
+      ...options
+    };
+
+    try {
+      const response = await fetch(url, fetchOptions);
+      if (!response.ok) {
+        const errText = await response.text();
+        console.warn(`Supabase REST warning on ${endpoint} [${response.status}]:`, errText);
+        return { success: false, status: response.status, error: errText };
+      }
+      const data = await response.json();
+      return { success: true, data };
+    } catch (err) {
+      console.warn(`Supabase network error on ${endpoint}:`, err.message);
+      return { success: false, error: err.message };
+    }
+  }
+
+  /**
+   * Generate a unique memorable Access Code for user login
+   * Format: OBE-XXXX (e.g., OBE-7892)
+   */
+  generateAccessCode() {
+    const num = Math.floor(1000 + Math.random() * 9000);
+    return `OBE-${num}`;
+  }
+
+  /**
+   * Save User Profile to Supabase & LocalStorage
+   */
+  async saveUserProfile(userData) {
+    // 1. Simpan ke LocalStorage sebagai primary immediate cache
+    localStorage.setItem(SUPABASE_CONFIG.storageKeyUser, JSON.stringify(userData));
+    localStorage.setItem(`${SUPABASE_CONFIG.storageKeyPrefix}${userData.access_code}`, JSON.stringify(userData));
+
+    // 2. Coba simpan / upsert ke Supabase
+    try {
+      const payload = {
+        access_code: userData.access_code,
+        name: userData.name,
+        age: parseInt(userData.age),
+        gender: userData.gender,
+        height: parseFloat(userData.height),
+        start_weight: parseFloat(userData.start_weight),
+        current_weight: parseFloat(userData.current_weight),
+        target_weight: parseFloat(userData.target_weight),
+        waist_circumference: userData.waist_circumference ? parseFloat(userData.waist_circumference) : null,
+        bmi: parseFloat(userData.bmi),
+        obesity_category: userData.obesity_category,
+        program_duration_months: parseInt(userData.program_duration_months),
+        fitness_level: userData.fitness_level,
+        diet_model: userData.diet_model,
+        fasting_protocol: userData.fasting_protocol,
+        current_streak: userData.current_streak || 0,
+        longest_streak: userData.longest_streak || 0,
+        updated_at: new Date().toISOString()
+      };
+
+      const res = await this.request('obesity_users', {
+        method: 'POST',
+        headers: { 'Prefer': 'resolution=merge-duplicates,return=representation' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.success) {
+        console.log('✓ User profile successfully synced to Supabase');
+      }
+    } catch (e) {
+      console.log('Using LocalStorage mode for user profile');
+    }
+
+    return userData;
+  }
+
+  /**
+   * Get User Profile by Access Code (Supabase first, then LocalStorage)
+   */
+  async getUserProfile(accessCode) {
+    const code = accessCode.trim().toUpperCase();
+
+    // 1. Coba ambil dari Supabase
+    try {
+      const res = await this.request(`obesity_users?access_code=eq.${code}&select=*`);
+      if (res.success && res.data && res.data.length > 0) {
+        const user = res.data[0];
+        // Sinkronkan ke local storage
+        localStorage.setItem(SUPABASE_CONFIG.storageKeyUser, JSON.stringify(user));
+        localStorage.setItem(`${SUPABASE_CONFIG.storageKeyPrefix}${code}`, JSON.stringify(user));
+        return user;
+      }
+    } catch (e) {
+      console.log('Supabase fetch failed, checking local cache...');
+    }
+
+    // 2. Fallback: Cari di LocalStorage
+    const localData = localStorage.getItem(`${SUPABASE_CONFIG.storageKeyPrefix}${code}`);
+    if (localData) {
+      const user = JSON.parse(localData);
+      localStorage.setItem(SUPABASE_CONFIG.storageKeyUser, JSON.stringify(user));
+      return user;
+    }
+
+    return null;
+  }
+
+  /**
+   * Save Workout Schedules Array
+   */
+  async saveSchedules(accessCode, schedules) {
+    const key = `obesity_schedules_${accessCode}`;
+    localStorage.setItem(key, JSON.stringify(schedules));
+
+    // Coba simpan ke Supabase jika tabel ada
+    try {
+      // Format payload untuk batch insert/upsert
+      const rows = schedules.map(s => ({
+        user_code: accessCode,
+        day_number: s.day_number,
+        week_number: s.week_number,
+        month_number: s.month_number,
+        title: s.title,
+        workout_type: s.workout_type,
+        prescribed_duration_mins: s.prescribed_duration_mins,
+        description: s.description,
+        is_completed: s.is_completed,
+        is_locked: s.is_locked,
+        completed_at: s.completed_at || null
+      }));
+
+      await this.request('workout_schedules', {
+        method: 'POST',
+        headers: { 'Prefer': 'resolution=merge-duplicates' },
+        body: JSON.stringify(rows)
+      });
+    } catch (e) {
+      // Local fallback active
+    }
+  }
+
+  /**
+   * Load Workout Schedules
+   */
+  async getSchedules(accessCode) {
+    // 1. Coba dari Supabase
+    try {
+      const res = await this.request(`workout_schedules?user_code=eq.${accessCode}&order=day_number.asc`);
+      if (res.success && res.data && res.data.length > 0) {
+        localStorage.setItem(`obesity_schedules_${accessCode}`, JSON.stringify(res.data));
+        return res.data;
+      }
+    } catch (e) {}
+
+    // 2. Dari LocalStorage
+    const local = localStorage.getItem(`obesity_schedules_${accessCode}`);
+    return local ? JSON.parse(local) : null;
+  }
+
+  /**
+   * Save Post-Workout Health Log
+   */
+  async savePostWorkoutLog(accessCode, logData) {
+    const key = `obesity_logs_${accessCode}`;
+    const existing = JSON.parse(localStorage.getItem(key) || '[]');
+    existing.unshift(logData);
+    localStorage.setItem(key, JSON.stringify(existing));
+
+    // Simpan ke Supabase
+    try {
+      await this.request('post_workout_logs', {
+        method: 'POST',
+        body: JSON.stringify({
+          user_code: accessCode,
+          day_number: logData.day_number,
+          actual_duration_mins: logData.actual_duration_mins,
+          steps_count: logData.steps_count || null,
+          distance_km: logData.distance_km || null,
+          rpe_fatigue_level: logData.rpe_fatigue_level,
+          avg_heart_rate: logData.avg_heart_rate || null,
+          reported_symptoms: logData.reported_symptoms,
+          risk_level: logData.risk_level,
+          recommendations: logData.recommendations,
+          auto_regulation_applied: logData.auto_regulation_applied || false
+        })
+      });
+    } catch (e) {}
+
+    return existing;
+  }
+
+  /**
+   * Get Post-Workout Logs
+   */
+  async getPostWorkoutLogs(accessCode) {
+    try {
+      const res = await this.request(`post_workout_logs?user_code=eq.${accessCode}&order=created_at.desc`);
+      if (res.success && res.data && res.data.length > 0) {
+        localStorage.setItem(`obesity_logs_${accessCode}`, JSON.stringify(res.data));
+        return res.data;
+      }
+    } catch (e) {}
+
+    const local = localStorage.getItem(`obesity_logs_${accessCode}`);
+    return local ? JSON.parse(local) : [];
+  }
+
+  /**
+   * Save Daily Habit Log (Water, Fasting, Diet)
+   */
+  async saveDailyHabits(accessCode, habitData) {
+    const key = `obesity_habits_${accessCode}_${habitData.log_date}`;
+    localStorage.setItem(key, JSON.stringify(habitData));
+
+    try {
+      await this.request('daily_habits', {
+        method: 'POST',
+        headers: { 'Prefer': 'resolution=merge-duplicates' },
+        body: JSON.stringify({
+          user_code: accessCode,
+          log_date: habitData.log_date,
+          workout_completed: habitData.workout_completed,
+          water_intake_ml: habitData.water_intake_ml,
+          diet_adherence: habitData.diet_adherence,
+          fasting_hours_completed: habitData.fasting_hours_completed,
+          weight_log: habitData.weight_log || null
+        })
+      });
+    } catch (e) {}
+  }
+
+  /**
+   * Get Daily Habit Log
+   */
+  async getDailyHabits(accessCode, dateStr) {
+    try {
+      const res = await this.request(`daily_habits?user_code=eq.${accessCode}&log_date=eq.${dateStr}`);
+      if (res.success && res.data && res.data.length > 0) {
+        return res.data[0];
+      }
+    } catch (e) {}
+
+    const key = `obesity_habits_${accessCode}_${dateStr}`;
+    const local = localStorage.getItem(key);
+    return local ? JSON.parse(local) : {
+      log_date: dateStr,
+      workout_completed: false,
+      water_intake_ml: 0,
+      diet_adherence: false,
+      fasting_hours_completed: 0,
+      weight_log: null
+    };
+  }
+
+  /**
+   * Get Active Logged-in User from Local Session
+   */
+  getCurrentUser() {
+    const raw = localStorage.getItem(SUPABASE_CONFIG.storageKeyUser);
+    return raw ? JSON.parse(raw) : null;
+  }
+
+  /**
+   * Logout User
+   */
+  logout() {
+    localStorage.removeItem(SUPABASE_CONFIG.storageKeyUser);
+  }
+}
+
+// Inisialisasi Singleton Service
+const dbService = new SupabaseService();
+
+
+// ==========================================
+// 2. CLINICAL & MATHEMATICAL HEALTH MODELS
+// ==========================================
+/**
+ * ==========================================================
+ * CLINICAL & EXERCISE LOGIC ENGINE
+ * Obesity to Infinity
+ * Calculations for BMI, Feasibility, Workout Generator,
+ * Nutrition & Fasting, and Post-Workout Health Diagnostics
+ * ==========================================================
+ */
+
+const HealthModels = {
+  /**
+   * 1. Calculate BMI & WHO Asia-Pacific Obesity Classification
+   */
+  calculateBMI(weightKg, heightCm) {
+    const heightM = heightCm / 100;
+    const bmi = parseFloat((weightKg / (heightM * heightM)).toFixed(1));
+
+    let category = '';
+    let categoryKey = '';
+    let badgeColor = '';
+    let description = '';
+
+    if (bmi < 18.5) {
+      category = 'Berat Badan Kurang (Underweight)';
+      categoryKey = 'underweight';
+      badgeColor = 'bg-blue-100 text-blue-800 border-blue-300';
+      description = 'Berat badan Anda di bawah rentang sehat. Fokuskan pada peningkatan massa otot.';
+    } else if (bmi <= 22.9) {
+      category = 'Berat Badan Normal (Ideal)';
+      categoryKey = 'normal';
+      badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+      description = 'Berat badan Anda berada pada rentang sehat optimal standar Asia-Pasifik.';
+    } else if (bmi <= 24.9) {
+      category = 'Kelebihan Berat Badan (Overweight)';
+      categoryKey = 'overweight';
+      badgeColor = 'bg-amber-100 text-amber-800 border-amber-300';
+      description = 'Anda berada pada kategori berisiko. Penurunan berat badan bertahap akan menurunkan beban sendi dan risiko sindrom metabolik.';
+    } else if (bmi <= 29.9) {
+      category = 'Obesitas Tingkat 1 (Class I)';
+      categoryKey = 'obesity_1';
+      badgeColor = 'bg-orange-100 text-orange-800 border-orange-300';
+      description = 'Kategori obesitas tingkat 1. Dibutuhkan jadwal adaptif jalan santai & defisit kalori teratur untuk melindungi sendi lutut.';
+    } else {
+      category = 'Obesitas Tingkat 2 (Class II - Berat)';
+      categoryKey = 'obesity_2';
+      badgeColor = 'bg-rose-100 text-rose-800 border-rose-300';
+      description = 'Kategori obesitas tingkat 2. Beban sendi saat bergerak tinggi; program harus dimulai dengan low-impact walking & perlindungan sendi ketat.';
+    }
+
+    // Hitung berat badan ideal (BMI 22.0)
+    const idealWeightMin = parseFloat((18.5 * heightM * heightM).toFixed(1));
+    const idealWeightMax = parseFloat((22.9 * heightM * heightM).toFixed(1));
+    const idealWeightMid = parseFloat((22.0 * heightM * heightM).toFixed(1));
+
+    return {
+      bmi,
+      category,
+      categoryKey,
+      badgeColor,
+      description,
+      idealWeightMin,
+      idealWeightMax,
+      idealWeightMid
+    };
+  },
+
+  /**
+   * 2. Realistic Weight Goal Feasibility & Clinical Reality Checker
+   */
+  evaluateWeightGoal(startWeight, targetWeight, heightCm, durationMonths) {
+    const totalWeeks = durationMonths * 4;
+    const totalDays = durationMonths * 30;
+    const totalLossKg = parseFloat((startWeight - targetWeight).toFixed(1));
+    const weeklyRateKg = parseFloat((totalLossKg / totalWeeks).toFixed(2));
+    const dailyCalorieDeficit = Math.round((totalLossKg * 7700) / totalDays);
+
+    const heightM = heightCm / 100;
+    const targetBMI = parseFloat((targetWeight / (heightM * heightM)).toFixed(1));
+
+    let status = 'realistic'; // realistic | challenging | unrealistic
+    let statusTitle = '';
+    let statusColor = '';
+    let message = '';
+    let medicalWarnings = [];
+    let smartSolutions = null;
+
+    // Evaluasi 1: Target BMI terlalu rendah (< 18.5)
+    if (targetBMI < 18.5) {
+      status = 'unrealistic';
+      statusTitle = 'Target Membahayakan: Menuju Underweight';
+      statusColor = 'text-rose-600 bg-rose-50 border-rose-200';
+      message = `Target berat badan ${targetWeight} kg akan membuat BMI Anda menjadi ${targetBMI} (di bawah batas normal sehat 18.5).`;
+      medicalWarnings.push('Risiko malnutrisi, penurunan kekebalan tubuh, dan osteoporosis.');
+      
+      const idealTarget = parseFloat((22.0 * heightM * heightM).toFixed(1));
+      smartSolutions = {
+        optionA: {
+          title: 'Sesuaikan ke Batas Sehat (BMI 22.0)',
+          suggestedTarget: idealTarget,
+          suggestedLoss: parseFloat((startWeight - idealTarget).toFixed(1)),
+          weeklyRate: 'Sangat Aman & Ideal'
+        }
+      };
+    }
+    // Evaluasi 2: Laju Penurunan > 1.2 kg per minggu (Ekstrem / Bahaya Crash Diet)
+    else if (weeklyRateKg > 1.2) {
+      status = 'unrealistic';
+      statusTitle = 'Target Tidak Realistis & Berbahaya Secara Medis';
+      statusColor = 'text-rose-600 bg-rose-50 border-rose-200';
+      message = `Anda ingin menurunkan ${totalLossKg} kg dalam ${durationMonths} bulan (${weeklyRateKg} kg/minggu). Laju ini melampaui batas aman fisiologi tubuh (maks. 1.0 kg/minggu).`;
+      
+      medicalWarnings = [
+        'Kerusakan Metabolisme (Metabolic Slowdown): Tubuh masuk mode kelaparan dan membakar massa otot daripada lemak.',
+        'Risiko Batu Empedu (Gallstones): Kolesterol mengendap akibat pelepasan lemak drastis.',
+        'Efek Yoyo Ekstrem: 95% pelaku diet terlalu cepat mengalami kenaikan BB lebih berat dalam beberapa bulan.',
+        'Beban Kardiovaskular Akut & Dehidrasi/Ketidakseimbangan Elektrolit.'
+      ];
+
+      // Hitung solusi realistis
+      const safeMaxLoss = parseFloat((1.0 * totalWeeks).toFixed(1));
+      const recommendedTargetForDuration = parseFloat((startWeight - safeMaxLoss).toFixed(1));
+      let recommendedMonthsForTarget = Math.ceil(totalLossKg / (0.85 * 4)); // asumsi laju 0.85 kg/minggu
+      if (recommendedMonthsForTarget < 2) recommendedMonthsForTarget = 2;
+      if (recommendedMonthsForTarget > 6) recommendedMonthsForTarget = 6;
+
+      smartSolutions = {
+        optionA: {
+          title: `Opsi A (Tetap ${durationMonths} Bulan)`,
+          suggestedTarget: recommendedTargetForDuration,
+          suggestedLoss: safeMaxLoss,
+          weeklyRate: '1.0 kg/minggu (Aman & Permanen)'
+        },
+        optionB: {
+          title: `Opsi B (Target Turun ${totalLossKg} kg)`,
+          suggestedMonths: recommendedMonthsForTarget,
+          weeklyRate: `${parseFloat((totalLossKg / (recommendedMonthsForTarget * 4)).toFixed(2))} kg/minggu (Sehat & Berkelanjutan)`
+        }
+      };
+    }
+    // Evaluasi 3: Laju 1.0 - 1.2 kg/minggu (Ambisius / Perlu Pengawasan)
+    else if (weeklyRateKg > 1.0) {
+      status = 'challenging';
+      statusTitle = 'Target Ambisius (Perlu Disiplin Ekstra)';
+      statusColor = 'text-amber-700 bg-amber-50 border-amber-200';
+      message = `Target penurunan ${weeklyRateKg} kg/minggu tergolong cukup agresif namun masih dapat dicapai dengan hidrasi optimal dan asupan protein tinggi.`;
+      medicalWarnings.push('Pastikan tidak memangkas asupan kalori di bawah 1.200 kkal/hari.');
+    }
+    // Evaluasi 4: Laju 0.5 - 1.0 kg/minggu (Zona Emas Realistis & Aman)
+    else if (weeklyRateKg >= 0.2) {
+      status = 'realistic';
+      statusTitle = 'Target Sangat Realistis & Sehat Optimal';
+      statusColor = 'text-emerald-700 bg-emerald-50 border-emerald-200';
+      message = `Target penurunan ${weeklyRateKg} kg/minggu adalah standar emas medis (WHO & Kemenkes). Target ini membakar murni lemak, menjaga otot, dan menjaga metabolisme tetap prima!`;
+    } else {
+      status = 'realistic';
+      statusTitle = 'Target Pemeliharaan / Penurunan Sangat Ringan';
+      statusColor = 'text-blue-700 bg-blue-50 border-blue-200';
+      message = 'Target ini sangat aman dan mudah dipertahankan dalam jangka panjang.';
+    }
+
+    return {
+      totalLossKg,
+      weeklyRateKg,
+      dailyCalorieDeficit,
+      targetBMI,
+      status,
+      statusTitle,
+      statusColor,
+      message,
+      medicalWarnings,
+      smartSolutions
+    };
+  },
+
+  /**
+   * 3. BMR, TDEE, and Nutrition / Fasting Modeling
+   */
+  calculateNutritionPlan(user) {
+    const { gender, current_weight, height, age, diet_model, fasting_protocol } = user;
+    const weight = parseFloat(current_weight);
+    const h = parseFloat(height);
+    const a = parseInt(age);
+
+    // Formula Mifflin-St Jeor
+    let bmr = (10 * weight) + (6.25 * h) - (5 * a);
+    if (gender === 'male') {
+      bmr += 5;
+    } else {
+      bmr -= 161;
+    }
+    bmr = Math.round(bmr);
+
+    // TDEE dengan faktor aktivitas sedentary-to-light (1.35)
+    const tdee = Math.round(bmr * 1.35);
+
+    // Target Defisit Kalori Harian (Moderately Safe: ~400 kcal)
+    const targetCalories = Math.max(1300, tdee - 450);
+
+    // Pembagian Makronutrisi (Plate Model)
+    // Protein: 1.5g per kg BB (melindungi otot)
+    const proteinGrams = Math.round(Math.min(weight * 1.5, (targetCalories * 0.30) / 4));
+    const proteinCalories = proteinGrams * 4;
+
+    // Lemak Sehat: 25% dari total kalori
+    const fatCalories = Math.round(targetCalories * 0.25);
+    const fatGrams = Math.round(fatCalories / 9);
+
+    // Karbohidrat Kompleks: Sisa kalori
+    const carbCalories = targetCalories - proteinCalories - fatCalories;
+    const carbGrams = Math.round(carbCalories / 4);
+
+    // Model Piring Sehat
+    const plateModel = {
+      veggiesAndFiber: '50% Piring (Sayuran Hijau, Brokoli, Wortel, Selada - Kenyang Lama & Rendah Kalori)',
+      leanProtein: '25% Piring (Dada Ayam, Ikan, Telur, Tahu/Tempe - Melindungi Otot)',
+      complexCarbs: '25% Piring (Nasi Merah, Ubi Rebus, Kentang Panggang, Oatmeal)'
+    };
+
+    // Protokol Puasa Intermiten
+    let fastingDetails = {
+      name: 'Pola Makan Teratur (Non-Fasting)',
+      fastingHours: 0,
+      eatingHours: 24,
+      scheduleAdvice: 'Makan 3 kali porsi sedang dengan jeda 4-5 jam. Hindari ngemil larut malam.'
+    };
+
+    if (fasting_protocol === '14_10') {
+      fastingDetails = {
+        name: 'Intermittent Fasting 14:10 (Pemula)',
+        fastingHours: 14,
+        eatingHours: 10,
+        exampleWindow: '08:00 - 18:00 (Jendela Makan) | 18:00 - 08:00 (Puasa)',
+        workoutSync: 'Lakukan jalan santai di pagi hari (jam 07:00) sebelum buka puasa, atau 1.5 jam setelah makan siang.',
+        scheduleAdvice: 'Sangat ramah lambung bagi penderita obesitas, membantu memperbaiki sensitivitas insulin.'
+      };
+    } else if (fasting_protocol === '16_8') {
+      fastingDetails = {
+        name: 'Intermittent Fasting 16:8 (Standar Leangains)',
+        fastingHours: 16,
+        eatingHours: 8,
+        exampleWindow: '12:00 - 20:00 (Jendela Makan) | 20:00 - 12:00 (Puasa)',
+        workoutSync: 'Waktu terbaik jalan kaki: Jam 17:00 (dalam jendela makan) atau jam 10:30 (akhir puasa dengan intensitas ringan).',
+        scheduleAdvice: 'Memicu autofagi dan mempercepat pembakaran lemak cadangan tubuh.'
+      };
+    }
+
+    return {
+      bmr,
+      tdee,
+      targetCalories,
+      proteinGrams,
+      fatGrams,
+      carbGrams,
+      plateModel,
+      fastingDetails
+    };
+  },
+
+  /**
+   * 4. Dynamic Workout Schedule & Weekly Milestone Roadmap Generator
+   */
+  generateProgramSchedules(user) {
+    const { access_code, program_duration_months, fitness_level, obesity_category } = user;
+    const months = parseInt(program_duration_months) || 1;
+    const totalWeeks = months * 4;
+    const schedules = [];
+
+    // Tentukan tema mingguan dan progres bertahap
+    // Ambil tanggal mulai dan hari mulai
+    const dayNamesIndo = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    let startDate = new Date();
+    if (user.program_start_date) {
+      const parsed = new Date(user.program_start_date);
+      if (!isNaN(parsed.getTime())) {
+        startDate = parsed;
+      }
+    }
+
+    for (let w = 1; w <= totalWeeks; w++) {
+      const monthNum = Math.ceil(w / 4);
+      const weekInMonth = ((w - 1) % 4) + 1;
+
+      // Rancang tema per minggu
+      let weekTheme = '';
+      if (w === 1) {
+        weekTheme = 'Minggu 1: Adaptasi Persendian & Postur Jalan';
+      } else if (w === 2) {
+        weekTheme = 'Minggu 2: Peningkatan Ritme Nafas & Brisk Walking';
+      } else if (w === 3) {
+        weekTheme = 'Minggu 3: Penguatan Daya Tahan Kardiovaskular Dasar';
+      } else if (w === 4) {
+        weekTheme = 'Minggu 4: Konsistensi Ritme & Evaluasi Bulan ke-1';
+      } else if (w <= 8) {
+        weekTheme = `Minggu ${w}: Progresi Jalan Cepat ke Walk-Jog Interval`;
+      } else if (w <= 12) {
+        weekTheme = `Minggu ${w}: Peningkatan Interval Joging Ringan & Efisiensi Lemak`;
+      } else {
+        weekTheme = `Minggu ${w}: Fase Peak Endurance Menuju 5K Continuous Run`;
+      }
+
+      let workoutDaysCount = 0;
+
+      // Buat 7 hari per minggu
+      for (let d = 1; d <= 7; d++) {
+        const dayNumber = (w - 1) * 7 + d;
+        let title = '';
+        let workoutType = '';
+        let prescribedDuration = 0;
+        let description = '';
+
+        // Hitung tanggal kalender nyata untuk hari ke-N
+        const dayDate = new Date(startDate.getTime() + (dayNumber - 1) * 24 * 60 * 60 * 1000);
+        const dayName = dayNamesIndo[dayDate.getDay()];
+        const dateFormatted = dayDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });
+        const fullDateFormatted = dayDate.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' });
+
+        // Pola latihan mingguan:
+        // Hari 1, 3, 5: Kardio Utama
+        // Hari 2: Mobilitas & Peregangan Sendi
+        // Hari 4, 7: Istirahat
+        // Hari 6: Pemulihan Aktif
+
+        if (d === 1 || d === 3 || d === 5) {
+          workoutDaysCount++;
+          if (w <= 2) {
+            workoutType = 'walk_gentle';
+            prescribedDuration = 25 + (w * 5);
+            title = `Sesi Jalan Santai Berirama (${prescribedDuration} Menit)`;
+            description = 'Jalan kaki dengan postur tegak, langkah pendek dan ritme konstan. Jaga napas teratur.';
+          } else if (w <= 5) {
+            workoutType = 'brisk_walk';
+            prescribedDuration = 30 + ((w - 2) * 5);
+            title = `Sesi Jalan Cepat / Brisk Walk (${prescribedDuration} Menit)`;
+            description = 'Jalan dengan tempo lebih cepat (kecepatan percakapan). Ayunkan lengan secara rileks.';
+          } else if (w <= 10) {
+            workoutType = 'walk_jog_interval';
+            prescribedDuration = 35;
+            title = `Sesi Walk-Jog Interval (35 Menit)`;
+            description = 'Kombinasi 3 menit jalan cepat + 45 detik joging santai. Dengarkan sinyal sendi lutut Anda.';
+          } else {
+            workoutType = 'steady_jog';
+            prescribedDuration = 35 + ((w - 10) * 3);
+            title = `Sesi Steady Jogging (${prescribedDuration} Menit)`;
+            description = 'Joging santai berkelanjutan dengan ritme pernapasan stabil.';
+          }
+        } else if (d === 6) {
+          workoutDaysCount++;
+          workoutType = 'active_recovery';
+          prescribedDuration = 20;
+          title = 'Jalan Santai Pemulihan Aktif (20 Menit)';
+          description = 'Jalan santai santai tanpa target kecepatan untuk melancarkan sirkulasi asam laktat.';
+        } else if (d === 2) {
+          workoutType = 'mobility_stretch';
+          prescribedDuration = 15;
+          title = 'Peregangan Sendi & Mobilitas Kaki (15 Menit)';
+          description = 'Lakukan peregangan betis, paha depan (quads), paha belakang (hamstring), dan telapak kaki.';
+        } else {
+          workoutType = 'rest_day';
+          prescribedDuration = 0;
+          title = (d === 7 && weekInMonth === 4) ? 'Hari Evaluasi Bulanan & Istirahat Total' : 'Hari Istirahat Penuh (Rest Day)';
+          description = 'Istirahatkan otot dan sendi. Penuhi target hidrasi 2.5L air dan tidur berkualitas minimal 7-8 jam.';
+        }
+
+        schedules.push({
+          user_code: access_code,
+          day_number: dayNumber,
+          week_number: w,
+          month_number: monthNum,
+          week_theme: weekTheme,
+          day_of_week: d,
+          day_name: dayName,
+          calendar_date: dateFormatted,
+          full_date_label: fullDateFormatted,
+          title,
+          workout_type: workoutType,
+          prescribed_duration_mins: prescribedDuration,
+          description,
+          is_completed: false,
+          completed_at: null,
+          is_locked: dayNumber !== 1
+        });
+      }
+    }
+
+    return schedules;
+  },
+
+  /**
+   * 5. Post-Workout Health Risk & Symptom Diagnostic Engine
+   * Termasuk Analisis Fisiologis Durasi Berlebih (Excess Duration Analysis)
+   */
+  diagnosePostWorkout(inputData) {
+    const { actualDuration, prescribedDuration = 0, rpeLevel, avgHeartRate, symptoms = [] } = inputData;
+    const actual = parseInt(actualDuration) || 0;
+    const prescribed = parseInt(prescribedDuration) || 0;
+    const rpe = parseInt(rpeLevel) || 5;
+
+    let riskLevel = 'green'; // green | yellow | red
+    let riskTitle = 'Kondisi Optimal & Pemulihan Normal';
+    let riskBadgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+    let autoRegulationApplied = false;
+    let autoRegulationMessage = '';
+    const adviceList = [];
+    const targetedStretches = [];
+
+    // Deteksi Durasi Berlebih
+    let isExcessDuration = false;
+    let excessMinutes = 0;
+    let excessAnalysis = null;
+
+    if (prescribed > 0 && actual > (prescribed + 5)) {
+      isExcessDuration = true;
+      excessMinutes = actual - prescribed;
+      const surplusPct = Math.round((excessMinutes / prescribed) * 100);
+
+      excessAnalysis = {
+        excessMinutes,
+        surplusPct,
+        summary: `Durasi latihan aktual (${actual} menit) melebihi target jadwal (${prescribed} menit) sebesar +${excessMinutes} menit (+${surplusPct}%).`,
+        physiologicalEffects: [
+          {
+            title: '1. Lonjakan Beban Impak Sendi Lutut & Ankle (Cartilage Overload)',
+            desc: `Pada penderita obesitas, setiap langkah memberikan beban 3 hingga 4 kali berat badan ke tempurung lutut. Menambah durasi +${excessMinutes} menit menambahkan sekitar ${excessMinutes * 100}–${excessMinutes * 130} hentakan kaki ekstra ke tulang rawan sendi sebelum jaringan lunak sempat beradaptasi.`
+          },
+          {
+            title: '2. Penurunan Efisiensi Pembakaran Lemak & Lonjakan Hormon Kortisol',
+            desc: 'Pada intensitas yang melebihi batas adaptasi harian, tubuh mengalami penurunan efisiensi Fat Max (pembakaran lemak) dan beralih ke katabolisme otot (pemecahan massa otot) disertai peningkatan hormon stres kortisol yang memicu penumpukan air (water retention).'
+          },
+          {
+            title: '3. Lonjakan Hormon Lapar Malam Hari (Compensatory Ghrelin Surge)',
+            desc: 'Pengurasan glikogen yang terlalu dalam akibat durasi berlebih merangsang pelepasan hormon ghrelin secara agresif, memicu rasa lapar meledak atau dorongan "binge eating" 2–4 jam setelah latihan.'
+          },
+          {
+            title: '4. Risiko Mikrolesi Tulang Kering & Fasia Kaki (Shin Splints / Plantar)',
+            desc: 'Kelelahan otot penopang kaki membuat hentakan langsung diserap oleh tulang tibia dan fasia telapak kaki, meningkatkan risiko nyeri tulang kering dan tumit dalam 24–48 jam ke depan.'
+          }
+        ],
+        recoveryProtocol: [
+          '🧊 Elevasi Kaki & Kompres Dingin: Berbaring dengan kaki diangkat lebih tinggi dari dada selama 15 menit. Kompres es batu berbalut handuk pada lutut jika terasa hangat.',
+          '💧 Rehidrasi Elektrolit Ekstra: Minum tambahan 400–500 ml air putih ditambah sedikit garam mineral atau air kelapa untuk mencegah kram otot malam hari.',
+          '🍗 Nutrisi Penahan Lapar: Konsumsi 20–25g protein berkualitas (telur rebus/tempe/dada ayam) dalam 45 menit untuk meredam lonjakan hormon lapar ghrelin.',
+          '🔄 Auto-Regulation Jadwal: Hari berikutnya disarankan untuk diisi dengan istirahat aktif atau jalan santai ringan agar persendian memiliki waktu regenerasi 24 jam penuh.'
+        ]
+      };
+    }
+
+    // 1. Cek Gejala Red Flag (Peringatan Medis Keras)
+    const redFlagSymptoms = [
+      'chest_tightness',      // Nyeri dada / dada tertekan
+      'palpitations',        // Dada berdebar kencang tidak beraturan
+      'severe_dyspnea',      // Sesak napas berat > 10 menit tidak reda
+      'severe_dizziness',    // Pusing berputar hebat / pandangan gelap
+      'sharp_joint_pain'     // Nyeri sendi tajam saat melangkah
+    ];
+
+    const hasRedFlag = symptoms.some(s => redFlagSymptoms.includes(s));
+
+    if (hasRedFlag || rpe >= 9) {
+      riskLevel = 'red';
+      riskTitle = 'Peringatan Medis: Butuh Istirahat Total & Waspada Kardiovaskular';
+      riskBadgeColor = 'bg-rose-100 text-rose-800 border-rose-300';
+      autoRegulationApplied = true;
+      autoRegulationMessage = 'Sistem mengunci aktivitas berat selama 48 jam ke depan dan mengubah jadwal menjadi Istirahat Total demi keselamatan jantung dan persendian Anda.';
+
+      adviceList.push({
+        title: 'Tindakan Darurat Segera',
+        text: 'Segera duduk bersandar atau berbaring dengan posisi kaki sedikit lebih tinggi. Longgarkan pakaian ketat dan bernapas dalam secara perlahan.'
+      });
+      adviceList.push({
+        title: 'Peringatan Dokter',
+        text: 'Jika sesak napas berat atau rasa tertekan di dada tidak mereda dalam 15 menit, segera minta bantuan keluarga untuk memeriksakan diri ke IGD / klinik terdekat.'
+      });
+    }
+    // 2. Cek Gejala Yellow Zone (Overuse Sendi / Dehidrasi Ringan / RPE 7-8 / Durasi Berlebih Signifikan)
+    else {
+      const yellowSymptoms = [
+        'knee_dull_pain',    // Nyeri tumpul tempurung lutut (Patellofemoral)
+        'itb_outer_knee',    // Nyeri sisi luar lutut (IT Band)
+        'heel_plantar_pain', // Nyeri tumit / telapak kaki (Plantar Fasciitis)
+        'shin_splints',      // Nyeri tulang kering depan
+        'lower_back_strain', // Pegal pinggang bawah
+        'muscle_cramps',     // Kram betis
+        'mild_dizziness',    // Pusing ringan saat berdiri cepat
+        'extreme_hunger'     // Dorongan makan berlebih
+      ];
+
+      const hasYellowSymptoms = symptoms.some(s => yellowSymptoms.includes(s));
+
+      if (hasYellowSymptoms || rpe >= 7 || (isExcessDuration && excessMinutes >= 15)) {
+        riskLevel = 'yellow';
+        riskTitle = isExcessDuration && !hasYellowSymptoms 
+          ? 'Perhatian: Durasi Berlebih Terdeteksi (Overuse Cartilage Alert)'
+          : 'Perhatian: Indikasi Kelelahan / Deteksi Dini Overuse Sendi';
+        riskBadgeColor = 'bg-amber-100 text-amber-800 border-amber-300';
+        autoRegulationApplied = true;
+        autoRegulationMessage = isExcessDuration
+          ? `Sistem mendeteksi durasi latihan berlebih (+${excessMinutes} menit). Jadwal besok secara otomatis diperingan menjadi Jalan Santai Pemulihan 15 Menit agar sendi lutut tidak mengalami radang kronis.`
+          : 'Sistem mendeteksi beban tinggi pada otot/sendi. Jadwal besok secara otomatis diperingan menjadi Jalan Santai Pemulihan 15 Menit.';
+
+        // Spesifik Saran Ortopedi
+        if (symptoms.includes('knee_dull_pain') || symptoms.includes('itb_outer_knee')) {
+          adviceList.push({
+            title: 'Protokol RICE untuk Lutut',
+            text: 'Kompres es batu yang dibalut handuk pada area lutut selama 12–15 menit. Hindari posisi jongkok atau menekuk lutut terlalu tajam hari ini.'
+          });
+          targetedStretches.push('Peregangan Quadriceps (Paha Depan) & Peregangan Hamstring sambil duduk di kursi');
+        }
+
+        if (symptoms.includes('heel_plantar_pain')) {
+          adviceList.push({
+            title: 'Pencegahan Plantar Fasciitis',
+            text: 'Pijat lembut telapak kaki menggunakan botol air dingin atau bola tenis selama 5 menit untuk melemaskan fasia telapak kaki.'
+          });
+          targetedStretches.push('Peregangan Tendon Achilles & Betis menempel pada dinding');
+        }
+
+        if (symptoms.includes('shin_splints')) {
+          adviceList.push({
+            title: 'Penanganan Tulang Kering (Shin Splints)',
+            text: 'Kompres dingin area tulang kering depan dan pastikan Anda tidak melangkah terlalu panjang (overstriding) di sesi berikutnya.'
+          });
+        }
+
+        if (symptoms.includes('mild_dizziness')) {
+          adviceList.push({
+            title: 'Penanganan Hipotensi Postural / Dehidrasi',
+            text: 'Minum 400 ml air mineral ditambah sedikit garam atau air kelapa alami untuk mengembalikan elektrolit yang hilang.'
+          });
+        }
+
+        if (symptoms.includes('extreme_hunger')) {
+          adviceList.push({
+            title: 'Pencegahan Binge Eating Pasca Latihan',
+            text: 'Konsumsi 1 gelas air hangat + camilan tinggi protein (seperti 1 butir telur rebus atau segenggam edamame) sebelum makan besar untuk menekan hormon ghrelin.'
+          });
+        }
+      } else {
+        // Green Zone
+        riskLevel = 'green';
+        riskTitle = 'Kondisi Prima & Beban Latihan Sangat Sesuai';
+        riskBadgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-300';
+        adviceList.push({
+          title: 'Hidrasi & Pemulihan Standar',
+          text: 'Bagus sekali! Minum 300–500 ml air putih dan konsumsi makanan sehat bergizi seimbang dalam 1–2 jam ke depan.'
+        });
+        adviceList.push({
+          title: 'Kesiapan Jadwal',
+          text: 'Tubuh Anda beradaptasi dengan sangat baik. Jadwal latihan besok berjalan sesuai rencana normal.'
+        });
+      }
+    }
+
+    return {
+      riskLevel,
+      riskTitle,
+      riskBadgeColor,
+      autoRegulationApplied,
+      autoRegulationMessage,
+      adviceList,
+      targetedStretches,
+      isExcessDuration,
+      excessMinutes,
+      excessAnalysis
+    };
+  }
+};
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = HealthModels;
+}
+
+
+// ==========================================
+// 3. MAIN APPLICATION UI & CONTROLLERS
+// ==========================================
+/**
+ * ==========================================================
+ * MAIN APPLICATION CONTROLLER
+ * Obesity to Infinity
+ * UI Management, Auth with User Access Codes, Calendar &
+ * Weekly Milestones, Fasting Clock, and Post-Workout Health Logs
+ * ==========================================================
+ */
+
+let currentUser = null;
+let userSchedules = [];
+let userLogs = [];
+let currentHabits = null;
+let currentWeekViewing = 1;
+let weightChartInstance = null;
+let fastingTimerInterval = null;
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', async () => {
+  initLucideIcons();
+  await checkAuthStatus();
+  setupEventListeners();
+});
+
+function initLucideIcons() {
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+/**
+ * 1. Auth Status & Screen Switching
+ */
+async function checkAuthStatus() {
+  const user = dbService.getCurrentUser();
+  if (user) {
+    currentUser = user;
+    await loadUserData();
+    showMainApp();
+  } else {
+    showAuthScreen();
+  }
+}
+
+function showAuthScreen() {
+  document.getElementById('auth-screen').classList.remove('hidden');
+  document.getElementById('main-app-screen').classList.add('hidden');
+}
+
+function showMainApp() {
+  document.getElementById('auth-screen').classList.add('hidden');
+  document.getElementById('main-app-screen').classList.remove('hidden');
+  updateHeaderProfile();
+  renderCalendarTab();
+  renderDietTab();
+  renderAnalyticsTab();
+  renderHealthLogHistory();
+  initLucideIcons();
+}
+
+/**
+ * 2. Load User Data & Schedules
+ */
+async function loadUserData() {
+  if (!currentUser) return;
+
+  // Ambil Jadwal
+  let schedules = await dbService.getSchedules(currentUser.access_code);
+  if (!schedules || schedules.length === 0) {
+    schedules = HealthModels.generateProgramSchedules(currentUser);
+    await dbService.saveSchedules(currentUser.access_code, schedules);
+  }
+  userSchedules = schedules;
+
+  // Ambil Logbook Pasca Latihan
+  userLogs = await dbService.getPostWorkoutLogs(currentUser.access_code);
+
+  // Ambil Habit Hari Ini
+  const todayStr = new Date().toISOString().split('T')[0];
+  currentHabits = await dbService.getDailyHabits(currentUser.access_code, todayStr);
+}
+
+/**
+ * 3. Update Header Profile & Badges
+ */
+function updateHeaderProfile() {
+  if (!currentUser) return;
+  document.getElementById('user-display-name').textContent = currentUser.name;
+  document.getElementById('user-access-code-badge').textContent = currentUser.access_code;
+  document.getElementById('user-streak-count').textContent = currentUser.current_streak || 0;
+  document.getElementById('user-bmi-badge').textContent = `BMI ${currentUser.bmi}`;
+  document.getElementById('user-bb-stat').textContent = `${currentUser.current_weight} kg`;
+  document.getElementById('user-target-stat').textContent = `${currentUser.target_weight} kg`;
+  
+  // Hitung persentase progres menuju target
+  const start = parseFloat(currentUser.start_weight);
+  const current = parseFloat(currentUser.current_weight);
+  const target = parseFloat(currentUser.target_weight);
+  const totalDiff = start - target;
+  const currentDiff = start - current;
+  const progressPct = totalDiff > 0 ? Math.min(100, Math.max(0, Math.round((currentDiff / totalDiff) * 100))) : 0;
+  
+  const progressBar = document.getElementById('header-progress-bar');
+  if (progressBar) {
+    progressBar.style.width = `${progressPct}%`;
+  }
+}
+
+/**
+ * 4. Tab Navigation
+ */
+function switchTab(tabId) {
+  // Update desktop side nav buttons
+  document.querySelectorAll('.side-tab-btn').forEach(btn => {
+    btn.classList.remove('bg-primary-container/20', 'text-primary', 'font-bold', 'border-r-4', 'border-primary');
+    btn.classList.add('text-on-surface-variant');
+  });
+
+  const activeSideBtn = document.getElementById(`side-tab-btn-${tabId}`);
+  if (activeSideBtn) {
+    activeSideBtn.classList.add('bg-primary-container/20', 'text-primary', 'font-bold', 'border-r-4', 'border-primary');
+    activeSideBtn.classList.remove('text-on-surface-variant');
+  }
+
+  // Update tab panes
+  document.querySelectorAll('.tab-pane').forEach(pane => {
+    pane.classList.remove('active');
+  });
+
+  const targetPane = document.getElementById(`tab-pane-${tabId}`);
+  if (targetPane) {
+    targetPane.classList.add('active');
+  }
+
+  if (tabId === 'analytics') {
+    renderAnalyticsTab();
+  } else if (tabId === 'calendar') {
+    renderCalendarTab();
+  } else if (tabId === 'diet') {
+    renderDietTab();
+  }
+
+  initLucideIcons();
+}
+
+/**
+ * 5. Render Kalender & Roadmap Mingguan (Weekly Milestone Roadmap)
+ */
+function renderCalendarTab() {
+  if (!userSchedules || userSchedules.length === 0) return;
+
+  const totalWeeks = (currentUser.program_duration_months || 1) * 4;
+  const weekSelector = document.getElementById('week-selector-dropdown');
+  if (weekSelector) {
+    weekSelector.innerHTML = '';
+    for (let w = 1; w <= totalWeeks; w++) {
+      const opt = document.createElement('option');
+      opt.value = w;
+      opt.textContent = `Minggu ke-${w} (Bulan ${Math.ceil(w / 4)})`;
+      if (w === currentWeekViewing) opt.selected = true;
+      weekSelector.appendChild(opt);
+    }
+  }
+
+  // Filter jadwal untuk minggu yang sedang dilihat
+  const weekDays = userSchedules.filter(s => s.week_number === currentWeekViewing);
+  const weekTheme = weekDays.length > 0 ? weekDays[0].week_theme : `Minggu ${currentWeekViewing}`;
+
+  // Header Banner Target Mingguan
+  document.getElementById('weekly-milestone-title').textContent = weekTheme;
+  const completedInWeek = weekDays.filter(s => s.is_completed).length;
+  const totalInWeek = weekDays.length;
+  document.getElementById('weekly-progress-counter').textContent = `${completedInWeek} dari ${totalInWeek} Selesai (${Math.round((completedInWeek/totalInWeek)*100)}%)`;
+
+  // Render Grid 7 Hari
+  const gridContainer = document.getElementById('week-days-grid');
+  if (!gridContainer) return;
+  gridContainer.innerHTML = '';
+
+  const dayNames = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+
+  weekDays.forEach((day, idx) => {
+    const card = document.createElement('div');
+    card.className = `day-card rounded-2xl p-4 sm:p-5 border transition-all relative flex flex-col justify-between `;
+
+    // Tentukan Style Status
+    let statusBadge = '';
+    let actionBtn = '';
+
+    if (day.is_completed) {
+      card.classList.add('day-completed', 'border-l-4', 'border-l-primary');
+      statusBadge = '<span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">check_circle</span> Selesai</span>';
+      actionBtn = `<button onclick="viewCompletedLog(${day.day_number})" class="text-xs text-primary font-bold hover:underline mt-3 flex items-center gap-1"><span class="material-symbols-outlined text-xs">visibility</span> Lihat Rekaman & Respon</button>`;
+    } else if (day.is_locked) {
+      card.classList.add('day-locked');
+      statusBadge = '<span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-outline flex items-center gap-0.5"><span class="material-symbols-outlined text-xs">lock</span> Terkunci</span>';
+      actionBtn = `<p class="text-[11px] text-outline mt-3 flex items-center gap-1"><span class="material-symbols-outlined text-xs">lock_clock</span> Selesaikan sesi sebelumnya.</p>`;
+    } else {
+      // Hari Aktif (Siap Latihan)
+      card.classList.add('day-active');
+      statusBadge = '<span class="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-amber-200 text-amber-900 border border-amber-400 flex items-center gap-1"><span class="material-symbols-outlined text-xs">bolt</span> Aktif Hari Ini</span>';
+      
+      if (day.workout_type === 'rest_day') {
+        actionBtn = `<button onclick="completeRestDay(${day.day_number})" class="w-full mt-3 py-2 px-3 bg-secondary hover:bg-secondary-container hover:text-on-secondary-container text-on-secondary font-bold text-xs rounded-xl shadow-sm transition">Selesaikan Istirahat Aktif</button>`;
+      } else {
+        actionBtn = `
+          <div class="flex gap-2 mt-3">
+            <button onclick="openPostWorkoutModal(${day.day_number})" class="flex-1 py-2 px-3 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow-sm transition flex items-center justify-center gap-1 hover:scale-[1.02]">
+              <span class="material-symbols-outlined text-sm">check_circle</span> Selesai & Check-in
+            </button>
+            <button onclick="swapToLowImpact(${day.day_number})" title="Ganti ke latihan ramah lutut jika sendi ngilu" class="py-2 px-2.5 bg-tertiary-container/15 hover:bg-tertiary-container/30 text-tertiary font-bold text-xs rounded-xl border border-tertiary-container/30 transition flex items-center justify-center">
+              <span class="material-symbols-outlined text-sm">healing</span>
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    const dayDisplayName = day.day_name ? `${day.day_name}, ${day.calendar_date || ''}` : `${dayNames[idx]}`;
+
+    card.innerHTML = `
+      <div>
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-outline">${dayDisplayName} (Hari ${day.day_number})</span>
+          ${statusBadge}
+        </div>
+        <h4 class="font-bold text-on-surface text-sm mb-1">${day.title}</h4>
+        <p class="text-xs text-on-surface-variant leading-relaxed mb-2">${day.description}</p>
+        ${day.prescribed_duration_mins > 0 ? `<div class="inline-flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-lg border border-primary/20"><span class="material-symbols-outlined text-xs">schedule</span> Target Jadwal: ${day.prescribed_duration_mins} Menit</div>` : ''}
+      </div>
+      <div>
+        ${actionBtn}
+      </div>
+    `;
+
+    gridContainer.appendChild(card);
+  });
+
+  initLucideIcons();
+}
+
+function changeWeekViewing(direction) {
+  const totalWeeks = (currentUser.program_duration_months || 1) * 4;
+  const newWeek = currentWeekViewing + direction;
+  if (newWeek >= 1 && newWeek <= totalWeeks) {
+    currentWeekViewing = newWeek;
+    renderCalendarTab();
+  }
+}
+
+function onWeekDropdownChange(e) {
+  currentWeekViewing = parseInt(e.target.value);
+  renderCalendarTab();
+}
+
+/**
+ * 6. Selesaikan Hari Istirahat Aktif
+ */
+async function completeRestDay(dayNumber) {
+  const day = userSchedules.find(s => s.day_number === dayNumber);
+  if (!day) return;
+
+  day.is_completed = true;
+  day.completed_at = new Date().toISOString();
+
+  // Buka hari berikutnya
+  unlockNextDay(dayNumber);
+
+  // Tambah Streak
+  currentUser.current_streak = (currentUser.current_streak || 0) + 1;
+  if (currentUser.current_streak > (currentUser.longest_streak || 0)) {
+    currentUser.longest_streak = currentUser.current_streak;
+  }
+
+  await dbService.saveSchedules(currentUser.access_code, userSchedules);
+  await dbService.saveUserProfile(currentUser);
+
+  celebrateStreak();
+  updateHeaderProfile();
+  renderCalendarTab();
+  alert('🎉 Hari istirahat aktif diselesaikan! Tubuh Anda memulihkan energi untuk sesi berikutnya.');
+}
+
+/**
+ * 7. Ganti Latihan ke Low Impact jika Sendi Lelah
+ */
+async function swapToLowImpact(dayNumber) {
+  const day = userSchedules.find(s => s.day_number === dayNumber);
+  if (!day) return;
+
+  if (confirm(`Apakah lutut/sendi Anda terasa lelah hari ini?\n\nSistem akan mengalihkan sesi Hari ke-${dayNumber} menjadi "Jalan Santai Pemulihan Lutut & Peregangan Sendi (20 Menit)" yang sangat aman bagi persendian.`)) {
+    day.title = 'Jalan Santai Pemulihan Lutut & Peregangan Sendi (20 Menit)';
+    day.workout_type = 'active_recovery';
+    day.prescribed_duration_mins = 20;
+    day.description = 'Latihan low-impact untuk menjaga sirkulasi darah tanpa memberikan tekanan impak pada tempurung lutut.';
+    
+    await dbService.saveSchedules(currentUser.access_code, userSchedules);
+    renderCalendarTab();
+  }
+}
+
+/**
+ * 8. Unlock Next Day in Linear Progression
+ */
+function unlockNextDay(completedDayNumber) {
+  const nextDay = userSchedules.find(s => s.day_number === completedDayNumber + 1);
+  if (nextDay) {
+    nextDay.is_locked = false;
+  }
+}
+
+/**
+ * 9. Post-Workout Health Check-in Modal
+ */
+let activeWorkoutDayNumber = null;
+
+function openPostWorkoutModal(dayNumber) {
+  activeWorkoutDayNumber = dayNumber;
+  const day = userSchedules.find(s => s.day_number === dayNumber);
+  if (!day) return;
+
+  const prescribed = day.prescribed_duration_mins || 30;
+  const dayTitle = day.day_name ? `${day.day_name}, ${day.calendar_date || ''} (Hari ${dayNumber})` : `Hari ke-${dayNumber}`;
+  
+  document.getElementById('modal-workout-day-title').textContent = `Check-in Latihan: ${dayTitle}`;
+  
+  const targetBadge = document.getElementById('modal-prescribed-duration-badge');
+  if (targetBadge) {
+    targetBadge.textContent = `${prescribed} Menit`;
+  }
+  
+  const durationInput = document.getElementById('post-duration-input');
+  if (durationInput) {
+    durationInput.value = prescribed;
+  }
+  
+  document.getElementById('post-rpe-input').value = '5';
+  document.getElementById('rpe-value-display').textContent = '5 - Cukup Melelahkan (Bisa Bicara Pendek)';
+  document.getElementById('post-heartrate-input').value = '';
+  document.getElementById('post-steps-input').value = '';
+
+  // Reset checkboxes
+  document.querySelectorAll('.symptom-checkbox').forEach(cb => cb.checked = false);
+
+  // Check real-time alert
+  checkExcessDurationRealtime();
+
+  // Sembunyikan hasil diagnosa awal
+  document.getElementById('diagnostic-result-container').classList.add('hidden');
+  document.getElementById('post-workout-form-inputs').classList.remove('hidden');
+
+  document.getElementById('post-workout-modal').classList.remove('hidden');
+}
+
+function closePostWorkoutModal() {
+  document.getElementById('post-workout-modal').classList.add('hidden');
+}
+
+function checkExcessDurationRealtime() {
+  if (!activeWorkoutDayNumber) return;
+  const day = userSchedules.find(s => s.day_number === activeWorkoutDayNumber);
+  const prescribed = day ? (day.prescribed_duration_mins || 30) : 30;
+  const actual = parseInt(document.getElementById('post-duration-input').value) || 0;
+  
+  const alertBanner = document.getElementById('post-excess-alert-banner');
+  const alertTitle = document.getElementById('post-excess-alert-title');
+  const alertDesc = document.getElementById('post-excess-alert-desc');
+  
+  if (alertBanner && prescribed > 0 && actual > prescribed + 5) {
+    const diff = actual - prescribed;
+    const surplusPct = Math.round((diff / prescribed) * 100);
+    alertTitle.textContent = `Peringatan: Durasi Latihan Melebihi Jadwal (+${diff} Menit / +${surplusPct}%)`;
+    alertDesc.textContent = `Anda berjalan ${diff} menit lebih lama dari target aman. Sistem akan menyertakan analisis proteksi sendi lutut, lonjakan hormon stres/lapar, dan panduan pemulihan khusus pasca latihan.`;
+    alertBanner.classList.remove('hidden');
+  } else if (alertBanner) {
+    alertBanner.classList.add('hidden');
+  }
+}
+
+async function submitPostWorkoutCheckin(e) {
+  e.preventDefault();
+  if (!activeWorkoutDayNumber) return;
+
+  const actualDuration = parseInt(document.getElementById('post-duration-input').value) || 30;
+  const rpeLevel = parseInt(document.getElementById('post-rpe-input').value) || 5;
+  const avgHeartRate = document.getElementById('post-heartrate-input').value ? parseInt(document.getElementById('post-heartrate-input').value) : null;
+  const stepsCount = document.getElementById('post-steps-input').value ? parseInt(document.getElementById('post-steps-input').value) : null;
+
+  const day = userSchedules.find(s => s.day_number === activeWorkoutDayNumber);
+  const prescribedDuration = day ? (day.prescribed_duration_mins || 0) : 0;
+
+  const symptoms = [];
+  document.querySelectorAll('.symptom-checkbox:checked').forEach(cb => {
+    symptoms.push(cb.value);
+  });
+
+  // Jalankan Diagnostic Engine
+  const diagnosis = HealthModels.diagnosePostWorkout({
+    actualDuration,
+    prescribedDuration,
+    rpeLevel,
+    avgHeartRate,
+    symptoms
+  });
+
+  // Simpan logbook ke DB/LocalStorage
+  const logData = {
+    day_number: activeWorkoutDayNumber,
+    prescribed_duration_mins: prescribedDuration,
+    actual_duration_mins: actualDuration,
+    steps_count: stepsCount,
+    rpe_fatigue_level: rpeLevel,
+    avg_heart_rate: avgHeartRate,
+    reported_symptoms: symptoms,
+    risk_level: diagnosis.riskLevel,
+    risk_title: diagnosis.riskTitle,
+    recommendations: diagnosis.adviceList,
+    targeted_stretches: diagnosis.targetedStretches,
+    is_excess_duration: diagnosis.isExcessDuration,
+    excess_minutes: diagnosis.excessMinutes,
+    auto_regulation_applied: diagnosis.autoRegulationApplied,
+    created_at: new Date().toISOString()
+  };
+
+  await dbService.savePostWorkoutLog(currentUser.access_code, logData);
+
+  // Tandai hari latihan selesai
+  if (day) {
+    day.is_completed = true;
+    day.completed_at = new Date().toISOString();
+    unlockNextDay(activeWorkoutDayNumber);
+  }
+
+  // Jika Auto-Regulation menyarankan peringan jadwal besok:
+  if (diagnosis.autoRegulationApplied) {
+    const nextDay = userSchedules.find(s => s.day_number === activeWorkoutDayNumber + 1);
+    if (nextDay && nextDay.workout_type !== 'rest_day') {
+      nextDay.title = 'Active Recovery Walk (Penyesuaian Perlindungan Sendi)';
+      nextDay.workout_type = 'active_recovery';
+      nextDay.prescribed_duration_mins = 15;
+      nextDay.description = 'Jadwal diperingan otomatis oleh sistem untuk memberi waktu pemulihan sendi dan tendon.';
+    }
+  }
+
+  // Update Streak
+  currentUser.current_streak = (currentUser.current_streak || 0) + 1;
+  if (currentUser.current_streak > (currentUser.longest_streak || 0)) {
+    currentUser.longest_streak = currentUser.current_streak;
+  }
+
+  await dbService.saveSchedules(currentUser.access_code, userSchedules);
+  await dbService.saveUserProfile(currentUser);
+
+  // Tampilkan Hasil Diagnosa di Modal
+  renderDiagnosticResult(diagnosis);
+  celebrateStreak();
+  updateHeaderProfile();
+  renderCalendarTab();
+  renderHealthLogHistory();
+}
+
+function renderDiagnosticResult(diagnosis) {
+  document.getElementById('post-workout-form-inputs').classList.add('hidden');
+  const resultContainer = document.getElementById('diagnostic-result-container');
+  resultContainer.classList.remove('hidden');
+
+  let bannerBg = 'bg-primary/10 border-primary/20 text-on-surface';
+  let badgeText = '🟢 ZONA AMAN & OPTIMAL';
+  if (diagnosis.riskLevel === 'yellow') {
+    bannerBg = 'bg-amber-50 border-amber-300 text-amber-950';
+    badgeText = '🟡 ZONA PERHATIAN: OVERUSE / KELELAHAN';
+  } else if (diagnosis.riskLevel === 'red') {
+    bannerBg = 'bg-error-container/40 border-error/30 text-on-error-container';
+    badgeText = '🔴 ZONA PERINGATAN MEDIS DARURAT';
+  }
+
+  let adviceHTML = diagnosis.adviceList.map(adv => `
+    <div class="p-3 bg-white rounded-xl border border-outline-variant/30 shadow-sm">
+      <h5 class="font-bold text-on-surface text-xs mb-1">${adv.title}</h5>
+      <p class="text-xs text-on-surface-variant leading-relaxed">${adv.text}</p>
+    </div>
+  `).join('');
+
+  let stretchHTML = '';
+  if (diagnosis.targetedStretches && diagnosis.targetedStretches.length > 0) {
+    stretchHTML = `
+      <div class="mt-3 p-3 bg-secondary-container/20 border border-secondary-container/40 rounded-xl">
+        <h5 class="font-bold text-secondary text-xs mb-1">🧘 Rekomendasi Peregangan Khusus:</h5>
+        <ul class="list-disc list-inside text-xs text-on-surface-variant space-y-1">
+          ${diagnosis.targetedStretches.map(st => `<li>${st}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  }
+
+  let autoRegHTML = '';
+  if (diagnosis.autoRegulationApplied) {
+    autoRegHTML = `
+      <div class="mt-3 p-3 bg-tertiary-container/15 border border-tertiary-container/30 rounded-xl">
+        <h5 class="font-bold text-tertiary text-xs mb-1">🔄 Penyesuaian Jadwal Otomatis (Auto-Regulation):</h5>
+        <p class="text-xs text-on-surface-variant">${diagnosis.autoRegulationMessage}</p>
+      </div>
+    `;
+  }
+
+  // Komponen Khusus Analisis Fisiologis Durasi Berlebih
+  let excessHTML = '';
+  if (diagnosis.isExcessDuration && diagnosis.excessAnalysis) {
+    const ex = diagnosis.excessAnalysis;
+    excessHTML = `
+      <div class="p-4 bg-amber-50/90 border-2 border-amber-300 rounded-2xl space-y-3 shadow-sm">
+        <div class="flex items-center gap-2 text-amber-950 font-extrabold text-xs">
+          <span class="material-symbols-outlined text-amber-600 text-base">warning</span>
+          <span>ANALISIS FISIOLOGIS: DURASI OLAHRAGA BERLEBIH (+${ex.excessMinutes} MENIT)</span>
+        </div>
+        <p class="text-xs text-amber-900 leading-relaxed font-medium">${ex.summary}</p>
+        
+        <div class="space-y-2 pt-1">
+          <span class="text-[11px] font-bold text-amber-950 uppercase tracking-wider block">Efek pada Tubuh & Persendian Obesitas:</span>
+          ${ex.physiologicalEffects.map(ef => `
+            <div class="p-2.5 bg-white/95 rounded-xl border border-amber-200 text-xs shadow-xs">
+              <strong class="text-amber-950 block font-bold mb-0.5">${ef.title}</strong>
+              <p class="text-slate-600 leading-relaxed text-[11px]">${ef.desc}</p>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="p-3 bg-white/95 rounded-xl border border-amber-200 shadow-xs">
+          <span class="text-[11px] font-bold text-primary uppercase tracking-wider block mb-1.5">Rekomendasi Pemulihan Khusus Durasi Berlebih:</span>
+          <ul class="space-y-1 text-xs text-slate-700">
+            ${ex.recoveryProtocol.map(rec => `<li class="flex items-start gap-1.5"><span class="text-primary font-bold">•</span><span>${rec}</span></li>`).join('')}
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  resultContainer.innerHTML = `
+    <div class="p-4 rounded-2xl border ${bannerBg} mb-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-white shadow-sm">${badgeText}</span>
+        <span class="text-xs font-bold text-primary">Streak +1 🔥</span>
+      </div>
+      <h4 class="font-bold text-sm mb-1">${diagnosis.riskTitle}</h4>
+    </div>
+
+    <div class="space-y-3 mb-4">
+      ${excessHTML}
+      <h5 class="font-bold text-on-surface text-xs uppercase tracking-wider">Saran Pemulihan & Pencegahan:</h5>
+      ${adviceHTML}
+      ${stretchHTML}
+      ${autoRegHTML}
+    </div>
+
+    <button onclick="closePostWorkoutModal()" class="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition">
+      Tutup & Lihat Jadwal Selanjutnya
+    </button>
+  `;
+}
+
+function viewCompletedLog(dayNumber) {
+  const log = userLogs.find(l => l.day_number === dayNumber);
+  if (!log) {
+    alert(`Rekaman untuk hari ke-${dayNumber} telah selesai.`);
+    return;
+  }
+  renderDiagnosticResult({
+    riskLevel: log.risk_level,
+    riskTitle: log.risk_title || 'Rekaman Latihan Selesai',
+    adviceList: log.recommendations || [],
+    targetedStretches: log.targeted_stretches || [],
+    autoRegulationApplied: log.auto_regulation_applied,
+    autoRegulationMessage: 'Jadwal telah disesuaikan berdasarkan rekaman respon fisik Anda.'
+  });
+  document.getElementById('post-workout-modal').classList.remove('hidden');
+}
+
+/**
+ * 10. Render Riwayat Logbook di Tab Kesehatan
+ */
+function renderHealthLogHistory() {
+  const container = document.getElementById('health-logs-history-list');
+  if (!container) return;
+
+  if (!userLogs || userLogs.length === 0) {
+    container.innerHTML = `
+      <div class="p-6 text-center text-outline bg-surface-container rounded-2xl border border-outline-variant/30">
+        <span class="material-symbols-outlined text-3xl mx-auto mb-2 opacity-50 block text-primary">assignment_turned_in</span>
+        <p class="text-xs">Belum ada rekaman latihan. Selesaikan sesi olahraga pertama Anda untuk melihat analisa kesehatan.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = userLogs.map(log => {
+    let badgeColor = 'bg-primary/10 text-primary border-primary/20';
+    if (log.risk_level === 'yellow') badgeColor = 'bg-amber-100 text-amber-900 border-amber-300';
+    if (log.risk_level === 'red') badgeColor = 'bg-error-container text-on-error-container border-error/30';
+
+    return `
+      <div class="p-4 glass-card rounded-2xl">
+        <div class="flex justify-between items-start mb-2">
+          <div>
+            <h5 class="font-bold text-on-surface text-sm">Hari ke-${log.day_number} (${log.actual_duration_mins} Menit)</h5>
+            <span class="text-[11px] text-outline">${new Date(log.created_at).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}</span>
+          </div>
+          <span class="px-2.5 py-0.5 text-[10px] font-extrabold rounded-full border ${badgeColor}">
+            ${log.risk_level.toUpperCase()}
+          </span>
+        </div>
+        <div class="flex gap-4 text-xs text-on-surface-variant mb-2">
+          <span>Tingkat Kelelahan: <strong>${log.rpe_fatigue_level}/10 (Borg)</strong></span>
+          ${log.avg_heart_rate ? `<span>Detak Jantung: <strong>${log.avg_heart_rate} bpm</strong></span>` : ''}
+        </div>
+        ${log.reported_symptoms && log.reported_symptoms.length > 0 ? `
+          <div class="text-[11px] text-on-surface-variant bg-surface-container p-2.5 rounded-xl border border-outline-variant/30">
+            <strong>Gejala yang dilaporkan:</strong> ${log.reported_symptoms.join(', ')}
+          </div>
+        ` : '<div class="text-[11px] text-primary flex items-center gap-1"><span class="material-symbols-outlined text-xs">check_circle</span> Tidak ada keluhan sendi atau pernapasan berat.</div>'}
+      </div>
+    `;
+  }).join('');
+}
+
+/**
+ * 11. Render Tab Diet & Puasa Intermiten
+ */
+function renderDietTab() {
+  if (!currentUser) return;
+  const nutrition = HealthModels.calculateNutritionPlan(currentUser);
+
+  document.getElementById('stat-bmr').textContent = `${nutrition.bmr} kkal`;
+  document.getElementById('stat-tdee').textContent = `${nutrition.tdee} kkal`;
+  document.getElementById('stat-target-calories').textContent = `${nutrition.targetCalories} kkal`;
+
+  document.getElementById('stat-protein-g').textContent = `${nutrition.proteinGrams}g`;
+  document.getElementById('stat-carbs-g').textContent = `${nutrition.carbGrams}g`;
+  document.getElementById('stat-fat-g').textContent = `${nutrition.fatGrams}g`;
+
+  document.getElementById('plate-veggies').textContent = nutrition.plateModel.veggiesAndFiber;
+  document.getElementById('plate-protein').textContent = nutrition.plateModel.leanProtein;
+  document.getElementById('plate-carbs').textContent = nutrition.plateModel.complexCarbs;
+
+  document.getElementById('fasting-protocol-title').textContent = nutrition.fastingDetails.name;
+  document.getElementById('fasting-schedule-advice').textContent = nutrition.fastingDetails.scheduleAdvice;
+  if (nutrition.fastingDetails.workoutSync) {
+    document.getElementById('fasting-workout-sync').textContent = nutrition.fastingDetails.workoutSync;
+    document.getElementById('fasting-sync-container').classList.remove('hidden');
+  } else {
+    document.getElementById('fasting-sync-container').classList.add('hidden');
+  }
+
+  initFastingClock();
+}
+
+/**
+ * 12. Fasting Clock Engine
+ */
+let fastingState = {
+  isFasting: true,
+  hoursElapsed: 8.5,
+  targetHours: 16
+};
+
+function initFastingClock() {
+  const protocol = currentUser ? currentUser.fasting_protocol : '16_8';
+  if (protocol === '14_10') fastingState.targetHours = 14;
+  else if (protocol === '16_8') fastingState.targetHours = 16;
+  else fastingState.targetHours = 12;
+
+  updateFastingClockUI();
+}
+
+function updateFastingClockUI() {
+  const pct = Math.min(100, (fastingState.hoursElapsed / fastingState.targetHours) * 100);
+  const offset = 283 - (283 * pct) / 100;
+  
+  const circle = document.getElementById('fasting-progress-circle');
+  if (circle) circle.style.strokeDashoffset = offset;
+
+  const hoursDisplay = document.getElementById('fasting-time-elapsed');
+  if (hoursDisplay) {
+    const hours = Math.floor(fastingState.hoursElapsed);
+    const mins = Math.round((fastingState.hoursElapsed - hours) * 60);
+    hoursDisplay.textContent = `${hours}j ${mins}m`;
+  }
+
+  const phaseTag = document.getElementById('fasting-phase-tag');
+  if (phaseTag) {
+    if (fastingState.hoursElapsed >= 12) {
+      phaseTag.textContent = '🔥 Fase Pembakaran Lemak & Sensitivitas Insulin Tinggi';
+      phaseTag.className = 'text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full border border-amber-300';
+    } else {
+      phaseTag.textContent = '🌿 Fase Penurunan Gula Darah & Pencernaan Beristirahat';
+      phaseTag.className = 'text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300';
+    }
+  }
+}
+
+function toggleFastingMode() {
+  fastingState.isFasting = !fastingState.isFasting;
+  const btn = document.getElementById('toggle-fasting-btn');
+  if (fastingState.isFasting) {
+    btn.textContent = 'Selesaikan Puasa & Buka Jendela Makan';
+    btn.className = 'w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow transition';
+  } else {
+    btn.textContent = 'Mulai Jendela Puasa Sekarang';
+    btn.className = 'w-full py-2.5 px-4 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl shadow transition';
+  }
+}
+
+/**
+ * 13. Water Intake Tracker & WebGL Wave Shader
+ */
+let hydrationShaderState = {
+  gl: null,
+  prog: null,
+  uTime: null,
+  uRes: null,
+  uFillLevel: null,
+  canvas: null,
+  fillLevel: 0.1,
+  animId: null
+};
+
+function initHydrationShader() {
+  const canvas = document.getElementById('shader-canvas-hydration');
+  if (!canvas) return;
+
+  function syncSize() {
+    const w = canvas.clientWidth || 300;
+    const h = canvas.clientHeight || 300;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+  }
+
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform float u_fillLevel;
+
+void main() {
+    vec2 uv = v_texCoord;
+    float fill = clamp(u_fillLevel, 0.08, 0.92);
+    
+    // Wave ripple math matching Vitality Flow shader
+    float wave = sin(uv.x * 12.0 + u_time * 2.5) * 0.022 + cos(uv.x * 6.0 - u_time * 1.5) * 0.012;
+    float waterLine = fill + wave;
+    
+    vec3 waterColor = vec3(0.0, 0.42, 0.38); // Vitality Teal (#006a61)
+    vec3 lightWater = vec3(0.52, 0.95, 0.89); // Secondary Container (#86f2e4)
+    
+    float dist = waterLine - uv.y;
+    vec3 surfaceColor = vec3(0.96, 0.98, 0.96);
+    vec3 waveColor = mix(waterColor, lightWater, clamp(uv.y / max(0.01, fill), 0.0, 1.0));
+    
+    vec3 finalColor = mix(surfaceColor, waveColor, smoothstep(0.0, 0.015, dist));
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+
+  function compile(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+
+  const prog = gl.createProgram();
+  gl.attachShader(prog, compile(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uFillLevel = gl.getUniformLocation(prog, 'u_fillLevel');
+
+  hydrationShaderState = {
+    gl,
+    prog,
+    uTime,
+    uRes,
+    uFillLevel,
+    canvas,
+    fillLevel: hydrationShaderState.fillLevel || 0.1,
+    animId: null
+  };
+
+  function render(t) {
+    if (!document.getElementById('shader-canvas-hydration')) return;
+    syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uFillLevel) gl.uniform1f(uFillLevel, hydrationShaderState.fillLevel);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    hydrationShaderState.animId = requestAnimationFrame(render);
+  }
+
+  if (hydrationShaderState.animId) cancelAnimationFrame(hydrationShaderState.animId);
+  render(0);
+}
+
+async function addWaterIntake(amountMl) {
+  if (!currentHabits) return;
+  currentHabits.water_intake_ml = (currentHabits.water_intake_ml || 0) + amountMl;
+  await dbService.saveDailyHabits(currentUser.access_code, currentHabits);
+  renderAnalyticsTab();
+}
+
+function resetWaterIntake() {
+  if (!currentHabits) return;
+  currentHabits.water_intake_ml = 0;
+  dbService.saveDailyHabits(currentUser.access_code, currentHabits);
+  renderAnalyticsTab();
+}
+
+/**
+ * 14. Render Tab Analytics & Chart.js
+ */
+function renderAnalyticsTab() {
+  if (!currentUser) return;
+
+  // Water Display
+  const currentWater = currentHabits ? (currentHabits.water_intake_ml || 0) : 0;
+  const targetWater = 2500;
+  document.getElementById('water-intake-current').textContent = `${(currentWater / 1000).toFixed(1)} L`;
+  const waterPct = Math.min(100, Math.round((currentWater / targetWater) * 100));
+  const waterBar = document.getElementById('water-progress-bar');
+  if (waterBar) waterBar.style.width = `${waterPct}%`;
+
+  // Update WebGL Shader Wave Level
+  hydrationShaderState.fillLevel = Math.max(0.08, Math.min(0.92, (currentWater / targetWater) * 0.8 + 0.1));
+  initHydrationShader();
+
+  // Render Chart
+  renderWeightChart();
+}
+
+function renderWeightChart() {
+  const ctx = document.getElementById('weightProgressChart');
+  if (!ctx) return;
+
+  if (weightChartInstance) {
+    weightChartInstance.destroy();
+  }
+
+  const startWeight = parseFloat(currentUser.start_weight);
+  const currentWeight = parseFloat(currentUser.current_weight);
+  const targetWeight = parseFloat(currentUser.target_weight);
+
+  // Label mingguan
+  const months = currentUser.program_duration_months || 1;
+  const totalWeeks = months * 4;
+  const labels = ['Awal'];
+  const dataPoints = [startWeight];
+  const targetTrend = [startWeight];
+
+  const weeklyStep = (startWeight - targetWeight) / totalWeeks;
+
+  for (let w = 1; w <= totalWeeks; w++) {
+    labels.push(`Mgg ${w}`);
+    targetTrend.push(parseFloat((startWeight - (weeklyStep * w)).toFixed(1)));
+    if (w === 1) {
+      dataPoints.push(currentWeight);
+    } else {
+      dataPoints.push(null);
+    }
+  }
+
+  weightChartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Berat Aktual (kg)',
+          data: dataPoints,
+          borderColor: '#059669',
+          backgroundColor: 'rgba(5, 150, 105, 0.15)',
+          fill: true,
+          tension: 0.3,
+          borderWidth: 3,
+          pointRadius: 6,
+          pointBackgroundColor: '#059669'
+        },
+        {
+          label: 'Target Penurunan Realistis (kg)',
+          data: targetTrend,
+          borderColor: '#94a3b8',
+          borderDash: [5, 5],
+          fill: false,
+          tension: 0.1,
+          borderWidth: 2,
+          pointRadius: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { font: { family: 'Plus Jakarta Sans', size: 11, weight: 'bold' } }
+        }
+      },
+      scales: {
+        y: {
+          title: { display: true, text: 'Berat Badan (kg)' },
+          grid: { color: '#f1f5f9' }
+        },
+        x: {
+          grid: { display: false }
+        }
+      }
+    }
+  });
+}
+
+/**
+ * 15. Modal Update Berat Badan & Evaluasi Bulanan
+ */
+function openWeightUpdateModal() {
+  document.getElementById('new-weight-input').value = currentUser.current_weight;
+  document.getElementById('weight-update-modal').classList.remove('hidden');
+}
+
+function closeWeightUpdateModal() {
+  document.getElementById('weight-update-modal').classList.add('hidden');
+}
+
+async function submitWeightUpdate(e) {
+  e.preventDefault();
+  const newWeight = parseFloat(document.getElementById('new-weight-input').value);
+  if (isNaN(newWeight) || newWeight <= 20) {
+    alert('Mohon masukkan angka berat badan yang valid.');
+    return;
+  }
+
+  currentUser.current_weight = newWeight;
+  // Hitung ulang BMI
+  const bmiResult = HealthModels.calculateBMI(newWeight, currentUser.height);
+  currentUser.bmi = bmiResult.bmi;
+  currentUser.obesity_category = bmiResult.category;
+
+  await dbService.saveUserProfile(currentUser);
+  closeWeightUpdateModal();
+  updateHeaderProfile();
+  renderAnalyticsTab();
+  renderDietTab();
+  celebrateStreak();
+  alert(`✓ Berat badan berhasil diperbarui ke ${newWeight} kg (BMI: ${bmiResult.bmi})!`);
+}
+
+/**
+ * 16. Onboarding & Registration Wizard
+ */
+let onboardingStep = 1;
+let tempOnboardingData = {};
+
+function startRegistration() {
+  onboardingStep = 1;
+  tempOnboardingData = {};
+  showOnboardingStep(1);
+  
+  const today = new Date();
+  const dateInput = document.getElementById('reg-start-date');
+  if (dateInput) {
+    dateInput.value = today.toISOString().split('T')[0];
+  }
+  const helper = document.getElementById('reg-start-date-helper');
+  if (helper) {
+    helper.textContent = `Hari ke-1 dimulai Hari Ini: ${today.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}.`;
+  }
+
+  document.getElementById('login-box').classList.add('hidden');
+  document.getElementById('onboarding-box').classList.remove('hidden');
+}
+
+function onStartTimingChange(e) {
+  const timing = e.target.value;
+  const dateInput = document.getElementById('reg-start-date');
+  const helper = document.getElementById('reg-start-date-helper');
+  const today = new Date();
+  
+  if (timing === 'today') {
+    dateInput.value = today.toISOString().split('T')[0];
+    if (helper) helper.textContent = `Hari ke-1 dimulai Hari Ini: ${today.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}.`;
+  } else if (timing === 'tomorrow') {
+    const tomorrow = new Date(today.getTime() + 86400000);
+    dateInput.value = tomorrow.toISOString().split('T')[0];
+    if (helper) helper.textContent = `Hari ke-1 dimulai Besok: ${tomorrow.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}.`;
+  } else if (timing === 'next_monday') {
+    const day = today.getDay();
+    const diff = (day === 0 ? 1 : 8 - day);
+    const nextMon = new Date(today.getTime() + diff * 86400000);
+    dateInput.value = nextMon.toISOString().split('T')[0];
+    if (helper) helper.textContent = `Hari ke-1 dimulai Hari Senin Depan: ${nextMon.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}.`;
+  } else {
+    if (helper) helper.textContent = 'Pilih tanggal mulai yang Anda kehendaki pada pemilih tanggal di samping.';
+  }
+}
+
+function backToLogin() {
+  document.getElementById('onboarding-box').classList.add('hidden');
+  document.getElementById('login-box').classList.remove('hidden');
+}
+
+function showOnboardingStep(step) {
+  onboardingStep = step;
+  document.querySelectorAll('.onboarding-step-pane').forEach(p => p.classList.add('hidden'));
+  const targetPane = document.getElementById(`onboarding-step-${step}`);
+  if (targetPane) targetPane.classList.remove('hidden');
+
+  // Update progress dots
+  document.querySelectorAll('.step-dot').forEach((dot, idx) => {
+    if (idx + 1 <= step) {
+      dot.classList.add('bg-emerald-600', 'text-white');
+      dot.classList.remove('bg-slate-200', 'text-slate-500');
+    } else {
+      dot.classList.remove('bg-emerald-600', 'text-white');
+      dot.classList.add('bg-slate-200', 'text-slate-500');
+    }
+  });
+}
+
+function processStep1() {
+  const name = document.getElementById('reg-name').value.trim();
+  const age = parseInt(document.getElementById('reg-age').value);
+  const gender = document.getElementById('reg-gender').value;
+  const height = parseFloat(document.getElementById('reg-height').value);
+  const weight = parseFloat(document.getElementById('reg-weight').value);
+  const waist = document.getElementById('reg-waist').value ? parseFloat(document.getElementById('reg-waist').value) : null;
+  const startDateInput = document.getElementById('reg-start-date');
+  const startDateVal = startDateInput && startDateInput.value ? startDateInput.value : new Date().toISOString().split('T')[0];
+
+  if (!name || isNaN(age) || isNaN(height) || isNaN(weight)) {
+    alert('Mohon lengkapi semua data wajib pada formulir.');
+    return;
+  }
+
+  tempOnboardingData.name = name;
+  tempOnboardingData.age = age;
+  tempOnboardingData.gender = gender;
+  tempOnboardingData.height = height;
+  tempOnboardingData.start_weight = weight;
+  tempOnboardingData.current_weight = weight;
+  tempOnboardingData.waist_circumference = waist;
+  tempOnboardingData.program_start_date = startDateVal;
+
+  // Hitung BMI & Kategori Obesitas
+  const bmiResult = HealthModels.calculateBMI(weight, height);
+  tempOnboardingData.bmi = bmiResult.bmi;
+  tempOnboardingData.obesity_category = bmiResult.category;
+
+  // Tampilkan di Step 2
+  document.getElementById('display-step2-bmi').textContent = bmiResult.bmi;
+  document.getElementById('display-step2-category').textContent = bmiResult.category;
+  document.getElementById('display-step2-desc').textContent = bmiResult.description;
+  document.getElementById('display-step2-ideal-range').textContent = `${bmiResult.idealWeightMin} - ${bmiResult.idealWeightMax} kg (Rekomendasi Sehat: ${bmiResult.idealWeightMid} kg)`;
+
+  // Default target berat badan
+  document.getElementById('reg-target-weight').value = bmiResult.idealWeightMid;
+
+  showOnboardingStep(2);
+  checkFeasibilityRealtime();
+}
+
+function checkFeasibilityRealtime() {
+  const startWeight = tempOnboardingData.start_weight;
+  const targetWeight = parseFloat(document.getElementById('reg-target-weight').value);
+  const durationMonths = parseInt(document.getElementById('reg-duration-months').value);
+  const height = tempOnboardingData.height;
+
+  if (isNaN(targetWeight) || isNaN(durationMonths)) return;
+
+  const evalResult = HealthModels.evaluateWeightGoal(startWeight, targetWeight, height, durationMonths);
+  const alertContainer = document.getElementById('feasibility-alert-container');
+
+  if (evalResult.status === 'unrealistic') {
+    let warningListHTML = evalResult.medicalWarnings.map(w => `<li>${w}</li>`).join('');
+    let solutionHTML = '';
+
+    if (evalResult.smartSolutions && evalResult.smartSolutions.optionA) {
+      const optA = evalResult.smartSolutions.optionA;
+      const optB = evalResult.smartSolutions.optionB;
+      solutionHTML = `
+        <div class="mt-3 pt-3 border-t border-rose-200">
+          <p class="text-xs font-bold text-rose-900 mb-2">💡 Rekomendasi Solusi Medis Realistis:</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <button type="button" onclick="applySmartOptionA(${optA.suggestedTarget})" class="p-2.5 text-left bg-white hover:bg-rose-50 border border-rose-300 rounded-xl transition">
+              <span class="text-xs font-bold text-rose-800 block">${optA.title}</span>
+              <span class="text-[11px] text-slate-600 block">Turunkan ke <strong>${optA.suggestedTarget} kg</strong> (${optA.weeklyRate})</span>
+            </button>
+            <button type="button" onclick="applySmartOptionB(${optB.suggestedMonths})" class="p-2.5 text-left bg-white hover:bg-rose-50 border border-rose-300 rounded-xl transition">
+              <span class="text-xs font-bold text-rose-800 block">${optB.title}</span>
+              <span class="text-[11px] text-slate-600 block">Perpanjang Waktu ke <strong>${optB.suggestedMonths} Bulan</strong></span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    alertContainer.innerHTML = `
+      <div class="p-4 bg-rose-50 border-2 border-rose-300 rounded-2xl">
+        <div class="flex items-center gap-2 text-rose-800 font-bold text-sm mb-1">
+          <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+          <span>${evalResult.statusTitle}</span>
+        </div>
+        <p class="text-xs text-rose-700 leading-relaxed mb-2">${evalResult.message}</p>
+        <ul class="list-disc list-inside text-xs text-rose-800 space-y-1 mb-2">
+          ${warningListHTML}
+        </ul>
+        ${solutionHTML}
+      </div>
+    `;
+    alertContainer.classList.remove('hidden');
+    initLucideIcons();
+  } else if (evalResult.status === 'challenging') {
+    alertContainer.innerHTML = `
+      <div class="p-3 bg-amber-50 border border-amber-300 rounded-xl text-amber-900 text-xs">
+        <strong>${evalResult.statusTitle}:</strong> ${evalResult.message}
+      </div>
+    `;
+    alertContainer.classList.remove('hidden');
+  } else {
+    alertContainer.innerHTML = `
+      <div class="p-3 bg-emerald-50 border border-emerald-300 rounded-xl text-emerald-900 text-xs flex items-center gap-2">
+        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+        <span><strong>${evalResult.statusTitle}:</strong> ${evalResult.message}</span>
+      </div>
+    `;
+    alertContainer.classList.remove('hidden');
+    initLucideIcons();
+  }
+}
+
+function applySmartOptionA(newTarget) {
+  const input = document.getElementById('reg-target-weight');
+  if (input) {
+    input.value = newTarget;
+    input.classList.add('ring-4', 'ring-emerald-400', 'bg-emerald-50');
+    setTimeout(() => {
+      input.classList.remove('ring-4', 'ring-emerald-400', 'bg-emerald-50');
+    }, 1000);
+  }
+  checkFeasibilityRealtime();
+}
+
+function applySmartOptionB(newMonths) {
+  const select = document.getElementById('reg-duration-months');
+  if (select) {
+    let optionExists = false;
+    for (let i = 0; i < select.options.length; i++) {
+      if (parseInt(select.options[i].value) === parseInt(newMonths)) {
+        optionExists = true;
+        break;
+      }
+    }
+    if (!optionExists) {
+      const newOpt = document.createElement('option');
+      newOpt.value = newMonths;
+      newOpt.textContent = `${newMonths} Bulan (${newMonths * 4} Minggu - Program Realistis)`;
+      select.appendChild(newOpt);
+    }
+    select.value = newMonths;
+    select.classList.add('ring-4', 'ring-emerald-400', 'bg-emerald-50');
+    setTimeout(() => {
+      select.classList.remove('ring-4', 'ring-emerald-400', 'bg-emerald-50');
+    }, 1000);
+  }
+  checkFeasibilityRealtime();
+}
+
+function processStep2() {
+  const targetWeight = parseFloat(document.getElementById('reg-target-weight').value);
+  const durationMonths = parseInt(document.getElementById('reg-duration-months').value);
+
+  if (isNaN(targetWeight) || isNaN(durationMonths)) {
+    alert('Mohon masukkan target berat badan dan pilihan durasi.');
+    return;
+  }
+
+  // Cek jika masih ekstrem tidak realistis
+  const evalResult = HealthModels.evaluateWeightGoal(tempOnboardingData.start_weight, targetWeight, tempOnboardingData.height, durationMonths);
+  if (evalResult.status === 'unrealistic') {
+    if (!confirm('Target Anda dinilai berbahaya secara medis oleh sistem karena melampaui batas fisiologi tubuh. Apakah Anda yakin tetap ingin melanjutkan atau ingin memilih rekomendasi realistis kami?')) {
+      return;
+    }
+  }
+
+  tempOnboardingData.target_weight = targetWeight;
+  tempOnboardingData.program_duration_months = durationMonths;
+
+  showOnboardingStep(3);
+}
+
+async function finalizeRegistration() {
+  const submitBtn = document.querySelector('button[onclick="finalizeRegistration()"]');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="animate-pulse">Sedang Menyusun Program...</span>';
+  }
+
+  try {
+    const fitnessEl = document.querySelector('input[name="reg-fitness-level"]:checked');
+    const fitnessLevel = fitnessEl ? fitnessEl.value : 'level_0';
+
+    // Selector aman untuk diet model (hidden atau radio)
+    const dietEl = document.querySelector('input[name="reg-diet-model"]:checked') || document.querySelector('input[name="reg-diet-model"]');
+    const dietModel = dietEl ? dietEl.value : 'deficit_moderate';
+
+    const fastingEl = document.querySelector('input[name="reg-fasting-protocol"]:checked');
+    const fastingProtocol = fastingEl ? fastingEl.value : '16_8';
+
+    tempOnboardingData.fitness_level = fitnessLevel;
+    tempOnboardingData.diet_model = dietModel;
+    tempOnboardingData.fasting_protocol = fastingProtocol;
+    tempOnboardingData.access_code = dbService.generateAccessCode();
+    tempOnboardingData.current_streak = 0;
+    tempOnboardingData.longest_streak = 0;
+
+    // Tampilkan Kode Akses di Modal Penutup Onboarding
+    const codeDisplay = document.getElementById('display-new-access-code');
+    if (codeDisplay) {
+      codeDisplay.textContent = tempOnboardingData.access_code;
+    }
+    
+    // Simpan ke Supabase & LocalStorage
+    currentUser = await dbService.saveUserProfile(tempOnboardingData);
+    
+    // Buat Jadwal Lengkap
+    const schedules = HealthModels.generateProgramSchedules(currentUser);
+    await dbService.saveSchedules(currentUser.access_code, schedules);
+    userSchedules = schedules;
+
+    // Pindah ke Step 4 (Tampilan Kode Akses Berhasil)
+    showOnboardingStep(4);
+    celebrateStreak();
+    initLucideIcons();
+  } catch (err) {
+    console.error('Error during finalizeRegistration:', err);
+    alert('Terjadi kendala saat membuat program: ' + err.message);
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i data-lucide="sparkles" class="w-4 h-4"></i><span>Buat Kode Akses & Program Saya</span>';
+      initLucideIcons();
+    }
+  }
+}
+
+function finishOnboardingAndEnterApp() {
+  showMainApp();
+}
+
+/**
+ * 17. Login dengan Kode Akses
+ */
+async function loginWithCode(e) {
+  e.preventDefault();
+  const codeInput = document.getElementById('login-access-code-input').value.trim();
+  if (!codeInput) {
+    alert('Mohon masukkan Kode Akses Anda.');
+    return;
+  }
+
+  const btn = document.getElementById('login-submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Memeriksa Kode...';
+
+  const user = await dbService.getUserProfile(codeInput);
+  btn.disabled = false;
+  btn.textContent = 'Masuk ke Akun';
+
+  if (user) {
+    currentUser = user;
+    await loadUserData();
+    showMainApp();
+  } else {
+    alert(`Kode Akses "${codeInput}" tidak ditemukan di database maupun penyimpanan lokal. Silakan buat akun baru jika belum memiliki kode.`);
+  }
+}
+
+/**
+ * 18. Quick Demo User Setup
+ */
+async function loadDemoUser() {
+  const demoCode = 'OBE-DEMO';
+  const demoData = {
+    access_code: demoCode,
+    name: 'Budi Santoso',
+    age: 34,
+    gender: 'male',
+    height: 170,
+    start_weight: 96,
+    current_weight: 94.5,
+    target_weight: 75,
+    waist_circumference: 104,
+    bmi: 33.2,
+    obesity_category: 'Obesitas Tingkat 2 (Class II - Berat)',
+    program_duration_months: 3,
+    fitness_level: 'level_0',
+    diet_model: 'deficit_moderate',
+    fasting_protocol: '16_8',
+    current_streak: 4,
+    longest_streak: 4
+  };
+
+  currentUser = await dbService.saveUserProfile(demoData);
+  const schedules = HealthModels.generateProgramSchedules(currentUser);
+  // Buat beberapa hari pertama sudah selesai untuk demo
+  schedules[0].is_completed = true;
+  schedules[1].is_completed = true;
+  schedules[2].is_completed = true;
+  schedules[3].is_completed = true;
+  schedules[4].is_locked = false; // Hari ke-5 aktif
+  await dbService.saveSchedules(demoCode, schedules);
+
+  await loadUserData();
+  showMainApp();
+}
+
+/**
+ * 19. Copy Access Code Helper
+ */
+function copyAccessCode() {
+  if (!currentUser) return;
+  navigator.clipboard.writeText(currentUser.access_code).then(() => {
+    alert(`✓ Kode Akses ${currentUser.access_code} berhasil disalin! Simpan kode ini untuk login di perangkat lain.`);
+  });
+}
+
+function userLogout() {
+  if (confirm('Apakah Anda ingin keluar dari akun? Pastikan Anda sudah mencatat Kode Akses Anda.')) {
+    dbService.logout();
+    currentUser = null;
+    showAuthScreen();
+  }
+}
+
+/**
+ * 20. Celebration Animation
+ */
+function celebrateStreak() {
+  if (window.confetti) {
+    confetti({
+      particleCount: 80,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }
+}
+
+/**
+ * 21. Event Listeners Setup
+ */
+function setupEventListeners() {
+  // RPE Slider label change
+  const rpeSlider = document.getElementById('post-rpe-input');
+  if (rpeSlider) {
+    rpeSlider.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      const display = document.getElementById('rpe-value-display');
+      const descriptions = {
+        1: '1 - Sangat Ringan (Bisa bernyanyi)',
+        2: '2 - Ringan (Napas sangat santai)',
+        3: '3 - Nyaman (Bisa mengobrol lancar)',
+        4: '4 - Mulai Hangat (Sedikit berkeringat)',
+        5: '5 - Cukup Melelahkan (Bisa bicara pendek)',
+        6: '6 - Berat Moderat (Napas mulai dalam)',
+        7: '7 - Berat (Hanya bisa bicara 1-2 kata)',
+        8: '8 - Sangat Berat (Napas terengah-engah)',
+        9: '9 - Mendekati Batas Maksimal (Sangat lelah)',
+        10: '10 - Kelelahan Ekstrem Maksimal'
+      };
+      if (display) display.textContent = descriptions[val] || `${val}/10`;
+    });
+  }
+
+  // Real-time Feasibility Inputs
+  const targetWeightInput = document.getElementById('reg-target-weight');
+  const durationSelect = document.getElementById('reg-duration-months');
+  if (targetWeightInput) targetWeightInput.addEventListener('input', checkFeasibilityRealtime);
+  if (durationSelect) durationSelect.addEventListener('change', checkFeasibilityRealtime);
+}
+
+</script>
+</body>
+</html>

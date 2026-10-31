@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jadwal Olahraga - Obesity to Infinity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdad7",
+                        "secondary": "#006a61",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#006c4a",
+                        "on-primary-fixed-variant": "#005137",
+                        "surface-variant": "#dee4de",
+                        "tertiary-container": "#ba5551",
+                        "surface-dim": "#d5dcd6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002114",
+                        "secondary-container": "#86f2e4",
+                        "inverse-primary": "#68dba9",
+                        "surface-container-high": "#e4eae4",
+                        "outline-variant": "#bccac0",
+                        "background": "#f5fbf5",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#e9efe9",
+                        "inverse-surface": "#2c322e",
+                        "outline": "#6d7a72",
+                        "primary": "#006948",
+                        "primary-fixed": "#85f8c4",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary-container": "#006f66",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#89f5e7",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-container-low": "#eff5ef",
+                        "tertiary": "#9b3e3b",
+                        "on-tertiary-fixed": "#410004",
+                        "primary-fixed-dim": "#68dba9",
+                        "on-surface-variant": "#3d4a42",
+                        "on-surface": "#171d19",
+                        "surface-bright": "#f5fbf5",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "surface": "#f5fbf5",
+                        "on-primary-container": "#f5fff7",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ecf2ec",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#171d19",
+                        "on-error": "#ffffff",
+                        "primary-container": "#00855d",
+                        "surface-container-highest": "#dee4de",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed-variant": "#7f2928",
+                        "secondary-fixed-dim": "#6bd8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "120px",
+                        "base": "4px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "sm": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-card {
+                @apply bg-surface/70 backdrop-blur-[12px] border border-white/40 shadow-[0_4px_20px_rgba(15,23,42,0.04)];
+            }
+            .glass-card-active {
+                @apply bg-surface/80 backdrop-blur-[16px] border-white/80 shadow-[0_8px_30px_rgba(15,23,42,0.08)];
+            }
+        }
+        
+        .pulse-border {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(134, 242, 228, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(134, 242, 228, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(134, 242, 228, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-x-hidden pt-16 pb-20 md:pb-0 md:pl-64">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl border-b border-white/40 dark:border-white/10 shadow-sm text-primary dark:text-primary-fixed-dim font-label-md text-label-md docked full-width top-0">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+            OBESITY TO INFINITY
+        </div>
+<div class="flex items-center gap-4">
+<button class="hover:scale-105 transition-transform duration-200 active:scale-95 text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</button>
+<button class="hover:scale-105 transition-transform duration-200 active:scale-95 text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined" data-icon="monitor_weight">monitor_weight</span>
+</button>
+<button class="hover:scale-105 transition-transform duration-200 active:scale-95 text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+<img alt="User profile photo" class="w-8 h-8 rounded-full object-cover" data-alt="A small circular profile picture of a user. The user appears healthy and energetic, set against a bright, clean background. Lighting is soft and natural, contributing to a modern, vital aesthetic. 50-100 words detailed description." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA479-OQ135PfAKivsuhMH8URnYGfmjmT09cFNijZSqB_2ez27hKV-TGPtD8znjfWVt_b_-T7RIJRwwmkGZO_fJuLJtZ8pQrOUT9iHIVLeItwZlB2B6Z3zCgbVfUVCeh9-UsY2gspR5Nu-_zB2dewl8OUUKf1RA6QGHa75wdOs48h4NIYwSYR-8ElOGBdNEE8NIRNPWU-7F4iw3BrCpzMqX6gD5NV4LlnTRAYVkvYUkbdb4Plj-4nwNnA"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full fixed left-0 top-0 pt-20 pb-8 bg-surface/80 dark:bg-surface-container-high/80 text-primary dark:text-primary-fixed-dim font-body-md text-body-md docked left-0 h-full w-64 backdrop-blur-xl border-r border-white/40 shadow-md z-40">
+<div class="px-6 mb-8 flex flex-col items-center">
+<img alt="User avatar" class="w-16 h-16 rounded-full mb-3 object-cover" data-alt="A circular user avatar depicting a person engaged in a healthy lifestyle. The style is modern and clean, fitting the vital-modern aesthetic with soft lighting and a crisp focus. 50-100 words detailed description." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc8O1QscS63R_DwrAuuzsn80YPnvOOSVR6b28FEFR_vHICXlVQ6sGGIsxll-pH8m7HGviXhdd-PEdbaYacFPLR-mr95_O1l2YtyoQfl7ymRN7YLaIjPFB01YNuUwxMfsA4iouvCBCWqnYQ2S6pGv4xB1cOKqcL5Rb4c5xrwe4braezQ52kitGvQQfZTQFcvrEDcM7OusJlzZaQudkvCh4oNO4IHqNkEY9eDg1kFk7QgamHyst8tqlroQ"/>
+<h2 class="font-headline-md text-headline-md text-primary">Health Profile</h2>
+<p class="text-on-surface-variant text-sm">Vibrant Journey</p>
+</div>
+<div class="flex-1 overflow-y-auto px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container/20 text-primary font-bold border-r-4 border-primary hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+                Schedule
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Health Analysis
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+                Fasting/Diet
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+                Progress
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+                Education
+            </a>
+</div>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-lg font-bold hover:scale-[1.02] transition-transform shadow-md">
+                + Update Weight
+            </button>
+</div>
+</nav>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface/70 dark:bg-surface-container/70 text-primary dark:text-primary-fixed-dim font-label-sm text-label-sm-mobile docked full-width bottom-0 rounded-t-xl backdrop-blur-xl border-t border-white/40 shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+            Home
+        </a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="insights">insights</span>
+            Analysis
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="timer">timer</span>
+            Fast
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+            Learn
+        </a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-[1280px] mx-auto px-margin-mobile md:px-lg py-lg space-y-lg">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<h1 class="font-display-lg text-display-lg md:text-[48px] text-on-surface mb-2 tracking-tight">Jadwal Olahraga</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Adaptive Walk-to-Run Program</p>
+</div>
+<div class="glass-card px-6 py-4 rounded-xl flex items-center gap-4 w-full md:w-auto">
+<div class="flex-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Weekly Milestone</p>
+<p class="font-headline-md text-headline-md text-primary">Minggu 2: Peningkatan Ritme Nafas</p>
+</div>
+</div>
+</section>
+<!-- Progress Overview -->
+<section class="glass-card rounded-2xl p-6 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at right, var(--color-primary-fixed) 0%, transparent 70%);"></div>
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Weekly Progress</h3>
+<span class="font-label-md text-label-md text-primary bg-primary-container/10 px-3 py-1 rounded-full">3 dari 7 Selesai (43%)</span>
+</div>
+<div class="w-full bg-surface-variant/30 h-4 rounded-full overflow-hidden shadow-inner">
+<div class="bg-gradient-to-r from-primary to-secondary-container h-full rounded-full transition-all duration-1000 ease-out w-[43%] relative">
+<div class="absolute right-0 top-0 bottom-0 w-4 bg-white/30 blur-[2px]"></div>
+</div>
+</div>
+</section>
+<!-- 7-Day Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-sm">
+<!-- Day 1: Done -->
+<div class="glass-card rounded-2xl p-5 border-l-4 border-l-primary relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-all"></div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Senin</p>
+<h4 class="font-headline-md text-[20px] font-bold text-on-surface">Day 1</h4>
+</div>
+<span class="material-symbols-outlined text-primary bg-primary-container/20 p-1.5 rounded-full" data-icon="check_circle">check_circle</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">20 Min Brisk Walk</p>
+<div class="mt-auto pt-4 border-t border-surface-variant/50">
+<span class="text-xs font-semibold text-primary">Selesai</span>
+</div>
+</div>
+<!-- Day 2: Today (Active) -->
+<div class="glass-card-active rounded-2xl p-5 border-2 border-secondary-container pulse-border relative transform hover:scale-[1.01] transition-transform z-10 md:col-span-2 lg:col-span-1 xl:col-span-2">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-secondary-container uppercase font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="today">today</span> HARI INI
+                        </p>
+<h4 class="font-headline-lg text-[24px] font-bold text-on-surface mt-1">Day 2: Interval Walk/Run</h4>
+</div>
+</div>
+<p class="text-base text-on-surface-variant mb-6">30 Min total. 3 min walk, 1 min jog (ulang 5x).</p>
+<div class="flex flex-col sm:flex-row gap-3 mt-auto">
+<button class="flex-1 bg-primary text-on-primary py-3 px-4 rounded-xl font-label-md hover:scale-[1.02] transition-transform flex justify-center items-center gap-2 shadow-md">
+<span class="material-symbols-outlined" data-icon="done_all">done_all</span> Selesai Latihan
+                    </button>
+<button class="flex-1 border border-secondary text-secondary py-3 px-4 rounded-xl font-label-md hover:bg-secondary/5 transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span> Swap Low Impact
+                    </button>
+</div>
+</div>
+<!-- Day 3: Active Rest -->
+<div class="glass-card rounded-2xl p-5 bg-[#e0f2fe]/40 border-l-4 border-l-[#38bdf8]">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rabu</p>
+<h4 class="font-headline-md text-[20px] font-bold text-on-surface">Day 3</h4>
+</div>
+<span class="material-symbols-outlined text-[#0284c7]" data-icon="self_improvement">self_improvement</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Active Rest: 15 Min Stretching / Yoga ringan</p>
+</div>
+<!-- Day 4: Locked -->
+<div class="glass-card rounded-2xl p-5 opacity-60 grayscale-[50%] hover:grayscale-0 transition-all cursor-not-allowed">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Kamis</p>
+<h4 class="font-headline-md text-[20px] font-bold text-on-surface">Day 4</h4>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</div>
+<p class="text-sm text-on-surface-variant">Endurance Walk</p>
+</div>
+<!-- Day 5: Locked -->
+<div class="glass-card rounded-2xl p-5 opacity-60 grayscale-[50%] hover:grayscale-0 transition-all cursor-not-allowed">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Jumat</p>
+<h4 class="font-headline-md text-[20px] font-bold text-on-surface">Day 5</h4>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</div>
+<p class="text-sm text-on-surface-variant">Interval Walk/Run</p>
+</div>
+<!-- Day 6: Locked -->
+<div class="glass-card rounded-2xl p-5 opacity-60 grayscale-[50%] hover:grayscale-0 transition-all cursor-not-allowed">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Sabtu</p>
+<h4 class="font-headline-md text-[20px] font-bold text-on-surface">Day 6</h4>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</div>
+<p class="text-sm text-on-surface-variant">Active Rest</p>
+</div>
+<!-- Day 7: Locked -->
+<div class="glass-card rounded-2xl p-5 opacity-60 grayscale-[50%] hover:grayscale-0 transition-all cursor-not-allowed">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Minggu</p>
+<h4 class="font-headline-md text-[20px] font-bold text-on-surface">Day 7</h4>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</div>
+<p class="text-sm text-on-surface-variant">Long Walk Challenge</p>
+</div>
+</section>
+<!-- Educational Security Box -->
+<section class="glass-card rounded-xl p-5 flex gap-4 items-start border border-secondary-container/30 bg-surface-container-low/50 mt-xl">
+<div class="bg-secondary-container/20 p-2 rounded-full shrink-0">
+<span class="material-symbols-outlined text-secondary" data-icon="security">security</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface mb-1">Keamanan &amp; Panduan Cedera</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                    Jika Anda merasakan nyeri tajam (bukan pegal otot) di persendian (lutut, pergelangan kaki), SEGERA berhenti. Gunakan fitur "Swap Low Impact" untuk mengganti jadwal lari dengan olahraga minim benturan seperti berenang atau bersepeda statis untuk menjaga momentum tanpa risiko cedera lanjutan.
+                </p>
+</div>
+</section>
+</main>
+</body></html>

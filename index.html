@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>OBESITY TO INFINITY - Vitality Flow & Walk-to-Run Transformation</title>
+
+  <!-- Tailwind CSS CDN with Tailwind Config -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Tailwind Custom Theme (Stitch Vitality Flow) -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#006948",
+            "primary-container": "#00855d",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#f5fff7",
+            "primary-fixed": "#85f8c4",
+            "primary-fixed-dim": "#68dba9",
+            "secondary": "#006a61",
+            "secondary-container": "#86f2e4",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#006f66",
+            "secondary-fixed": "#89f5e7",
+            "secondary-fixed-dim": "#6bd8cb",
+            "tertiary": "#9b3e3b",
+            "tertiary-container": "#ba5551",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#fffbff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "surface": "#f5fbf5",
+            "surface-dim": "#d5dcd6",
+            "surface-bright": "#f5fbf5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eff5ef",
+            "surface-container": "#e9efe9",
+            "surface-container-high": "#e4eae4",
+            "surface-container-highest": "#dee4de",
+            "on-surface": "#171d19",
+            "on-surface-variant": "#3d4a42",
+            "outline": "#6d7a72",
+            "outline-variant": "#bccac0",
+            "background": "#f5fbf5"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.25rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-white font-sans">
+
+  <!-- ======================================================== -->
+  <!-- 1. AUTH / ONBOARDING SCREEN (Stitch Welcome Style) -->
+  <!-- ======================================================== -->
+  <div id="auth-screen" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-surface via-surface-container-low to-secondary-container/20 relative z-10">
+    <div class="max-w-md w-full my-8">
+      
+      <!-- Logo & Hero Header -->
+      <div class="flex flex-col items-center mb-8 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="w-28 h-28 mb-5 float-animation bg-white/80 rounded-full flex items-center justify-center shadow-lg glass-card p-3.5 border-2 border-white/60">
+          <img alt="Obesity to Infinity Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHSkFcE2XyRf_5ZI3-b5v3sl-qoiYFXiSK_p61BsoZ_quUY513G9vDCD6t90AIDrhNtZx39ank3xC7qmayEV8GRBCkTfX5LfB8XW-uJfZ2c8agAxEkZ_BHPjdwX4T88iRVkJy9i1USsJIl5lp0TsXc_0ZsMfAbZYP7oHorOoh0qXCOYCWHB3sw1l6rLC7yp5CvBKFYxSef5v6-zlpvpTHGvpWoOcYAoWud0ZuilrJQ2PfhRHIzX5i_Dg"/>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-primary text-center tracking-tight leading-tight">
+          OBESITY TO<br/>INFINITY
+        </h1>
+        <p class="text-sm font-medium text-secondary text-center mt-3 max-w-[320px] leading-relaxed">
+          Transformasi Sehat Bertahap: Walking → Jogging → Running
+        </p>
+      </div>
+
+      <!-- Login Card -->
+      <div id="login-box" class="glass-card w-full rounded-2xl p-6 sm:p-8 flex flex-col gap-4 fade-in-up" style="animation-delay: 0.25s;">
+        <div class="flex items-center justify-between mb-1">
+          <div>
+            <h2 class="text-lg font-bold text-on-surface">Masuk ke Akun Anda</h2>
+            <p class="text-xs text-on-surface-variant">Gunakan Kode Akses unik Anda untuk melanjutkan</p>
+          </div>
+          <span class="p-2 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+            <span class="material-symbols-outlined text-xl">key</span>
+          </span>
+        </div>
+
+        <form onsubmit="loginWithCode(event)" class="space-y-4">
+          <div class="relative">
+            <label class="sr-only" for="login-access-code-input">Kode Akses Pengguna</label>
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+              <span class="material-symbols-outlined text-lg">vpn_key</span>
+            </div>
+            <input type="text" id="login-access-code-input" placeholder="Kode Akses (Contoh: OBE-7824)" class="w-full bg-surface-container-low border border-outline-variant/40 text-on-surface rounded-xl pl-11 pr-4 py-3 text-sm font-mono uppercase tracking-widest font-bold focus:ring-2 focus:ring-primary focus:outline-none transition shadow-inner" required>
+          </div>
+
+          <button type="submit" id="login-submit-btn" class="w-full bg-primary hover:bg-primary-container text-on-primary font-bold text-sm py-3.5 rounded-xl flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-95 shadow-md">
+            <span>Masuk ke Akun Saya</span>
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </button>
+        </form>
+
+        <div class="flex flex-col gap-2.5 mt-2">
+          <button onclick="startRegistration()" class="w-full bg-transparent border border-secondary text-secondary hover:bg-secondary-container/20 font-bold text-xs py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-base">person_add</span>
+            <span>Belum Punya Kode? Buat Akun & Skrining Baru</span>
+          </button>
+          
+          <button onclick="loadDemoUser()" class="w-full bg-transparent text-outline hover:text-primary font-medium text-xs py-2 rounded-lg transition underline-offset-4 hover:underline flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-sm text-tertiary-container">play_circle</span>
+            <span>Coba Mode Demo Cepat (Budi - 96 kg &rarr; 75 kg)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Registration & Multi-step Onboarding Box -->
+      <div id="onboarding-box" class="glass-card rounded-2xl p-6 sm:p-8 hidden">
+        <!-- Progress Steps -->
+        <div class="flex items-center justify-between mb-5 pb-3 border-b border-outline-variant/30">
+          <button onclick="backToLogin()" class="text-xs text-on-surface-variant hover:text-primary flex items-center gap-1 font-semibold">
+            <span class="material-symbols-outlined text-sm">arrow_back</span> Kembali
+          </button>
+          <div class="flex items-center gap-2">
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-primary text-white">1</span>
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-surface-container text-outline">2</span>
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-surface-container text-outline">3</span>
+            <span class="step-dot w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-surface-container text-outline">4</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Input Data Fisik -->
+        <div id="onboarding-step-1" class="onboarding-step-pane space-y-4">
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Langkah 1: Profil Fisik Awal</h3>
+            <p class="text-xs text-on-surface-variant">Sistem mengkalkulasi level obesitas standar WHO Asia-Pasifik.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Nama Panggilan</label>
+              <input type="text" id="reg-name" placeholder="Nama Anda" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Usia (Tahun)</label>
+              <input type="number" id="reg-age" placeholder="Contoh: 32" min="15" max="90" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Jenis Kelamin</label>
+              <select id="reg-gender" class="w-full px-3 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80">
+                <option value="male">Pria</option>
+                <option value="female">Wanita</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Tinggi Badan (cm)</label>
+              <input type="number" id="reg-height" placeholder="Contoh: 170" min="120" max="230" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Berat Badan (kg)</label>
+              <input type="number" id="reg-weight" step="0.1" placeholder="Contoh: 95" min="30" max="250" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80" required>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Lingkar Pinggang (cm) <span class="text-outline font-normal">(Opsional)</span></label>
+            <input type="number" id="reg-waist" placeholder="Contoh: 102" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none bg-white/80">
+          </div>
+
+          <!-- Pilihan Hari & Tanggal Mulai Program -->
+          <div class="p-3.5 bg-surface-container/70 rounded-xl border border-outline-variant/40">
+            <label class="block text-xs font-bold text-on-surface mb-1.5 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-base text-primary">event</span>
+              <span>Kapan Anda Ingin Memulai Hari ke-1 Program?</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div>
+                <select id="reg-start-timing" onchange="onStartTimingChange(event)" class="w-full px-3 py-2 rounded-lg border border-outline-variant/50 text-xs font-bold text-on-surface focus:ring-2 focus:ring-primary outline-none bg-white">
+                  <option value="today" selected>Mulai Hari Ini</option>
+                  <option value="tomorrow">Mulai Besok</option>
+                  <option value="next_monday">Mulai Hari Senin Depan</option>
+                  <option value="custom">Pilih Tanggal Sendiri</option>
+                </select>
+              </div>
+              <div>
+                <input type="date" id="reg-start-date" class="w-full px-3 py-1.5 rounded-lg border border-outline-variant/50 text-xs font-bold text-primary focus:ring-2 focus:ring-primary outline-none bg-white">
+              </div>
+            </div>
+            <p id="reg-start-date-helper" class="text-[11px] text-outline mt-1 font-medium">Hari ke-1 latihan akan otomatis disinkronkan dengan kalender nyata.</p>
+          </div>
+
+          <button type="button" onclick="processStep1()" class="w-full mt-3 py-3 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1.5 hover:scale-[1.02]">
+            <span>Hitung Level Obesitas & Lanjut</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Step 2: Hasil Kategori & Uji Kelayakan Target Realistis -->
+        <div id="onboarding-step-2" class="onboarding-step-pane space-y-4 hidden">
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Langkah 2: Klasifikasi & Target Realistis</h3>
+            <p class="text-xs text-on-surface-variant">Sistem menguji kelayakan target penurunan berat badan Anda.</p>
+          </div>
+
+          <!-- BMI Banner -->
+          <div class="p-4 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-bold text-primary uppercase tracking-wider">Standar WHO Asia-Pasifik</span>
+              <h4 id="display-step2-category" class="text-sm font-extrabold text-on-surface mt-0.5">Obesitas Tingkat 1</h4>
+              <p id="display-step2-desc" class="text-xs text-on-surface-variant mt-1 leading-relaxed"></p>
+            </div>
+            <div class="text-right pl-3 border-l border-primary/20">
+              <span class="text-[10px] font-bold text-primary">Skor BMI</span>
+              <div id="display-step2-bmi" class="text-2xl font-black text-primary">28.4</div>
+            </div>
+          </div>
+
+          <div class="text-xs text-on-surface-variant bg-surface-container p-3 rounded-xl border border-outline-variant/40">
+            <span>🎯 Berat Badan Ideal Sehat: <strong id="display-step2-ideal-range" class="text-primary font-bold"></strong></span>
+          </div>
+
+          <!-- Target Weight & Duration Inputs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Target Berat Badan (kg)</label>
+              <input type="number" id="reg-target-weight" step="0.1" class="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/50 font-bold text-primary text-sm focus:ring-2 focus:ring-primary outline-none bg-white/90">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-on-surface-variant mb-1">Pilihan Durasi Target (Bulan)</label>
+              <select id="reg-duration-months" class="w-full px-3 py-2.5 rounded-xl border border-outline-variant/50 font-bold text-on-surface text-sm focus:ring-2 focus:ring-primary outline-none bg-white/90">
+                <option value="1">1 Bulan (4 Minggu - Habit Starter)</option>
+                <option value="2">2 Bulan (8 Minggu - Endurance Builder)</option>
+                <option value="3" selected>3 Bulan (12 Minggu - Standard Transformation)</option>
+                <option value="4">4 Bulan (16 Minggu - Fat Loss & Stride Build)</option>
+                <option value="5">5 Bulan (20 Minggu - Advanced Cardio Progression)</option>
+                <option value="6">6 Bulan (24 Minggu - Complete 5K Run)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Real-time Clinical Feasibility Alert Container -->
+          <div id="feasibility-alert-container"></div>
+
+          <div class="flex gap-2 pt-2">
+            <button type="button" onclick="showOnboardingStep(1)" class="w-1/3 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-bold text-xs rounded-xl transition">Kembali</button>
+            <button type="button" onclick="processStep2()" class="w-2/3 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1 hover:scale-[1.02]">
+              <span>Lanjut ke Pola Diet & Puasa</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Pilihan Kebugaran & Diet/Puasa -->
+        <div id="onboarding-step-3" class="onboarding-step-pane space-y-4 hidden">
+          <div>
+            <h3 class="text-base font-bold text-on-surface">Langkah 3: Preferensi Olahraga & Nutrisi</h3>
+            <p class="text-xs text-on-surface-variant">Pilih level kesiapan fisik dan pemodelan pola makan yang Anda minati.</p>
+          </div>
+
+          <!-- Kesiapan Fisik -->
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-2">Level Kesiapan Fisik Saat Ini:</label>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fitness-level" value="level_0" checked class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Level 0: Pemula Total / Sendi Sensitif</span>
+                  <span class="text-on-surface-variant">Jarang jalan kaki (<3.000 langkah/hari). Fokus adaptasi sendi lutut.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fitness-level" value="level_1" class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Level 1: Terbiasa Jalan Kaki</span>
+                  <span class="text-on-surface-variant">Sudah biasa jalan 5.000+ langkah/hari, siap meningkatkan kecepatan ke brisk walk.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Model Puasa Intermiten -->
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-2">Protokol Puasa / Pola Makan:</label>
+            <div class="space-y-2">
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fasting-protocol" value="16_8" checked class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Intermittent Fasting 16:8 (Rekomendasi Populer)</span>
+                  <span class="text-on-surface-variant">16 jam puasa (air putih/teh tawar boleh), 8 jam jendela makan.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fasting-protocol" value="14_10" class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Intermittent Fasting 14:10 (Ramah Pemula)</span>
+                  <span class="text-on-surface-variant">14 jam puasa, 10 jam jendela makan. Sangat aman bagi asam lambung.</span>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 bg-white/80 border border-outline-variant/40 rounded-xl cursor-pointer hover:border-primary transition">
+                <input type="radio" name="reg-fasting-protocol" value="none" class="mt-1 text-primary focus:ring-primary">
+                <div class="text-xs">
+                  <span class="font-bold text-on-surface block">Pola Makan Teratur (Non-Fasting Plate Model)</span>
+                  <span class="text-on-surface-variant">Makan 3x sehari seimbang dengan defisit kalori moderat.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <input type="hidden" name="reg-diet-model" value="deficit_moderate">
+
+          <div class="flex gap-2 pt-2">
+            <button type="button" onclick="showOnboardingStep(2)" class="w-1/3 py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-bold text-xs rounded-xl transition">Kembali</button>
+            <button type="button" onclick="finalizeRegistration()" class="w-2/3 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1 hover:scale-[1.02]">
+              <span class="material-symbols-outlined text-sm">sparkles</span>
+              <span>Buat Kode Akses & Program Saya</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Kode Akses Berhasil Dibuat -->
+        <div id="onboarding-step-4" class="onboarding-step-pane space-y-4 text-center hidden">
+          <div class="w-16 h-16 bg-primary/15 text-primary rounded-full flex items-center justify-center mx-auto shadow-inner">
+            <span class="material-symbols-outlined text-3xl font-bold">check_circle</span>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-extrabold text-on-surface">Program Berhasil Dibuat!</h3>
+            <p class="text-xs text-on-surface-variant mt-1">Berikut adalah Kode Akses unik Anda. Simpan kode ini untuk login kembali kapan saja.</p>
+          </div>
+
+          <!-- Access Code Card -->
+          <div class="p-5 bg-gradient-to-r from-primary to-primary-container text-white rounded-2xl shadow-xl">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary-fixed">KODE AKSES ANDA</span>
+            <div id="display-new-access-code" class="text-3xl font-black font-mono tracking-widest my-2">OBE-XXXX</div>
+            <p class="text-[11px] text-on-primary-container/90">Gunakan kode ini untuk masuk dari perangkat mana pun.</p>
+          </div>
+
+          <button onclick="finishOnboardingAndEnterApp()" class="w-full py-3.5 px-4 bg-primary text-on-primary font-bold text-sm rounded-xl shadow-md transition flex items-center justify-center gap-2 hover:scale-[1.02]">
+            <span>Mulai Perjalanan Transformasi Saya</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- 2. MAIN APPLICATION DASHBOARD (Stitch Vitality Flow) -->
+  <!-- ======================================================== -->
+  <div id="main-app-screen" class="min-h-screen antialiased hidden">
+    
+    <!-- TopAppBar (Fixed Header) -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 h-16 bg-surface/75 backdrop-blur-xl border-b border-white/50 shadow-sm">
+      <div class="flex items-center gap-3">
+        <img alt="OBESITY TO INFINITY Logo" class="h-9 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHSkFcE2XyRf_5ZI3-b5v3sl-qoiYFXiSK_p61BsoZ_quUY513G9vDCD6t90AIDrhNtZx39ank3xC7qmayEV8GRBCkTfX5LfB8XW-uJfZ2c8agAxEkZ_BHPjdwX4T88iRVkJy9i1USsJIl5lp0TsXc_0ZsMfAbZYP7oHorOoh0qXCOYCWHB3sw1l6rLC7yp5CvBKFYxSef5v6-zlpvpTHGvpWoOcYAoWud0ZuilrJQ2PfhRHIzX5i_Dg"/>
+        <div>
+          <span class="text-base font-extrabold text-primary tracking-tight hidden sm:block">OBESITY TO INFINITY</span>
+          <div class="flex items-center gap-2 text-[11px] text-on-surface-variant">
+            <span id="user-display-name" class="font-bold text-on-surface">Pengguna</span>
+            <span>•</span>
+            <span class="flex items-center gap-1 font-mono text-primary bg-primary/10 px-2 py-0.5 rounded-md font-bold">
+              <span id="user-access-code-badge">OBE-0000</span>
+              <button onclick="copyAccessCode()" title="Salin Kode Akses" class="hover:text-primary-container"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Badges & Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Streak Flame Badge -->
+        <div class="flex items-center gap-1.5 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant/50 shadow-sm">
+          <span class="material-symbols-outlined text-tertiary-container animate-pulse text-lg" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+          <span class="text-xs font-black text-on-surface"><span id="user-streak-count">0</span> Hari</span>
+        </div>
+
+        <!-- BMI Pill -->
+        <div id="user-bmi-badge" class="hidden sm:flex items-center gap-1 bg-primary-container px-3 py-1 rounded-full text-on-primary-container text-xs font-bold">
+          <span class="material-symbols-outlined text-sm">monitor_weight</span>
+          <span>BMI 00.0</span>
+        </div>
+
+        <!-- Logout Button -->
+        <button onclick="userLogout()" title="Keluar Akun" class="text-on-surface-variant hover:text-error hover:scale-105 transition-transform p-1.5 rounded-lg">
+          <span class="material-symbols-outlined text-xl">logout</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SideNavBar (Desktop Fixed Left) -->
+    <nav class="hidden md:flex flex-col h-full fixed left-0 top-0 pt-20 pb-8 w-64 bg-surface/80 backdrop-blur-xl border-r border-white/50 shadow-md z-40">
+      
+      <!-- Navigation Links -->
+      <div class="flex flex-col gap-1.5 px-3 w-full font-medium text-xs">
+        <button id="side-tab-btn-calendar" onclick="switchTab('calendar')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl bg-primary-container/20 text-primary font-bold border-r-4 border-primary hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">calendar_today</span>
+          <span>Jadwal Olahraga</span>
+        </button>
+        <button id="side-tab-btn-health" onclick="switchTab('health')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">stethoscope</span>
+          <span>Analisis Pasca Latihan</span>
+        </button>
+        <button id="side-tab-btn-diet" onclick="switchTab('diet')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">restaurant</span>
+          <span>Diet & Puasa Intermiten</span>
+        </button>
+        <button id="side-tab-btn-analytics" onclick="switchTab('analytics')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">show_chart</span>
+          <span>Progres & Kebiasaan</span>
+        </button>
+        <button id="side-tab-btn-education" onclick="switchTab('education')" class="side-tab-btn flex items-center gap-3 px-3.5 py-3 rounded-xl text-on-surface-variant hover:bg-surface-variant/50 transition-all text-left">
+          <span class="material-symbols-outlined text-lg">school</span>
+          <span>Edukasi Sendi</span>
+        </button>
+      </div>
+
+      <div class="mt-auto px-4 w-full">
+        <button onclick="openWeightUpdateModal()" class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-xs hover:scale-105 transition-transform shadow-md flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">scale</span>
+          <span>+ Update Berat Badan</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 md:hidden bg-surface/85 backdrop-blur-xl border-t border-white/50 shadow-lg">
+      <button onclick="switchTab('calendar')" class="flex flex-col items-center justify-center text-primary font-bold text-[10px]">
+        <span class="material-symbols-outlined text-lg">calendar_today</span>
+        <span>Jadwal</span>
+      </button>
+      <button onclick="switchTab('health')" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px]">
+        <span class="material-symbols-outlined text-lg">stethoscope</span>
+        <span>Analisa</span>
+      </button>
+      <button onclick="switchTab('diet')" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px]">
+        <span class="material-symbols-outlined text-lg">restaurant</span>
+        <span>Diet/Puasa</span>
+      </button>
+      <button onclick="switchTab('analytics')" class="flex flex-col items-center justify-center text-on-surface-variant text-[10px]">
+        <span class="material-symbols-outlined text-lg">show_chart</span>
+        <span>Progres</span>
+      </button>
+    </nav>
+
+    <!-- Main Content Canvas -->
+    <main class="pt-20 pb-24 md:pb-12 md:pl-72 px-4 md:px-8 max-w-[1280px] mx-auto min-h-screen">
+
+      <!-- Transformation Progress Card (Bento Style) -->
+      <div class="glass-card rounded-2xl p-5 sm:p-6 mb-6 relative overflow-hidden group hover:shadow-lg transition-shadow">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 relative z-10">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-full border border-primary/20">Target Transformasi Sehat</span>
+              <span class="text-[10px] font-bold text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-full">Walk &rarr; Run</span>
+            </div>
+            <h2 class="text-base font-bold text-on-surface mt-1">Perjalanan Berat Badan Ideal</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button onclick="openWeightUpdateModal()" class="py-2 px-3 bg-primary text-on-primary hover:bg-primary-container font-bold text-xs rounded-xl transition flex items-center gap-1 shadow-sm">
+              <span class="material-symbols-outlined text-sm">scale</span>
+              <span>Input BB Baru</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-center sm:text-left">
+            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Berat Saat Ini</p>
+            <p class="text-2xl sm:text-3xl font-extrabold text-primary mt-0.5"><span id="user-bb-stat">0 kg</span></p>
+          </div>
+
+          <div class="flex-1 w-full px-2">
+            <div class="h-3.5 w-full rounded-full progress-track overflow-hidden relative shadow-inner">
+              <div id="header-progress-bar" class="h-full rounded-full progress-gradient transition-all duration-1000 ease-out" style="width: 15%"></div>
+            </div>
+          </div>
+
+          <div class="text-center sm:text-right">
+            <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Target Akhir</p>
+            <p class="text-2xl sm:text-3xl font-extrabold text-secondary mt-0.5"><span id="user-target-stat">0 kg</span></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 1: KALENDER & JADWAL OLAHRAGA -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-calendar" class="tab-pane active space-y-6">
+        
+        <!-- Weekly Milestone Card -->
+        <section class="glass-card rounded-2xl p-5 sm:p-6 border-l-4 border-l-primary relative overflow-hidden">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Weekly Milestone</p>
+              <h3 id="weekly-milestone-title" class="text-base sm:text-lg font-bold text-primary mt-0.5">Minggu 1: Adaptasi Persendian & Postur Jalan</h3>
+              <p class="text-xs text-on-surface-variant mt-1">Selesaikan jadwal latihan harian secara bertahap untuk menjaga persendian.</p>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="text-right">
+                <span class="text-[10px] uppercase font-bold text-outline">Progres Minggu Ini</span>
+                <div id="weekly-progress-counter" class="text-xs font-extrabold text-primary">0 dari 7 Selesai (0%)</div>
+              </div>
+              <div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl border border-outline-variant/40">
+                <button onclick="changeWeekViewing(-1)" class="p-1.5 hover:bg-white rounded-lg text-on-surface transition"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+                <select id="week-selector-dropdown" onchange="onWeekDropdownChange(event)" class="bg-transparent text-xs font-bold text-on-surface px-2 py-1 outline-none"></select>
+                <button onclick="changeWeekViewing(1)" class="p-1.5 hover:bg-white rounded-lg text-on-surface transition"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7 Days Grid Cards -->
+        <section>
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="font-bold text-on-surface text-sm">Jadwal 7 Hari Berjalan (Linear Safe Progression):</h4>
+            <div class="flex items-center gap-3 text-[11px] text-on-surface-variant">
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Selesai</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Aktif</span>
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span> Terkunci</span>
+            </div>
+          </div>
+
+          <div id="week-days-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Protection & Catch-Up Info Box -->
+        <div class="p-4 bg-surface-container rounded-2xl border border-outline-variant/40 text-xs text-on-surface-variant flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary text-xl mt-0.5">verified_user</span>
+          <div>
+            <strong class="text-on-surface font-bold">Protokol Keamanan Sendi & Linear Catch-Up Lock:</strong>
+            <p class="mt-0.5 leading-relaxed">Sistem secara otomatis mengunci hari berikutnya jika sesi latihan utama sebelumnya belum selesai. Ini mencegah sendi dan tendon lutut cedera akibat lonjakan volume mendadak.</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 2: ANALISIS KESEHATAN PASCA LATIHAN -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-health" class="tab-pane space-y-6">
+        
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-container/30 px-2.5 py-1 rounded-full border border-secondary-container">Early Warning Diagnostic</span>
+              <h3 class="text-base font-bold text-on-surface mt-2">Analisis Respon Fisik & Risiko Kesehatan Pasca Latihan</h3>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed max-w-2xl">
+                Setelah selesai jalan kaki/joging, input rekaman data dan gejala Anda. Sistem mendiagnosa potensi radang sendi (*tendonitis/plantar*), dehidrasi, atau tanda kardiovaskular untuk melindungi kesehatan Anda.
+              </p>
+            </div>
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-2xl flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-2xl">health_and_safety</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Level Zone Info Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 bg-primary/10 border border-primary/20 rounded-2xl">
+            <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-primary text-on-primary">🟢 ZONA AMAN</span>
+            <h4 class="font-bold text-on-surface text-sm mt-2">Pemulihan Optimal</h4>
+            <p class="text-xs text-on-surface-variant mt-1">RPE 1–6, tidak ada nyeri sendi tajam. Hidrasi normal 300–500ml.</p>
+          </div>
+
+          <div class="p-4 bg-amber-50 border border-amber-300 rounded-2xl">
+            <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500 text-white">🟡 ZONA PERHATIAN</span>
+            <h4 class="font-bold text-amber-950 text-sm mt-2">Deteksi Overuse / Sendi Lelah</h4>
+            <p class="text-xs text-amber-900 mt-1">RPE 7–8 atau ngilu sendi. Jadwal besok otomatis diperingan (*Active Recovery*).</p>
+          </div>
+
+          <div class="p-4 bg-error-container/40 border border-error/30 rounded-2xl">
+            <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-error text-on-error">🔴 ZONA RED FLAG</span>
+            <h4 class="font-bold text-on-error-container text-sm mt-2">Peringatan Medis Darurat</h4>
+            <p class="text-xs text-on-error-container mt-1">Nyeri dada, pusing berputar, atau sesak napas >10 menit. Lockdown latihan 48 jam.</p>
+          </div>
+        </div>
+
+        <!-- History Logbook Section -->
+        <div>
+          <h4 class="font-bold text-on-surface text-sm mb-3">Riwayat Rekaman Latihan & Catatan Pemulihan:</h4>
+          <div id="health-logs-history-list" class="space-y-3">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 3: POLA MAKAN, DIET & PUASA INTERMITEN -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-diet" class="tab-pane space-y-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Fasting Circular Clock -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-container/30 px-3 py-1 rounded-full border border-secondary-container mb-3">Fasting Window Clock</span>
+            
+            <div class="relative w-48 h-48 flex items-center justify-center my-2 pulse-ring rounded-full">
+              <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" class="text-surface-container" stroke-width="8" stroke="currentColor" fill="transparent"></circle>
+                <circle id="fasting-progress-circle" cx="50" cy="50" r="45" class="fasting-circle text-primary" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="140" stroke-linecap="round" stroke="currentColor" fill="transparent"></circle>
+              </svg>
+              <div class="absolute flex flex-col items-center justify-center">
+                <span class="text-[10px] uppercase font-bold text-outline tracking-wider">Durasi Puasa</span>
+                <span id="fasting-time-elapsed" class="text-2xl font-black text-on-surface">8j 30m</span>
+                <span class="text-[10px] text-primary font-bold mt-0.5">Jendela Puasa Aktif</span>
+              </div>
+            </div>
+
+            <div id="fasting-phase-tag" class="text-xs font-bold text-tertiary bg-tertiary-container/15 px-3.5 py-1 rounded-full border border-tertiary-container/30 my-3">
+              🔥 Fase Pembakaran Lemak Dimulai
+            </div>
+
+            <button id="toggle-fasting-btn" onclick="toggleFastingMode()" class="w-full py-2.5 px-4 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition">
+              Selesaikan Puasa & Buka Jendela Makan
+            </button>
+          </div>
+
+          <!-- Energy & Macro Breakdown -->
+          <div class="glass-card rounded-2xl p-6 lg:col-span-2 space-y-4">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">Kalkulasi Energi Klinis</span>
+              <h3 class="text-base font-bold text-on-surface mt-1">Kebutuhan Energi & Target Defisit Kalori</h3>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3">
+              <div class="p-3 bg-surface rounded-xl border border-outline-variant/30 text-center">
+                <span class="text-[10px] font-bold text-outline uppercase">Metabolisme Basal (BMR)</span>
+                <div id="stat-bmr" class="text-sm sm:text-base font-black text-on-surface mt-0.5">0 kkal</div>
+              </div>
+              <div class="p-3 bg-surface rounded-xl border border-outline-variant/30 text-center">
+                <span class="text-[10px] font-bold text-outline uppercase">Total Energi (TDEE)</span>
+                <div id="stat-tdee" class="text-sm sm:text-base font-black text-secondary mt-0.5">0 kkal</div>
+              </div>
+              <div class="p-3 bg-primary/10 rounded-xl border border-primary/20 text-center">
+                <span class="text-[10px] font-bold text-primary uppercase">Target Asupan Harian</span>
+                <div id="stat-target-calories" class="text-sm sm:text-base font-black text-primary mt-0.5">0 kkal</div>
+              </div>
+            </div>
+
+            <!-- Macro Targets -->
+            <div class="p-4 bg-surface rounded-xl border border-outline-variant/30">
+              <span class="text-xs font-bold text-on-surface block mb-2">Target Makronutrisi Harian:</span>
+              <div class="grid grid-cols-3 gap-3 text-center text-xs">
+                <div>
+                  <span class="text-outline block">Protein (Otot)</span>
+                  <strong id="stat-protein-g" class="text-primary font-extrabold text-sm">0g</strong>
+                </div>
+                <div>
+                  <span class="text-outline block">Karbo Kompleks</span>
+                  <strong id="stat-carbs-g" class="text-secondary font-extrabold text-sm">0g</strong>
+                </div>
+                <div>
+                  <span class="text-outline block">Lemak Sehat</span>
+                  <strong id="stat-fat-g" class="text-tertiary font-extrabold text-sm">0g</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fasting Advice -->
+            <div class="text-xs text-on-surface-variant bg-secondary-container/15 p-4 rounded-xl border border-secondary-container/30">
+              <h5 id="fasting-protocol-title" class="font-bold text-secondary mb-1">Protokol Puasa Intermiten</h5>
+              <p id="fasting-schedule-advice" class="leading-relaxed"></p>
+              <div id="fasting-sync-container" class="mt-2 pt-2 border-t border-secondary-container/30 font-medium text-secondary">
+                <strong>🏃 Waktu Terbaik Olahraga:</strong> <span id="fasting-workout-sync"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Plate Model & Binge Prevention -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-card rounded-2xl p-6">
+            <h4 class="font-bold text-on-surface text-sm mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">pie_chart</span>
+              <span>Panduan Piring Sehat (Plate Model)</span>
+            </h4>
+            <div class="space-y-2.5 text-xs">
+              <div class="p-3 bg-primary/10 rounded-xl border border-primary/20">
+                <strong class="text-primary block font-bold">🥗 50% Piring: Sayuran & Serat</strong>
+                <p id="plate-veggies" class="text-on-surface-variant mt-0.5 leading-relaxed"></p>
+              </div>
+              <div class="p-3 bg-secondary-container/20 rounded-xl border border-secondary-container/40">
+                <strong class="text-secondary block font-bold">🍗 25% Piring: Protein Berkualitas</strong>
+                <p id="plate-protein" class="text-on-surface-variant mt-0.5 leading-relaxed"></p>
+              </div>
+              <div class="p-3 bg-tertiary-container/15 rounded-xl border border-tertiary-container/30">
+                <strong class="text-tertiary block font-bold">🥔 25% Piring: Karbohidrat Kompleks</strong>
+                <p id="plate-carbs" class="text-on-surface-variant mt-0.5 leading-relaxed"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h4 class="font-bold text-on-surface text-sm mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary text-base">shield</span>
+              <span>Mencegah Binge Eating Pasca Latihan</span>
+            </h4>
+            <div class="space-y-2.5 text-xs text-on-surface-variant leading-relaxed">
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                <span><strong>Minum 1 Gelas Air Hangat</strong> segera setelah jalan kaki untuk meredakan sinyal lapar palsu akibat dehidrasi.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                <span><strong>Konsumsi Protein Berkualitas</strong> saat berbuka (telur/tahu/tempe/ayam) untuk menekan hormon lapar (*ghrelin*).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-sm shrink-0 mt-0.5">check_circle</span>
+                <span><strong>Hindari Sugar Reward</strong> dengan anggapan sudah jalan jauh. Ingat: jalan 30 menit membakar ~150 kkal, 1 minuman boba mengandung ~350 kkal!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 4: PROGRES BB & HABIT TRACKER -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-analytics" class="tab-pane space-y-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Chart.js Graph -->
+          <div class="glass-card rounded-2xl p-6 lg:col-span-2">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="font-bold text-on-surface text-base">Grafik Tren Penurunan Berat Badan</h3>
+                <p class="text-xs text-on-surface-variant">Aktual vs Target Penurunan Realistis</p>
+              </div>
+              <button onclick="openWeightUpdateModal()" class="py-1.5 px-3 bg-primary/10 hover:bg-primary/20 text-primary font-bold text-xs rounded-xl transition">
+                + Input BB Baru
+              </button>
+            </div>
+            <div class="h-64 w-full">
+              <canvas id="weightProgressChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Hydration Tracker with Dynamic Fluid Wave Shader -->
+          <div class="glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden min-h-[290px]">
+            <!-- WebGL Fluid Wave Shader Animation Canvas -->
+            <div class="absolute inset-0 w-full h-full z-0 opacity-40 mix-blend-multiply pointer-events-none rounded-2xl overflow-hidden">
+              <canvas id="shader-canvas-hydration" style="display:block;width:100%;height:100%"></canvas>
+            </div>
+
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-container/30 px-2.5 py-1 rounded-full border border-secondary-container">Hidrasi Harian</span>
+                <button onclick="resetWaterIntake()" class="text-[11px] text-outline hover:text-on-surface">Reset</button>
+              </div>
+              <h4 class="font-bold text-on-surface text-sm">Target Air: 2.5 Liter</h4>
+              <p class="text-xs text-on-surface-variant mt-0.5">Membantu metabolisme lemak dan mencegah kram sendi.</p>
+
+              <div class="text-center my-6">
+                <span id="water-intake-current" class="text-3xl font-black text-secondary">0.0 L</span>
+                <span class="text-xs text-outline block mt-0.5">dari target 2.5 L</span>
+                <div class="w-full bg-surface-container rounded-full h-3 mt-3 overflow-hidden border border-outline-variant/30">
+                  <div id="water-progress-bar" class="bg-secondary h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 relative z-10">
+              <button onclick="addWaterIntake(250)" class="py-2.5 px-3 bg-secondary-container/30 hover:bg-secondary-container/50 text-secondary font-bold text-xs rounded-xl border border-secondary-container transition flex items-center justify-center gap-1 backdrop-blur-md">
+                <span class="material-symbols-outlined text-sm">local_drink</span> +250ml
+              </button>
+              <button onclick="addWaterIntake(600)" class="py-2.5 px-3 bg-secondary hover:bg-on-secondary-container text-on-secondary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1 backdrop-blur-md">
+                <span class="material-symbols-outlined text-sm">water_drop</span> +600ml
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================================================== -->
+      <!-- TAB 5: EDUKASI SENDI & MEDIS -->
+      <!-- ==================================================== -->
+      <div id="tab-pane-education" class="tab-pane space-y-6">
+        
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-xl">medical_information</span>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-on-surface">Edukasi Ortopedi & Keselamatan Olahraga Obesitas</h3>
+              <p class="text-xs text-on-surface-variant">Prinsip biomekanika bergerak aman tanpa merusak tulang rawan sendi.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">directions_walk</span>
+              <span>Teknik Langkah Pendek (High Cadence)</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Penyandang obesitas disarankan mengambil <strong>langkah lebih pendek namun berirama teratur</strong> daripada melangkah terlalu lebar (*overstriding*). Langkah pendek menjaga pusat gravitasi tetap di bawah tubuh, sehingga impak ke tempurung lutut berkurang hingga 40%.
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary text-base">favorite</span>
+              <span>Zona Fat Max: Jalan Kaki vs Sprint</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Pada intensitas rendah–sedang (jalan santai/jalan cepat), tubuh menggunakan <strong>lemak sebagai sumber bahan bakar utama (Fat Max Zone)</strong>. Lari sprint berlebihan justru memicu asam laktat dan kelaparan hebat pasca latihan.
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-base">footprint</span>
+              <span>Tips Memilih Sepatu untuk Obesitas</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Pilihlah sepatu dengan <strong>bantalan tebal (Maximal Cushioning)</strong> dan stabilitas tumit (*heel counter*) yang kokoh untuk mencegah radang telapak kaki (*Plantar Fasciitis*).
+            </p>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 space-y-2">
+            <h4 class="font-bold text-on-surface text-sm flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-base">bedtime</span>
+              <span>Peran Tidur dalam Pembakaran Lemak</span>
+            </h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Tidur kurang dari 7 jam meningkatkan hormon stres (*kortisol*) dan hormon nafsu makan (*ghrelin*). Tubuh meregenerasi otot dan tendon terutama saat tidur malam yang nyenyak.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- MODAL: POST-WORKOUT CHECK-IN & HEALTH DIAGNOSTIC -->
+  <!-- ======================================================== -->
+  <div id="post-workout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div class="glass-card rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl bg-white/95">
+      
+      <div class="flex items-center justify-between pb-4 mb-4 border-b border-outline-variant/30">
+        <div>
+          <span class="text-[10px] font-extrabold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">Post-Workout Check-in</span>
+          <h3 id="modal-workout-day-title" class="text-base font-bold text-on-surface mt-0.5">Check-in Latihan</h3>
+        </div>
+        <button onclick="closePostWorkoutModal()" class="p-1 text-outline hover:text-on-surface rounded-xl transition">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+
+      <!-- Form Inputs Container -->
+      <form id="post-workout-form-inputs" onsubmit="submitPostWorkoutCheckin(event)" class="space-y-4">
+        
+        <!-- Target Prescribed vs Actual Banner -->
+        <div class="flex items-center justify-between p-3 bg-surface-container/70 rounded-xl border border-outline-variant/30 text-xs">
+          <span class="text-on-surface-variant font-medium">Target Jadwal Sesi Ini:</span>
+          <strong id="modal-prescribed-duration-badge" class="font-extrabold text-primary bg-primary/10 px-2.5 py-0.5 rounded-lg border border-primary/20">30 Menit</strong>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Durasi Aktual (Menit)</label>
+            <input type="number" id="post-duration-input" oninput="checkExcessDurationRealtime()" min="5" max="300" class="w-full px-3 py-2 rounded-xl border border-outline-variant/50 text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary outline-none" required>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-on-surface-variant mb-1">Estimasi Langkah / Jarak</label>
+            <input type="number" id="post-steps-input" placeholder="Opsional" class="w-full px-3 py-2 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none">
+          </div>
+        </div>
+
+        <!-- Real-time Excess Duration Live Warning Banner -->
+        <div id="post-excess-alert-banner" class="hidden p-3 bg-amber-50 border border-amber-300 rounded-xl text-amber-950 text-xs flex items-start gap-2">
+          <span class="material-symbols-outlined text-amber-600 text-base shrink-0 mt-0.5">warning</span>
+          <div>
+            <strong class="block font-bold" id="post-excess-alert-title">Durasi Melebihi Target Jadwal</strong>
+            <p id="post-excess-alert-desc" class="text-[11px] text-amber-900 mt-0.5 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- RPE Borg Fatigue Slider -->
+        <div>
+          <label class="block text-xs font-bold text-on-surface mb-1">Tingkat Kelelahan / Beban (Skala Borg 1-10):</label>
+          <input type="range" id="post-rpe-input" min="1" max="10" value="5" class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary">
+          <div id="rpe-value-display" class="text-xs font-bold text-primary bg-primary/10 p-2 rounded-xl border border-primary/20 mt-1 text-center">
+            5 - Cukup Melelahkan (Bisa Bicara Pendek)
+          </div>
+        </div>
+
+        <!-- Heart Rate Optional -->
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Detak Jantung Rata-rata (bpm) <span class="text-outline font-normal">(Opsional)</span></label>
+          <input type="number" id="post-heartrate-input" placeholder="Contoh: 125" class="w-full px-3 py-2 rounded-xl border border-outline-variant/50 text-sm focus:ring-2 focus:ring-primary outline-none">
+        </div>
+
+        <!-- Symptom Checklist -->
+        <div>
+          <label class="block text-xs font-bold text-on-surface mb-1">Checklist Gejala & Sinyal Tubuh Pasca Latihan:</label>
+          <p class="text-[11px] text-on-surface-variant mb-2">Centang jika Anda merasakan salah satu keluhan berikut:</p>
+          
+          <div class="space-y-2 max-h-44 overflow-y-auto pr-1">
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="knee_dull_pain" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Nyeri tumpul / pegal di tempurung lutut</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="itb_outer_knee" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Nyeri di sisi luar lutut (IT Band)</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="heel_plantar_pain" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Ngilu di tumit / telapak kaki saat menapak</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="shin_splints" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Nyeri pada tulang kering depan (Shin Splints)</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="mild_dizziness" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Pusing ringan saat berdiri cepat</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl text-xs cursor-pointer hover:bg-surface-container">
+              <input type="checkbox" value="extreme_hunger" class="symptom-checkbox rounded text-primary focus:ring-primary">
+              <span>Dorongan nafsu makan meledak (Binge Urge)</span>
+            </label>
+
+            <!-- Red Flags -->
+            <label class="flex items-center gap-2 p-2 bg-error-container/30 rounded-xl text-xs cursor-pointer hover:bg-error-container/50 text-error border border-error/20">
+              <input type="checkbox" value="chest_tightness" class="symptom-checkbox rounded text-error focus:ring-error">
+              <span class="font-bold">⚠️ Rasa tertekan / nyeri di dada</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-error-container/30 rounded-xl text-xs cursor-pointer hover:bg-error-container/50 text-error border border-error/20">
+              <input type="checkbox" value="severe_dyspnea" class="symptom-checkbox rounded text-error focus:ring-error">
+              <span class="font-bold">⚠️ Sesak napas berat > 10 menit tidak reda</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-error-container/30 rounded-xl text-xs cursor-pointer hover:bg-error-container/50 text-error border border-error/20">
+              <input type="checkbox" value="palpitations" class="symptom-checkbox rounded text-error focus:ring-error">
+              <span class="font-bold">⚠️ Jantung berdebar kencang tidak teratur</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">check</span>
+          <span>Simpan Rekaman & Analisa Respon Tubuh</span>
+        </button>
+      </form>
+
+      <!-- Diagnostic Results Screen (shown after submit) -->
+      <div id="diagnostic-result-container" class="hidden"></div>
+
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- MODAL: UPDATE BERAT BADAN TERBARU -->
+  <!-- ======================================================== -->
+  <div id="weight-update-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div class="glass-card rounded-2xl max-w-sm w-full p-6 shadow-2xl bg-white/95">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-bold text-on-surface text-base">Check-in Berat Badan Baru</h4>
+        <button onclick="closeWeightUpdateModal()" class="text-outline hover:text-on-surface"><span class="material-symbols-outlined text-xl">close</span></button>
+      </div>
+      <form onsubmit="submitWeightUpdate(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Berat Badan Hari Ini (kg)</label>
+          <input type="number" id="new-weight-input" step="0.1" min="30" max="250" class="w-full px-4 py-3 rounded-xl border border-outline-variant/50 font-extrabold text-lg text-primary focus:ring-2 focus:ring-primary outline-none" required>
+          <p class="text-[11px] text-outline mt-1">Sistem akan memperbarui BMI dan kalori target secara otomatis.</p>
+        </div>
+        <button type="submit" class="w-full py-3 bg-primary hover:bg-primary-container text-on-primary font-bold text-xs rounded-xl shadow transition">
+          Simpan Progres Berat Badan
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Application Scripts -->
+  <script src="js/supabase-client.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+/* ==========================================================
+   OBESITY TO INFINITY - Vitality Flow Design System
+   Matches Google Stitch UIX Specification & Medical Precision
+   Fully Responsive for Mobile, Tablet, Laptop & Desktop
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+  --color-surface: #f5fbf5;
+  --color-surface-dim: #d5dcd6;
+  --color-surface-bright: #f5fbf5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff5ef;
+  --color-surface-container: #e9efe9;
+  --color-surface-container-high: #e4eae4;
+  --color-surface-container-highest: #dee4de;
+  --color-on-surface: #171d19;
+  --color-on-surface-variant: #3d4a42;
+  --color-inverse-surface: #2c322e;
+  --color-inverse-on-surface: #ecf2ec;
+  --color-outline: #6d7a72;
+  --color-outline-variant: #bccac0;
+  --color-surface-tint: #006c4a;
+  --color-primary: #006948;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #00855d;
+  --color-on-primary-container: #f5fff7;
+  --color-inverse-primary: #68dba9;
+  --color-secondary: #006a61;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #86f2e4;
+  --color-on-secondary-container: #006f66;
+  --color-tertiary: #9b3e3b;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ba5551;
+  --color-on-tertiary-container: #fffbff;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #85f8c4;
+  --color-primary-fixed-dim: #68dba9;
+  --color-background: #f5fbf5;
+}
+
+* {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Form inputs on mobile - prevent unwanted iOS auto-zoom by maintaining 16px minimum font size */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Material Symbols default styling */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Glassmorphism & High-Performance Glass Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+}
+
+.glass-card-active {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #86f2e4;
+  box-shadow: 0 8px 30px rgba(0, 105, 72, 0.08);
+}
+
+/* Progress Track & Gradient */
+.progress-gradient {
+  background: linear-gradient(90deg, #006948 0%, #00855d 50%, #86f2e4 100%);
+}
+
+.progress-track {
+  background: rgba(0, 105, 72, 0.08);
+}
+
+/* Smooth Animations */
+.fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Pulse Ring */
+.pulse-ring {
+  animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 105, 72, 0.3); }
+  70% { box-shadow: 0 0 0 16px rgba(0, 105, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 105, 72, 0); }
+}
+
+/* Flame Glow */
+@keyframes flameGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+  50% {
+    transform: scale(1.1) rotate(-3deg);
+    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.7));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+  }
+}
+
+.flame-streak {
+  animation: flameGlow 2s infinite ease-in-out;
+}
+
+/* Day Cards on Calendar */
+.day-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.day-card:hover:not(.day-locked) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -4px rgba(0, 105, 72, 0.1);
+}
+
+.day-completed {
+  background: rgba(245, 255, 247, 0.9);
+  border-color: #85f8c4;
+}
+
+.day-active {
+  background: rgba(254, 252, 232, 0.95);
+  border-color: #fde047;
+  box-shadow: 0 0 0 2px #eab308;
+}
+
+.day-rest {
+  background: rgba(240, 249, 255, 0.9);
+  border-color: #bae6fd;
+}
+
+.day-locked {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Fasting Circular Ring */
+.fasting-circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tab Panes */
+.tab-pane {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.tab-pane.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Safe Area Inset for Modern Mobile Devices (iPhone notch/home bar) */
+.pb-safe {
+  padding-bottom: max(0.6rem, env(safe-area-inset-bottom, 0.6rem));
+}
+
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0.5rem));
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #eff5ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #bccac0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d7a72;
+}
+
+/* Interactive touch target helpers */
+button, a, input, select {
+  touch-action: manipulation;
+}

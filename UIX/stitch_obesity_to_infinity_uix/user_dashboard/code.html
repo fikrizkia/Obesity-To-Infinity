@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OBESITY TO INFINITY - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdad7",
+                        "secondary": "#006a61",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#006c4a",
+                        "on-primary-fixed-variant": "#005137",
+                        "surface-variant": "#dee4de",
+                        "tertiary-container": "#ba5551",
+                        "surface-dim": "#d5dcd6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002114",
+                        "secondary-container": "#86f2e4",
+                        "inverse-primary": "#68dba9",
+                        "surface-container-high": "#e4eae4",
+                        "outline-variant": "#bccac0",
+                        "background": "#f5fbf5",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#e9efe9",
+                        "inverse-surface": "#2c322e",
+                        "outline": "#6d7a72",
+                        "primary": "#006948",
+                        "primary-fixed": "#85f8c4",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary-container": "#006f66",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#89f5e7",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-container-low": "#eff5ef",
+                        "tertiary": "#9b3e3b",
+                        "on-tertiary-fixed": "#410004",
+                        "primary-fixed-dim": "#68dba9",
+                        "on-surface-variant": "#3d4a42",
+                        "on-surface": "#171d19",
+                        "surface-bright": "#f5fbf5",
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "surface": "#f5fbf5",
+                        "on-primary-container": "#f5fff7",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ecf2ec",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#171d19",
+                        "on-error": "#ffffff",
+                        "primary-container": "#00855d",
+                        "surface-container-highest": "#dee4de",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed-variant": "#7f2928",
+                        "secondary-fixed-dim": "#6bd8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "120px",
+                        "base": "4px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "sm": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+        }
+        .progress-gradient {
+            background: linear-gradient(90deg, #006948 0%, #00855d 100%);
+        }
+        .progress-track {
+            background: rgba(0, 105, 72, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface/70 backdrop-blur-xl border-b border-white/40 shadow-sm transition-all">
+<div class="flex items-center gap-sm">
+<img alt="OBESITY TO INFINITY Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHSkFcE2XyRf_5ZI3-b5v3sl-qoiYFXiSK_p61BsoZ_quUY513G9vDCD6t90AIDrhNtZx39ank3xC7qmayEV8GRBCkTfX5LfB8XW-uJfZ2c8agAxEkZ_BHPjdwX4T88iRVkJy9i1USsJIl5lp0TsXc_0ZsMfAbZYP7oHorOoh0qXCOYCWHB3sw1l6rLC7yp5CvBKFYxSef5v6-zlpvpTHGvpWoOcYAoWud0ZuilrJQ2PfhRHIzX5i_Dg"/>
+<span class="font-headline-md text-headline-md font-bold text-primary hidden sm:block">OBESITY TO INFINITY</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-tertiary-container animate-pulse" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">12 Days</span>
+</div>
+<div class="hidden sm:flex items-center gap-xs bg-primary-container px-3 py-1 rounded-full text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">monitor_weight</span>
+<span class="font-label-md text-label-md font-bold">BMI 24.5</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="text-on-surface-variant hover:scale-105 transition-transform duration-200 active:scale-95">
+<span class="material-symbols-outlined">logout</span>
+</button>
+<img alt="User profile photo" class="w-8 h-8 rounded-full border-2 border-primary object-cover" data-alt="A detailed headshot portrait of a healthy individual glowing with vitality, set against a bright, modern, minimalist white background. Soft, diffused lighting highlights a subtle smile, embodying a positive health transformation journey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4JL_grRsWFQLZsFob8Ena8DYuNIXqauE6y1gx7O40Hce6l3jnhgPGJYTk_jyvYj1lIx13qOXMwUvLQbTgu3_iwGoJWfUGNDYzWNDn-fpi-0IdvPlh9kybeoO85cimPOHpW2caRK_bv9LMwNlEQjcCv3pz8MvxS-sXTojrkQ_WwO5L4JAFjimJX_LLaIPnw211bteoewS0T9kwYCHWwREIoYo5Dnu3WK8yHRomRfdUnZ29KoasdbbdnA"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full fixed left-0 top-0 pt-20 pb-8 docked left-0 h-full w-64 bg-surface/80 backdrop-blur-xl border-r border-white/40 shadow-md z-40">
+<div class="flex flex-col items-center px-sm mb-lg">
+<img alt="User avatar" class="w-16 h-16 rounded-full border-2 border-primary object-cover mb-xs" data-alt="A detailed headshot portrait of a healthy individual glowing with vitality, set against a bright, modern, minimalist white background. Soft, diffused lighting highlights a subtle smile, embodying a positive health transformation journey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfUVuD4C5v_tGFYSdnf0km6I_95SdmJj_96mtrElIWFq5P6xDyHh23yun7OzFe0NWhG5Jqj27WxvbgnS6guVthYUmndKN1Czf1n7qvKPetX5wjnmTm-lKkT78JA3Wtn_fRRKaOBQJRMssYF-uoh6l2PVKOr-CvcP0VO8ha2I8D6B21AEXIsBykjyCQBH1WsK-K0r_OT_L_2ux7IWMnHdSk5yA9AAXMvutN8yd1kD6KPCKs1kTU6xf48Q"/>
+<h2 class="font-label-md text-label-md text-on-surface font-bold">Health Profile</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Vibrant Journey</p>
+</div>
+<ul class="flex flex-col gap-2 px-3 w-full font-body-md text-body-md">
+<!-- Active Tab: Dashboard -->
+<li>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg bg-primary-container/20 text-primary font-bold border-r-4 border-primary hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                    Schedule
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Health Analysis
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined">restaurant</span>
+                    Fasting/Diet
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined">show_chart</span>
+                    Progress
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors active:translate-x-1" href="#">
+<span class="material-symbols-outlined">school</span>
+                    Education
+                </a>
+</li>
+</ul>
+<div class="mt-auto px-4 w-full">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md font-bold hover:scale-105 transition-transform duration-200 active:scale-95 shadow-md flex items-center justify-center gap-xs">
+                 + Update Weight
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-20 pb-24 md:pb-lg md:pl-[280px] px-margin-mobile md:pr-margin-desktop min-h-screen">
+<div class="mb-lg">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Welcome back, Traveler</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Here is your daily vitality overview.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-sm md:gap-lg">
+<!-- Main Column -->
+<div class="md:col-span-8 flex flex-col gap-sm md:gap-lg">
+<!-- Transformation Progress Card -->
+<div class="glass-card rounded-xl p-md relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed rounded-full blur-3xl opacity-20 -mr-10 -mt-10"></div>
+<div class="flex justify-between items-start mb-lg relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Transformation Progress</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Consistent momentum towards your goal.</p>
+</div>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+                            -4.5 kg
+                        </div>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-md mb-md">
+<div class="text-center sm:text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Current Weight</p>
+<p class="font-display-lg text-display-lg text-primary mt-1">82.5<span class="font-headline-md text-headline-md text-on-surface-variant ml-1">kg</span></p>
+</div>
+<div class="flex-1 w-full px-sm">
+<div class="h-3 w-full rounded-full progress-track overflow-hidden relative shadow-inner">
+<div class="absolute top-0 left-0 h-full rounded-full progress-gradient w-[65%] transition-all duration-1000 ease-out"></div>
+</div>
+</div>
+<div class="text-center sm:text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Target</p>
+<p class="font-display-lg text-display-lg text-secondary mt-1">70.0<span class="font-headline-md text-headline-md text-on-surface-variant ml-1">kg</span></p>
+</div>
+</div>
+</div>
+<!-- Bento Grid for Summaries -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
+<!-- Steps Tile -->
+<div class="glass-card rounded-xl p-md flex items-center gap-md hover:bg-surface-bright/50 transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_walk</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Daily Steps</p>
+<p class="font-headline-md text-headline-md text-on-surface">8,432 <span class="font-body-md text-body-md text-outline">/ 10k</span></p>
+</div>
+</div>
+<!-- Next Activity Tile -->
+<div class="glass-card rounded-xl p-md flex flex-col justify-center border-l-4 border-l-tertiary-container hover:bg-surface-bright/50 transition-colors cursor-pointer">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-tertiary-container text-sm">timer</span>
+<p class="font-label-sm text-label-sm text-tertiary-container font-bold">Upcoming: 16:8 Fast</p>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">Starts in 2h 15m</p>
+</div>
+</div>
+</div>
+<!-- Side Column -->
+<div class="md:col-span-4 flex flex-col gap-sm md:gap-lg">
+<!-- Hydration Widget -->
+<div class="glass-card rounded-xl p-md relative overflow-hidden min-h-[250px] flex flex-col justify-between group">
+<div class="absolute inset-0 w-full h-full z-0 opacity-40 mix-blend-multiply">
+<!-- STITCH_SHADER_START:ANIMATION_5 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_5" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_5');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    float fillLevel = 0.6; // This could be passed as a uniform but we use a baseline for now
+    
+    float wave = sin(uv.x * 10.0 + u_time * 2.0) * 0.02;
+    float waterLine = fillLevel + wave;
+    
+    vec3 waterColor = vec3(0.15, 0.39, 0.92); // Hydration Blue (#2563EB)
+    vec3 lightWater = vec3(0.35, 0.59, 1.0);
+    
+    float dist = waterLine - uv.y;
+    vec3 finalColor = mix(vec3(0.86, 0.92, 0.99), mix(waterColor, lightWater, uv.y/fillLevel), smoothstep(0.0, 0.01, dist));
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_5 -->
+</div>
+<div class="relative z-10 flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface drop-shadow-md">Hydration</h3>
+<span class="material-symbols-outlined text-secondary drop-shadow-md">water_drop</span>
+</div>
+<div class="relative z-10 text-center mt-auto">
+<p class="font-display-lg text-display-lg text-on-surface drop-shadow-lg">1.5<span class="font-headline-md text-headline-md ml-1">L</span></p>
+<p class="font-label-md text-label-md text-on-surface-variant font-bold drop-shadow-md">Goal: 2.5L</p>
+<button class="mt-4 bg-secondary text-on-secondary px-4 py-2 rounded-full font-label-md text-label-md hover:scale-105 transition-transform shadow-md flex items-center gap-2 mx-auto">
+<span class="material-symbols-outlined text-sm">add</span> Log Water
+                        </button>
+</div>
+</div>
+<!-- BMI Summary Tile (Mobile only, hidden on desktop as it's in header) -->
+<div class="sm:hidden glass-card rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">monitor_weight</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface">Current BMI</p>
+</div>
+<p class="font-headline-md text-headline-md text-primary font-bold">24.5</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (Mobile Only) -->
+<button class="md:hidden fixed bottom-24 right-4 z-50 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface/70 backdrop-blur-xl border-t border-white/40 shadow-lg rounded-t-xl h-16">
+<!-- Active Tab: Home/Dashboard -->
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Analysis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">timer</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Fast</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:opacity-80 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Learn</span>
+</a>
+</nav>
+</body></html>
